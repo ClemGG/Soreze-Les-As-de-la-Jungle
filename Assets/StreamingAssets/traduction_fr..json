@@ -1,0 +1,212 @@
+{
+    "items": [
+        {
+            "key": "presentation",
+            "value": "Présentent"
+        },
+        {
+            "key": "titre",
+            "value": "La mégalomanie de la tapisserie"
+        },
+        {
+            "key": "lancer la partie",
+            "value": "Lancer la partie"
+        },
+        {
+            "key": "parametres",
+            "value": "Paramètres"
+        },
+        {
+            "key": "startBtn",
+            "value": "Démarrer"
+        },
+        {
+            "key": "settingsBtn",
+            "value": "Paramètres"
+        },
+        {
+            "key": "bruitages",
+            "value": "Bruitages :"
+        },
+        {
+            "key": "audio",
+            "value": "Audio"
+        },
+        {
+            "key": "langue",
+            "value": "Langues"
+        },
+        {
+            "key": "help0",
+            "value": "texte d'initialisation du panel d'aide."
+        },
+        {
+            "key": "help1",
+            "value": "Nous sommes dans la scène principale."
+        },
+        {
+            "key": "help2",
+            "value": "Nous sommes dans l'épreuve de test."
+        },
+        {
+            "key": "ep0h0",
+            "value": "Le texte d'aide qui s'affiche pour l'épreuve."
+        },
+        {
+            "key": "minute",
+            "value": "minute"
+        },
+        {
+            "key": "secondes",
+            "value": "secondes"
+        },
+        {
+            "key": "voir la fiche",
+            "value": "Voir la fiche"
+        },
+        {
+            "key": "oui",
+            "value": "oui"
+        },
+        {
+            "key": "non",
+            "value": "non"
+        },
+        {
+            "key": "quitter l'aventure",
+            "value": "QUITTER L'AVENTURE ?"
+        },
+        {
+            "key": "quitter l'epreuve",
+            "value": "STOPPER L'INTERACTION EN COURS ?"
+        },
+        {
+            "key": "es tu sur aventure",
+            "value": "Attention, tu retourneras sur l'écran titre et tu perdras toute ta progression. Es-tu sûr ?"
+        },
+        {
+            "key": "es tu sur epreuve",
+            "value": "Tu retourneras sur l'écran de scan. Es-tu sûr ?"
+        },
+        {
+            "key": "legende-1",
+            "value": "Plan du Musée"
+        },
+        {
+            "key": "legende0",
+            "value": "Ascenseur"
+        },
+        {
+            "key": "legende1",
+            "value": "Sens de la visite"
+        },
+        {
+            "key": "legende2",
+            "value": "Symboles"
+        },
+        {
+            "key": "legende3",
+            "value": "Toilettes"
+        },
+        {
+            "key": "legende4",
+            "value": "Accès PMR"
+        },
+        {
+            "key": "legende5",
+            "value": "Escaliers"
+        },
+        {
+            "key": "legende6",
+            "value": "Entrée au 2ème étage"
+        },
+        {
+            "key": "legende7",
+            "value": "Accueil"
+        },
+        {
+            "key": "legende8",
+            "value": "Cour des Rouges"
+        },
+        {
+            "key": "legende9",
+            "value": "Rez-de-chaussée"
+        },
+        {
+            "key": "legende10",
+            "value": "Galerie haute"
+        },
+        {
+            "key": "legende11",
+            "value": "Passerelle"
+        },
+        {
+            "key": "scan recherche",
+            "value": "Recherche d'oeuvres en cours..."
+        },
+        {
+            "key": "scan analyse en cours",
+            "value": "Analyse de l'oeuvre en cours..."
+        },
+        {
+            "key": "scan validation",
+            "value": "Analyse terminée !"
+        },
+        {
+            "key": "scan erreur titre",
+            "value": "Problème de scan"
+        },
+        {
+            "key": "scan erreur",
+            "value": "Hmmm, il doit y avoir une petite erreur… Mais certainement pas dans le programme ! Essaye de te rapprocher du symbole ou de mieux le cadrer et relance le scan…Grmmbll..."
+        },
+        {
+            "key": "photo prends place",
+            "value": "Prends place dans la cible !"
+        },
+        {
+            "key": "photo analyse",
+            "value": "Patiente un peu, ta photo\na été envoyée à l'imprimante."
+        },
+        {
+            "key": "photo validation",
+            "value": "Impression terminée !\nVa récupérer ta photo !"
+        },
+        {
+            "key": "exemplaires",
+            "value": "exemplaires"
+        },
+        {
+            "key": "imprimer",
+            "value": "Imprimer"
+        },
+        {
+            "key": "différences trouvées",
+            "value": "différences trouvées"
+        },
+        {
+            "key": "motifs trouvés",
+            "value": "motifs trouvés"
+        },
+        {
+            "key": "couleurs remplacées",
+            "value": "couleurs remplacées"
+        },
+        {
+            "key": "teintes réalisées",
+            "value": "teintes réalisées"
+        },
+        {
+            "key": "pièces placées",
+            "value": "pièces placées"
+        },
+        {
+            "key": "moustiques gobés",
+            "value": "moustiques gobés"
+        },
+        {
+            "key": "piliers détruits",
+            "value": "piliers détruits"
+        }
+    ]
+}

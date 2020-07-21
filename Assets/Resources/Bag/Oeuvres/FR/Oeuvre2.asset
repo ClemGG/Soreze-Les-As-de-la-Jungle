@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre2
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: 27882679ea343cd4a8b0f0c2fdd6af50, type: 3}
+  title: "Jardin de sir\xE8nes"
+  date: (1907 - 1997)
+  author: Dom Robert
+  materials: Tapisserie de basse lisse, laine et coton
+  reference: "Carton de 1961, premier tissage: atelier Goubely, Aubusson. \nTissage
+    Atelier Janine Dassonval \xE0 Montpezat de Quercy en 2009. \n200x280cm"
+  questionG: Quels sont les animaux que l'on retrouve dans cette tapisserie?
+  descriptionG: "On peut observer 7 poissons, quelques crevettes, un petit poisson
+    plat et 2 bernard-l'hermite dont un, si tu regardes bien, avec un chapeau plut\xF4t
+    \xE9trange. Il s'agit de celui de l'\xE9v\xEAque appel\xE9 la mitre, \xE9voqu\xE9
+    en coquillage dans cette tapisserie."
+  questionD: "D'apr\xE8s toi, combien d'heures de tissage a-t-il fallu pour finir
+    cette tapisserie?"
+  descriptionD: "Pour cette tapisserie de pr\xE8s de 6 m\xE8tres carr\xE9s et en raison
+    de sa finesse, le tissage a pris plus de 1 200heures, temps auquel il faut ajouter
+    250 heures de couture. Soit pr\xE8s de 1 500 heures en tout et cela sur 7 mois.\r"

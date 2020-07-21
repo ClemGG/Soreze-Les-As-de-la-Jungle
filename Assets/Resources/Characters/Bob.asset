@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e802948cea42d547a8edf81f876e21f, type: 3}
+  m_Name: Bob
+  m_EditorClassIdentifier: 
+  characterName: Bob
+  characterMedaillon: {fileID: 21300000, guid: 257d4e94b248eaf42a43f6f077142165, type: 3}
+  characterExpressions:
+  - mood: 0
+    sprite: {fileID: 21300000, guid: ba5c220c7dff2cb4692156d78c5418e5, type: 3}
+  - mood: 1
+    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+  - mood: 4
+    sprite: {fileID: 21300000, guid: 88b6fc01c642a7e4285d7586238cabe4, type: 3}
+  - mood: 5
+    sprite: {fileID: 21300000, guid: 2031609678b79a740bf892e36ea2fb3e, type: 3}
+  - mood: 7
+    sprite: {fileID: 21300000, guid: ef45d972ea02f894083a200e734eff62, type: 3}

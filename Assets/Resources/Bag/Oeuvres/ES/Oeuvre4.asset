@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre4
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: caa640635a911504f8a1ba713278ba0e, type: 3}
+  title: Verano
+  date: (1907-1997)
+  author: Dom Robert
+  materials: "Tapiz bajo liso, lana y algod\xF3n"
+  reference: "Cart\xF3n de 1941. \nTissage Atelier Tabard, Aubusson, 1947, ej. 5,
+    \n224x328 cm. \nPr\xE9stamo de la Cit\xE9 International de la Tapisserie. Aubusson,
+    inv.2006.7.1"
+  questionG: "\xA1Es curioso c\xF3mo Dom Robert interpret\xF3 la fauna y la flora!"
+  descriptionG: "El tapiz incluye los temas principales que Dom Robert rechazar\xE1
+    m\xE1s tarde: animales de granja, \xE1rboles, flores y mariposas. La forma ovoide
+    que contiene la escena central se convertir\xE1 en una de las caracter\xEDsticas
+    de sus composiciones."
+  questionD: "\xBFEl espacio fue construido por otro artista que inspir\xF3 a Dom
+    Robert, Jean Lur\xE7at?"
+  descriptionD: "Aqu\xED se elige la paleta propuesta por Jean Lur\xE7at: fondo verde-azul
+    y gran masa de color rojo intenso sobre el que destacan los blancos y amarillos.
+    El borde rojo y la inscripci\xF3n en el cartucho en la parte inferior derecha
+    conectan esta obra con la iluminaci\xF3n y el tapiz medieval."

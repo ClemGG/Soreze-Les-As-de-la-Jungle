@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e802948cea42d547a8edf81f876e21f, type: 3}
+  m_Name: Vladimir
+  m_EditorClassIdentifier: 
+  characterName: Vladimir
+  characterMedaillon: {fileID: 21300000, guid: 0106069c42a72e240bd1c4991d3a7342, type: 3}
+  characterExpressions:
+  - mood: 0
+    sprite: {fileID: 21300000, guid: 1d1a932c6335ad7418b55ec12656632c, type: 3}
+  - mood: 1
+    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+  - mood: 3
+    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+  - mood: 5
+    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+  - mood: 7
+    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+  - mood: 8
+    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+  - mood: 9
+    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}

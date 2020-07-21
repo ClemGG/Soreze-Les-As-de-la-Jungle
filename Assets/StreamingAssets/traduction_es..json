@@ -1,0 +1,212 @@
+{
+    "items": [
+        {
+            "key": "presentation",
+            "value": "Presentan"
+        },
+        {
+            "key": "titre",
+            "value": "La megalomanía del tapiz"
+        },
+        {
+            "key": "lancer la partie",
+            "value": "Comienza el juego"
+        },
+        {
+            "key": "parametres",
+            "value": "parametros"
+        },
+        {
+            "key": "startBtn",
+            "value": "Comienzo"
+        },
+        {
+            "key": "settingsBtn",
+            "value": "Configuraciones"
+        },
+        {
+            "key": "bruitages",
+            "value": "Efectos sonoros\r :"
+        },
+        {
+            "key": "audio",
+            "value": "Audio"
+        },
+        {
+            "key": "langue",
+            "value": "Idioma"
+        },
+        {
+            "key": "help0",
+            "value": "texto de inicialización del panel de ayuda"
+        },
+        {
+            "key": "help1",
+            "value": "Estamos en el escenario principal"
+        },
+        {
+            "key": "help2",
+            "value": "Estamos en la prueba"
+        },
+        {
+            "key": "ep0h0",
+            "value": "Mantenga presionado el botón del mouse durante 3 segundos."
+        },
+        {
+            "key": "minuto",
+            "value": "minuto"
+        },
+        {
+            "key": "secondes",
+            "value": "segundos"
+        },
+        {
+            "key": "voir la fiche",
+            "value": "Ver el archivo\r"
+        },
+        {
+            "key": "oui",
+            "value": "SÍ"
+        },
+        {
+            "key": "non",
+            "value": "NO"
+        },
+        {
+            "key": "quitter l'aventure",
+            "value": "¿DEJAR LA AVENTURA?"
+        },
+        {
+            "key": "quitter l'epreuve",
+            "value": "¿DETENER LA INTERACCIÓN EN CURSO?"
+        },
+        {
+            "key": "es tu sur aventure",
+            "value": "Tenga en cuenta que volverá a la pantalla de título y perderá todo su progreso. Estas seguro ?"
+        },
+        {
+            "key": "es tu sur epreuve",
+            "value": "Volverá a la pantalla de escaneo. Estas seguro ?"
+        },
+        {
+            "key": "legende-1",
+            "value": "Mapa del museo"
+        },
+        {
+            "key": "legende0",
+            "value": "Ascensor"
+        },
+        {
+            "key": "legende1",
+            "value": "Dirección de la visita"
+        },
+        {
+            "key": "legende2",
+            "value": "Interacción"
+        },
+        {
+            "key": "legende3",
+            "value": "Baños"
+        },
+        {
+            "key": "legende4",
+            "value": "Acceso PMR"
+        },
+        {
+            "key": "legende5",
+            "value": "Escalera"
+        },
+        {
+            "key": "legende6",
+            "value": "Entrada en el 2do piso"
+        },
+        {
+            "key": "legende7",
+            "value": "Recepción"
+        },
+        {
+            "key": "legende8",
+            "value": "Corte roja"
+        },
+        {
+            "key": "legende9",
+            "value": "Mapa del museo"
+        },
+        {
+            "key": "legende10",
+            "value": "Alta galería"
+        },
+        {
+            "key": "legende11",
+            "value": "Puente"
+        },
+        {
+            "key": "scan recherche",
+            "value": "Escanear búsqueda..."
+        },
+        {
+            "key": "scan analyse en cours",
+            "value": "Análisis del trabajo en progreso..."
+        },
+        {
+            "key": "scan validation",
+            "value": "Análisis del escaneo ok!"
+        },
+        {
+            "key": "scan erreur titre",
+            "value": "Problema de escaneo"
+        },
+        {
+            "key": "scan erreur",
+            "value": "Hmmm, debe haber un pequeño error... ¡Pero ciertamente no en el programa! Intente acercarse al símbolo o encuadrarlo mejor y reiniciar el escaneo... Grmmbll..."
+        },
+        {
+            "key": "photo prends place",
+            "value": "¡Toma asiento en el objetivo!"
+        },
+        {
+            "key": "photo analyse",
+            "value": "Espere un momento, su foto\nfue enviada a la impresora."
+        },
+        {
+            "key": "photo validation",
+            "value": "¡Impresión terminada!\n¡Ve a buscar tu foto!"
+        },
+        {
+            "key": "exemplaires",
+            "value": "copias"
+        },
+        {
+            "key": "imprimer",
+            "value": "imprimir"
+        },
+        {
+            "key": "différences trouvées",
+            "value": "diferencias encontradas"
+        },
+        {
+            "key": "motifs trouvés",
+            "value": "patrones encontrados"
+        },
+        {
+            "key": "couleurs remplacées",
+            "value": "colores reemplazados"
+        },
+        {
+            "key": "teintes réalisées",
+            "value": "sombras hechas"
+        },
+        {
+            "key": "pièces placées",
+            "value": "piezas colocadas"
+        },
+        {
+            "key": "moustiques gobés",
+            "value": "mosquitos tragados"
+        },
+        {
+            "key": "piliers détruits",
+            "value": "piliers détruits"
+        }
+    ]
+}

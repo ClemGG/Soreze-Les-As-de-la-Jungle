@@ -1,0 +1,238 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5608084517724573911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5608084517724573912}
+  - component: {fileID: 5608084517724573913}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5608084517724573912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608084517724573911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 867.1857, y: 763.6286, z: -489.84668}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5608084517724573913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608084517724573911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c64a291f56df149b95eaba11610c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sons:
+  - tag: AMBIANCE JUNGLE
+    clip: {fileID: 8300000, guid: 829d9fe7c6855b749bf43cb0a1d81e0e, type: 3}
+    source: {fileID: 0}
+    volume: 0.402
+    loop: 1
+    playOnAwake: 0
+  - tag: GENERIQUE AS DE LA JUNGLE VERSION COURTE
+    clip: {fileID: 8300000, guid: 16928943a59dd63459d7129dfdfd312c, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: JINGLE REUSSITE
+    clip: {fileID: 8300000, guid: 2dffa255925488149b4c7e527421a8b0, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: BEEP ERREUR
+    clip: {fileID: 8300000, guid: ca753e31c9d146148a3b8f8ece2abd30, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: MUSIQUE SIGNATURE RETICULE
+    clip: {fileID: 8300000, guid: 5cd86711a4b689c46a9707e6145c98e1, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: SPLASH 1
+    clip: {fileID: 8300000, guid: d12ef09337a86ed49bad80b6ebbdbff2, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: IMPACT JUNIOR
+    clip: {fileID: 8300000, guid: 051a1b6dacbe88b48bdc046e2e1b883a, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: POSE PAPIER
+    clip: {fileID: 8300000, guid: d3c55fac1c435c64b92494389ada8c58, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: THEME REUSSITE EPREUVE
+    clip: {fileID: 8300000, guid: 548d3e44de2c7a348aef82eab64b6f4e, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: EXPLOSION BOIS
+    clip: {fileID: 8300000, guid: a767a23ee8633d44e944733244c89152, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: CHUTE BAMBOUS
+    clip: {fileID: 8300000, guid: 69107cb89f2fca942ac6e70b0906098d, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: CHUTE BOIS
+    clip: {fileID: 8300000, guid: a64776640ab31494caa73328dee2cde2, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: coup_miguel_seul01
+    clip: {fileID: 8300000, guid: cf3ce231e46a609449492d2d4d6affbd, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: SORTIE LANGUE 1
+    clip: {fileID: 8300000, guid: cb4dee5b6d5d4ea45973fcfee8f7b32f, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: SORTIE LANGUE 2
+    clip: {fileID: 8300000, guid: 14b8ff71f082e3c429fdb619f7ad72cf, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: LANGUE ATTRAPE AVALE 1
+    clip: {fileID: 8300000, guid: 87720ed6501432b4bace186fee08acd5, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: LANGUE ATTRAPE AVALE 2
+    clip: {fileID: 8300000, guid: 477761987f2095840b5f7ffa80bfff71, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: TOUILLE LIQUIDE
+    clip: {fileID: 8300000, guid: b397c41d478fa504fb04e2364416e98b, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: VERSE LIQUIDE 4
+    clip: {fileID: 8300000, guid: 61635d206dfb06e46a0293089b628e3a, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: verse_liquide_03
+    clip: {fileID: 8300000, guid: 8c02574a548e3d94682401499f4a82d7, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: CANON2
+    clip: {fileID: 8300000, guid: 937ee9fb4ba10334ca0ebe59ca8b832e, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: TIC
+    clip: {fileID: 8300000, guid: 963b9902aee472e429c5f8fe08c205f4, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: IMPACT FRUIT 1
+    clip: {fileID: 8300000, guid: f7e0ba4d235860940a950039ef6d42bd, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: IMPACT FRUIT 2
+    clip: {fileID: 8300000, guid: c3a0803da1368ad41a0593441d332c7b, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: IMPACT FRUIT 3
+    clip: {fileID: 8300000, guid: cceec26ea7c1c90468818a356920f40d, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: IMPACT FRUIT 4
+    clip: {fileID: 8300000, guid: afc0f72a2889a7b4d888922a1ff89c9f, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: PINCEAU 1
+    clip: {fileID: 8300000, guid: d9119170e3bee84479fa7d9dfd308a55, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: PINCEAU 2
+    clip: {fileID: 8300000, guid: 5c15b04e08910434186b1bd9d0b359ec, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: OUVERTURE PLAN
+    clip: {fileID: 8300000, guid: 7504857bdfe03b74498940d3653edbd5, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: OUVERTURE BOITE A OUTILS
+    clip: {fileID: 8300000, guid: 85a88da7b35645348a3a68e2009d7f2d, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0
+  - tag: ZOOM LENT_scan_analyse
+    clip: {fileID: 8300000, guid: ace212a2efdde9d47becc46cafc5cd0c, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 1
+    playOnAwake: 0
+  - tag: ZOOM RAPIDE_lancer_scan
+    clip: {fileID: 8300000, guid: 8fb25c9246917fa43882370ed0e948ef, type: 3}
+    source: {fileID: 0}
+    volume: 1
+    loop: 0
+    playOnAwake: 0

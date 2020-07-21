@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre5
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: f35c23aaaea5cf64e91d7e64441bd730, type: 3}
+  title: La creacion del hombre
+  date: 
+  author: 
+  materials: "Tapiz bajo liso, lana y algod\xF3n"
+  reference: "Cart\xF3n de 1946. \nTejiendo Atelier de la Beauze, Aubusson, 2004.
+    \n400x340cm"
+  questionG: "\xBFA qui\xE9n se le ofreci\xF3 este tapiz?"
+  descriptionG: "El tapiz fue adquirido por el Estado franc\xE9s y luego ofrecido
+    en 1954 por el presidente Ren\xE9 Coty a la reina de los Pa\xEDses Bajos. \xA1Qu\xE9
+    maravilloso regalo!"
+  questionD: "\xBFCu\xE1les son los zapatos del personaje en el centro del tapiz?"
+  descriptionD: "La figura central representa a Dios en zapatillas. Tambi\xE9n usa
+    el delantal azul de trabajo de los monjes de los cuales Dom Robert era miembro,
+    los monjes de En Calcat. El monasterio se encuentra a 10 minutos de Sor\xE8ze,
+    en la ciudad de Dourgne y todav\xEDa est\xE1 en funcionamiento."

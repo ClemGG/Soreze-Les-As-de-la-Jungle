@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre6
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: 41fff9a61c4de8e4181390cadb90de17, type: 3}
+  title: Loul ducks
+  date: (1907-1997)
+  author: Dom Robert
+  materials: Smooth bass tapestry, wool and cotton
+  reference: "Cardboard from 1985. \nWeaving at the Goubely-La Beauze workshop, Aubusson,
+    2003\n133x142.5 cm "
+  questionG: Can you recognize one of Dom Robert's favorite themes that we find a
+    lot in his works?
+  descriptionG: The farmyard is one of Dom Robert's favorite themes. Here, the ducks
+    form a circle in the middle of a flowered meadow of poppies, umbels and sorrels.
+    Dom Robert was inspired by a farm around the monastery in which he lived, which
+    explains the name of the work.
+  questionD: At what age did Dom Robert make this work?
+  descriptionD: Dom Robert will be 80 years old when he creates this box. He still
+    willingly takes his bike when the weather is good to go and draw the surrounding
+    countryside. This work demonstrates his perfect mastery of composition and technique.

@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: kungfu FR conclu
+  m_EditorClassIdentifier: 
+  done: 1
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Noooooonnn ! Me voil\xE0, MOI, le Grand Vladimir, en cage ! Mais comment
+      est-ce possible ?"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 9
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "Bravo Miguel, un juste retour de b\xE2ton ! On dirait bien que tu t\u2019es
+      pris les pieds dans la tapisserie Vladimir. "
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 6
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: Tissera bien qui tissera le dernier, Guerrier-Tigre !
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 9
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "Merci les As, ce personnage machiav\xE9lique a bien failli r\xE9ussir son
+      coup ! Mais gr\xE2ce \xE0 vous le Mus\xE9e Dom Robert est d\xE9sormais sauv\xE9
+      ! Muchas gracias les As !"
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 5
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "QUOI ? Petit personnage ? MOI ? Le grand Vladimir !? Je ne t\u2019autorise
+      pas \xE0 parler ainsi ! Je me vengerai !"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 9
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "De rien Salvador, on est toujours ravis de mettre un terme aux agissements
+      de Vladimir ! Et puis \xE7a nous a fait une jolie balade au coeur du Mus\xE9e
+      Dom Robert."
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Et merci \xE0 toi mon ami de nous avoir accompagn\xE9 tout au long de cette
+      aventure. Rien n\u2019aurait \xE9t\xE9 possible sans ton aide.\n\nAvant de rentrer,
+      j\u2019ai une petite surprise pour toi, juste \xE0 c\xF4t\xE9 du bureau d'informations
+      \xE0 l'\xE9tage !"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

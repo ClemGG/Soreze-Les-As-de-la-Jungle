@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: intro fr
+  m_EditorClassIdentifier: 
+  done: 1
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Tiens, salut Salvador ! Qu\u2019est-ce qui t\u2019am\xE8ne dans le coin
+      ?"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 3
+    arrowOrientation: 1
+  - text: Ah, Maurizio, je suis content de te voir !
+    backgroundImg: {fileID: 21300000, guid: cb594fe1c09f4544090c1746dbc98e52, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 3
+    arrowOrientation: 0
+  - text: "C\u2019est une catastrophe ! C\u2019est un terrible malheur ! Le mus\xE9e
+      Dom Robert est en grand danger ! Tout est sens dessus dessous ! "
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 3
+    side: 0
+    bubbleSize: 2
+    arrowOrientation: 1
+  - text: "Maurizio, tu dois faire quelque chose r\xE1pido\u2026On ne peut pas laisser
+      le mus\xE9e comme \xE7a pour le public ! Ce n\u2019est pas possible ! Des chefs
+      d\u2019oeuvres ont \xE9t\xE9 vandalis\xE9s, tout est en d\xE9sordre, il faut
+      m\u2019aider, por favor !"
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 3
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "T\u2019inqui\xE8te pas Salvador, on va s\u2019en occuper. Tu as raison,
+      ce beau mus\xE9e ne m\xE9rite pas \xE7a ! \nTu veux bien nous en dire un peu
+      plus ?"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "Merci les As ! \nPour vous aider, laissez-moi vous indiquer  les magnifiques
+      oeuvres qui ont \xE9t\xE9 vandalis\xE9es ! Je vous ai marqu\xE9 les emplacements
+      des interactions sur le plan du mus\xE9e avec une image de Maurizio."
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 5
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "Merci Salvador, on sait maintenant par o\xF9 commencer notre enqu\xEAte."
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 3
+    arrowOrientation: 1
+  - text: "Ah Maurice ! C\u2019est l\u2019occasion id\xE9ale pour vous pr\xE9senter
+      ma toute derni\xE8re invention : l\u2019Interpr\xE9teur Pour Algorithmes Transposables
+      de Technologie Exp\xE9rimentale, ou plus simplement... \n\n<size=120><color=#ffca00>
+      l\u2019i.P.A.T.T.E\_! </color></size>"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 6
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 1
+  - text: "Avec cet outil, nous allons pouvoir scanner les oeuvres directement et
+      mettre en lumi\xE8re les \xE9ventuels probl\xE8mes."
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 2
+    arrowOrientation: 1
+  - text: Blop blop.
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 3e60fbedcc082a246b3fb706a2e8ddc8, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 1
+    bubbleSize: 3
+    arrowOrientation: 1
+  - text: "Effectivement Junior, c\u2019est une tablette ! Mais beaucoup plus \xE9labor\xE9e..."
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 3
+    arrowOrientation: 1
+  - text: Oh Gilbert, quelle merveilleuse invention ! Mais, dites-nous, comment marche-t-elle
+      ?
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 2
+    arrowOrientation: 1

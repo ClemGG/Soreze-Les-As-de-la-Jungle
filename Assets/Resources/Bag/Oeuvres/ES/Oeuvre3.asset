@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre3
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: 7c39d92808544294f9d80b5b65685f4e, type: 3}
+  title: Telar de bajo lizo
+  date: (En uso hasta 2005)
+  author: 
+  materials: Taller Goubely
+  reference: En uso hasta 2005 por Atelier de la Beauze
+  questionG: "Observe bien el telar y el trabajo, seg\xFAn usted, \xBFen qu\xE9 sentido
+    est\xE1 tejido el tapiz de Aubusson?"
+  descriptionG: "El tapiz de Aubusson se basa en una imagen preparada por un pintor
+    de cart\xF3n. El tejido se realiza manualmente por un tejedor en el reverso del
+    tapiz, utilizando lana te\xF1ida a mano: un proceso exigente con tiempos y costos
+    de producci\xF3n significativos. Catalogado como Patrimonio de la Humanidad por
+    la UNESCO desde 2009, los tapices de Aubusson son un punto de referencia en todo
+    el mundo."
+  questionD: "\xBFQu\xE9 significa caer del comercio?"
+  descriptionD: "Es la expresi\xF3n utilizada para designar la fase final de la creaci\xF3n
+    del tapiz. Es el momento en que se cortan los hilos que conectan el tapiz con
+    el telar y hacen que el tapiz se \"caiga\", permitiendo por primera vez descubrirlo
+    como un todo y en su lugar."

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre6
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: 17a10581962b14a4c9ff357329265bad, type: 3}
+  title: Patos del alma
+  date: (1907-1997)
+  author: Dom Robert
+  materials: "Tapiz bajo liso, lana y algod\xF3n"
+  reference: "Cart\xF3n de 1985. \nTejido en el taller Goubely-La Beauze, Aubusson,
+    2003.\n133x142,5 cm "
+  questionG: "\xBFPuedes reconocer uno de los temas favoritos de Dom Robert que encontramos
+    mucho en sus obras?"
+  descriptionG: "El corral es uno de los temas favoritos de Dom Robert. Aqu\xED, los
+    patos forman un c\xEDrculo en medio de un prado florecido de amapolas, umbelas
+    y acederas. Dom Robert se inspir\xF3 en una granja alrededor del monasterio en
+    el que viv\xEDa, que explica el nombre de la obra."
+  questionD: "\xBFA qu\xE9 edad hizo Dom Robert hacer que esto funcionara?"
+  descriptionD: "Dom Robert tendr\xE1 80 a\xF1os cuando cree esta caja. Todav\xEDa
+    est\xE1 dispuesto a tomar su bicicleta cuando hace buen tiempo y dibujar el campo
+    circundante. Este trabajo demuestra su perfecto dominio de la composici\xF3n y
+    la t\xE9cnica."

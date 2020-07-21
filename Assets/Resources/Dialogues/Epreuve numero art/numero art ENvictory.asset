@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: numero art ENvictory
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: Well done Miguel ! We managed to fully restore the tapestry and according
+      to me, Salvador will be delighted with the result !
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "If mister Maurice happy, Miguel happy too. Even if sad because no more
+      bananas for Miguel\u2026"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Sorry, but we had no choice !
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Let's continue the museum visit looking for the next symbol ! You come with
+      us ?
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

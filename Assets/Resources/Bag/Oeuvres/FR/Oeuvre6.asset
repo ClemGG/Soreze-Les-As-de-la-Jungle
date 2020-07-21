@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre6
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: 17a10581962b14a4c9ff357329265bad, type: 3}
+  title: Canards de Loul
+  date: (1907 - 1997)
+  author: Dom Robert
+  materials: 'Tapisserie de basse lisse,  laine et coton '
+  reference: "Carton de 1985. \nTissage \xE0 l'atelier Goubely-La Beauze, Aubusson,
+    2003\n133x142,5 cm  "
+  questionG: "Est-ce que tu peux reconna\xEEtre un des th\xE8mes favoris de Dom Robert
+    que l'on retrouve beaucoup dans ses oeuvres?"
+  descriptionG: "La basse-cour est un des th\xE8mes de pr\xE9dilection de Dom Robert.
+    Ici, les canards forment une ronde au milieu d'un pr\xE9 fleuri de coquelicots,
+    d'ombelles et d'oseilles. Dom Robert s'est inspir\xE9 d'une ferme des alentours
+    du monast\xE8re dans lequel il vivait, ce qui explique le nom de l'oeuvre. "
+  questionD: "A quel \xE2ge Dom Robert a confectionn\xE9 cette oeuvre?"
+  descriptionD: "Dom Robert va avoir 80 ans quand il cr\xE9\xE9 ce carton. Il prend
+    encore volontiers son v\xE9lo quand il fait beau pour aller dessiner la campagne
+    environnante. Cette \u0153uvre t\xE9moigne de sa parfaite ma\xEEtrise de la composition
+    et de la technique."

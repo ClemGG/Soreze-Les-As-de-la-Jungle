@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e7b33d49878e5489ce4a57ccc45509, type: 3}
+  m_Name: allPossibleCombinationsV2
+  m_EditorClassIdentifier: 
+  allPossibleCombinations:
+  - tag: Orange
+    colorResultID: 10
+    colorsToMix: 0000000001000000
+    colorResult: {r: 1, g: 0.54967153, b: 0, a: 1}
+  - tag: Jaune clair
+    colorResultID: 13
+    colorsToMix: 0100000004000000
+    colorResult: {r: 1, g: 0.93290794, b: 0.5613208, a: 1}
+  - tag: Bleu
+    colorResultID: 7
+    colorsToMix: 0200000003000000
+    colorResult: {r: 0, g: 0.2165901, b: 0.8301887, a: 1}
+  - tag: Vert
+    colorResultID: 6
+    colorsToMix: 0100000007000000
+    colorResult: {r: 0.09726847, g: 0.6981132, b: 0, a: 1}
+  - tag: Rouge
+    colorResultID: 5
+    colorsToMix: 000000000000000001000000
+    colorResult: {r: 1, g: 0, b: 0, a: 1}
+  - tag: Suamon
+    colorResultID: 11
+    colorsToMix: 05000000010000000a000000
+    colorResult: {r: 0.8962264, g: 0.56992775, b: 0.46079564, a: 1}
+  - tag: Violet
+    colorResultID: 8
+    colorsToMix: 0100000003000000070000000a000000
+    colorResult: {r: 0.6017316, g: 0, b: 0.8113208, a: 1}
+  - tag: Gris
+    colorResultID: 12
+    colorsToMix: 04000000050000000600000007000000
+    colorResult: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}

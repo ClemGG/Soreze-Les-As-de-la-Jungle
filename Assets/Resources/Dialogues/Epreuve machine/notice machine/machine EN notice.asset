@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: machine EN notice
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: Open the toolbox and choose the 4 feet (they look like beams) and position
+      them in the right places.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: We also need tension supports. There are also 4. Go ahead, I'm looking at
+      you!
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: We continue with the bench, this is the front part.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Then the 2 twins, in symmetry on each side.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: And finally the board.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Perfect ! The structure is in place! Now position the 2 rollers, front and
+      rear.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Now let's take care of the mechanism with the slide first.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: And the pedal.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Come on, we're almost done. Now add serrated wheels to the mechanism.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: And finally a little rope. These vines will do the trick!
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

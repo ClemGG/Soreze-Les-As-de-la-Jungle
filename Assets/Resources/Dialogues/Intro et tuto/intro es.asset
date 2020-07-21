@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: intro es
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "\xA1Hola, Salvador! \xBFQu\xE9 te trae por aqu\xED?"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "\xA1Ah, Maurizio, me alegro de verte!"
+    backgroundImg: {fileID: 21300000, guid: cb594fe1c09f4544090c1746dbc98e52, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 5
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "\xA1Es un desastre! \xA1Es una desgracia terrible! \xA1El museo Dom Robert
+      est\xE1 en gran peligro! \xA1Todo est\xE1 al rev\xE9s!"
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 1
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "Maurizio, tienes que hacer algo r\xE1pido ... \xA1No podemos dejar el
+      museo as\xED para el p\xFAblico! No es posible ! Las obras maestras han sido
+      destrozadas, todo est\xE1 en desorden, \xA1debes ayudarme, por favor! "
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 1
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 1
+  - text: "No te preocupes Salvador, nosotros nos encargaremos. Tienes raz\xF3n,
+      este hermoso museo no merece esto. \n\xBFNos contar\xE1s un poco m\xE1s?"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Gracias amigos ! \n\xA1Para ayudarlo, perm\xEDtame mostrarle las magn\xEDficas
+      obras que han sido destrozadas ! Marqu\xE9 las ubicaciones de las interacciones
+      en el mapa del museo con una imagen de Maurizio."
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Gracias Salvador, ahora sabemos d\xF3nde comenzar nuestra investigaci\xF3n."
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "\xA1Ah, Maurice! Esta es la oportunidad perfecta para presentar mi \xFAltimo
+      invento: el Interpretor Pad for an Advanced Wild Nature, o m\xE1s simplemente...
+      \n\n<size=120><color=#ffca00>\xA1el i.PAWN ! </color></size>"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 6
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 1
+  - text: Con esta herramienta, podremos escanear los trabajos directamente y resaltar
+      cualquier problema.
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: Blop blop.
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 3e60fbedcc082a246b3fb706a2e8ddc8, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "De hecho Junior, es una tableta! Pero mucho m\xE1s elaborado ..."
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "\xA1Oh Gilbert, qu\xE9 maravilloso invento! Pero, cu\xE9ntanos, \xBFc\xF3mo
+      funciona ?"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1

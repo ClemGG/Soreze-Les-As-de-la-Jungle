@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: suite intro grand EN
+  m_EditorClassIdentifier: 
+  done: 1
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Perfect, thank you Salvador! We are going to learn while having fun, and
+      we won't hesitate to ask your disciple for help !\r"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: And you, are you ready to take up the challenge? The mission may be difficult
+      and we need your help !
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "Come on guys ! The Jungle Bunch...\n<size=120><color=#cf5708>TO THE RESCUE
+      !\_</color></size>"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 00598ac1b520cce44829e2dcdceb7716, type: 2}
+    clip: {fileID: 8300000, guid: 16928943a59dd63459d7129dfdfd312c, type: 3}
+    mood: 6
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1

@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: kungfu FRintro
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Grandiose ! Bravo mes fid\xE8les moustiques ! Quelle magnifique chef d\u2019oeuvre
+      \xE0 la hauteur de la magnificence de Vladimir ! "
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Une oeuvre qui marquera le d\xE9but d\u2019une nouvelle p\xE9riode artistique
+      au Mus\xE9e Dom Robert, la plus grande de toute, la plus\u2026VLADIMIRESQUE
+      !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Vladimir, encore toi ?! Toujours dans les mauvais coups. Tu ne resteras
+      donc jamais tranquille ?!
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Tiens tiens, Les As de la Jungle ! Encore vous dans les pattes du Majestueux
+      Vladimir !
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 1
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "J\u2019\xE9tais s\xFBr que c\u2019\xE9tait toi qui tirais les ficelles
+      ! Pr\xE9pare-toi \xE0 go\xFBter \xE0 la fureur du Grand Guerrier-Tigre, Grrreuh
+      !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Cette fois, tu ne pourras pas te mettre en travers de ma route ! Gardes,
+      emp\xEAchez-le de s\u2019emparer de mon oeuvre. Enzo, L\xE9o, Hugo, Th\xE9o,
+      Paolo, Pierrot \u2026 A l\u2019attaque !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Oh non, des moustiques-tigres, leurs piq\xFBres font tr\xE8s tr\xE8s tr\xE8s
+      mal! "
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Miguel pas aimer quand vilain moustique piquer Miguel !
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: On ne pourra jamais passer, comment faire ?
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Laissez-nous faire les As, on a un petit creux, \xE7a tombe bien !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 376714a2bf7239642a4df14b80cc9a28, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "On g\xE8re, on g\xE8re grave !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 968e6a8a5374cf84e8313d5ba024f060, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

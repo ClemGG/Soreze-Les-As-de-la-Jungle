@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: machine FR notice
+  m_EditorClassIdentifier: 
+  done: 1
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Ouvre la bo\xEEte \xE0 outils et choisi les 4 pieds (on dirait des poutres)
+      et positionne-les aux bons endroits."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Il nous faut aussi des supports de tension. Il y en a 4 \xE9galement. Vas-y
+      je te regarde !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: On continue avec le banc, c'est la partie de devant.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Puis les 2 jumelles, en sym\xE9trie sur chacun des c\xF4t\xE9s."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Et enfin la planche.
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Parfait ! La structure est en place ! Positionne maintenant les 2 rouleaux,
+      avant et arri\xE8re."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Maintenant occupons-nous du m\xE9canisme avec d'abord le coulisseau."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Et la p\xE9dale."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Allez on a presque fini. Ajoute maintenant des roues dentel\xE9es au m\xE9canisme."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Et enfin un peu de corde. Ces lianes feront parfaitement l\u2019affaire
+      ! "
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

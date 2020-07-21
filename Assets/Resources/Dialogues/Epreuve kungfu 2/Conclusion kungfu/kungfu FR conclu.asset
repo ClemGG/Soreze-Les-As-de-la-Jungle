@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: kungfu FR conclu
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Merci les As, cet odieux petit personnage a bien failli r\xE9ussir son
+      coup et \xE0 d\xE9gouter l\xE9 grand poublic des \u0153uvres dou mous\xE9e \xE0
+      tout yamais ! Mais vous avez r\xE9uoussi et le Mous\xE9e Dom Roberto est d\xE9sormais
+      sauv\xE9 ! Grazi\xE9 mil\xE9 les As !"
+    backgroundImg: {fileID: 21300000, guid: cb594fe1c09f4544090c1746dbc98e52, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+    clip: {fileID: 0}
+  - text: "QUOI ?? Petit personnage ? MOI ? Le grand Vladimir !? Je ne t\u2019autorise
+      pas \xE0 parler de Vladimir ainsi, Je me vengerai ! "
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+    clip: {fileID: 0}
+  - text: " De rien Salvador, on est toujours ravis de mettre un terme aux agissements
+      de cette crapule. Et puis \xE7a nous a fait une jolie balade au c\u0153ur du
+      Mus\xE9e Dom Robert."
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+    clip: {fileID: 0}
+  - text: "Et merci \xE0 toi mon ami de nous avoir accompagn\xE9 tout au long de cette
+      aventure. Rien n\u2019aurait \xE9t\xE9 possible sans ton aide. Avant de rentrer,
+      j\u2019ai une petite surprise pour toi pr\xE8s de l\u2019accueil du Mus\xE9e,
+      juste \xE0 c\xF4t\xE9 de la Boutique !"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 1
+    clip: {fileID: 0}
+  - text: "Allez c\u2019est parti ! "
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1
+    clip: {fileID: 0}

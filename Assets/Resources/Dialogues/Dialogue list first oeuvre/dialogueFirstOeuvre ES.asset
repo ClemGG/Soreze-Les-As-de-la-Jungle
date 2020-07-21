@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: dialogueFirstOeuvre ES
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "\xA1Ahora tiene acceso a informaci\xF3n sobre el trabajo que acaba de
+      guardar! Ve a la bolsa del gran guerrero tigre para consultar tu primera hoja
+      de trabajo. \xA1Contin\xFAa la aventura para desbloquear m\xE1s y aprender
+      m\xE1s sobre arte!"
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "Gracias Salvador, veremos eso, incluso si el arte que preferimos ... \xA1es
+      arte marcial! Banza\xEFiii!"
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 2
+    arrowOrientation: 1

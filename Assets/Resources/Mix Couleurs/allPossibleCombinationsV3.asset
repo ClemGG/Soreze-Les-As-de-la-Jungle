@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e7b33d49878e5489ce4a57ccc45509, type: 3}
+  m_Name: allPossibleCombinationsV3
+  m_EditorClassIdentifier: 
+  allPossibleCombinations:
+  - tag: Rose
+    colorResultID: 7
+    colorsToMix: 0000000004000000
+    colorResult: {r: 0.972549, g: 0.56078434, b: 0.6784314, a: 1}
+  - tag: "Bleu fonc\xE9"
+    colorResultID: 8
+    colorsToMix: 0200000003000000
+    colorResult: {r: 0.101960786, g: 0.4, b: 0.50980395, a: 1}
+  - tag: "Rouge fonc\xE9"
+    colorResultID: 9
+    colorsToMix: 0100000006000000
+    colorResult: {r: 0.73333335, g: 0.27450982, b: 0.2901961, a: 1}
+  - tag: Gris
+    colorResultID: 10
+    colorsToMix: 0300000004000000
+    colorResult: {r: 0.5529412, g: 0.5294118, b: 0.4862745, a: 1}
+  - tag: "Vert fonc\xE9"
+    colorResultID: 11
+    colorsToMix: 010000000200000003000000
+    colorResult: {r: 0.32941177, g: 0.43529412, b: 0.27058825, a: 1}
+  - tag: Brun
+    colorResultID: 12
+    colorsToMix: 030000000500000006000000
+    colorResult: {r: 0.3962264, g: 0.2693927, b: 0.16634032, a: 1}
+  - tag: "Rose fonc\xE9"
+    colorResultID: 13
+    colorsToMix: 000000000300000004000000
+    colorResult: {r: 0.7529412, g: 0.3372549, b: 0.4627451, a: 1}
+  - tag: Beige
+    colorResultID: 14
+    colorsToMix: 010000000400000006000000
+    colorResult: {r: 0.9433962, g: 0.7581825, b: 0.6452474, a: 1}

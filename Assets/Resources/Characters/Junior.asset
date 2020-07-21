@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e802948cea42d547a8edf81f876e21f, type: 3}
+  m_Name: Junior
+  m_EditorClassIdentifier: 
+  characterName: Junior
+  characterMedaillon: {fileID: 21300000, guid: ec9cc099e3479b44cba0d016e3bad375, type: 3}
+  characterExpressions:
+  - mood: 0
+    sprite: {fileID: 21300000, guid: 4c85965f6d5bc0f46a052e86db8a10a6, type: 3}
+  - mood: 1
+    sprite: {fileID: 21300000, guid: 6d973e6d3ab87c243922b0ac5435f4f9, type: 3}
+  - mood: 3
+    sprite: {fileID: 21300000, guid: 6d973e6d3ab87c243922b0ac5435f4f9, type: 3}
+  - mood: 5
+    sprite: {fileID: 21300000, guid: 4c85965f6d5bc0f46a052e86db8a10a6, type: 3}
+  - mood: 7
+    sprite: {fileID: 21300000, guid: 6d973e6d3ab87c243922b0ac5435f4f9, type: 3}

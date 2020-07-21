@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre2
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: 27882679ea343cd4a8b0f0c2fdd6af50, type: 3}
+  title: "Jard\xEDn de sirenas"
+  date: (1907-1997)
+  author: Dom Robert
+  materials: "Tapiz bajo liso, lana y algod\xF3n"
+  reference: "Cart\xF3n de 1961, primer tejido: taller Goubely, Aubusson. \nTaller
+    de tejido Janine Dassonval en Montpezat de Quercy en 2009. \n200x280cm"
+  questionG: "\xBFQu\xE9 animales se encuentran en este tapiz?"
+  descriptionG: "Podemos observar 7 peces, algunos camarones, un peque\xF1o pez plano
+    y 2 cangrejos ermita\xF1os, uno de los cuales, si se mira de cerca, con un sombrero
+    bastante extra\xF1o. Es el del obispo llamado la mitra, mencionado en concha en
+    este tapiz."
+  questionD: "Seg\xFAn usted, \xBFcu\xE1ntas horas de tejido tard\xF3 en terminar
+    este tapiz?"
+  descriptionD: "Para este tapiz de casi 6 metros cuadrados y debido a su delicadeza,
+    el tejido tom\xF3 m\xE1s de 1.200 horas, a lo que hay que agregar 250 horas de
+    costura. Es decir, casi 1.500 horas en total y m\xE1s de 7 meses."

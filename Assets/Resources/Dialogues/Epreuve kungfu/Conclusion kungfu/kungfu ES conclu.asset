@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: kungfu ES conclu
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Noooooonnn! \xA1Aqu\xED estoy, YO, el Gran Vladimir, en una jaula! \xBFPero
+      c\xF3mo es posible?"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 9
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "\xA1Bien hecho Miguel, una reacci\xF3n violenta! Parece que tienes los
+      pies en el tapiz de Vladimir."
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 6
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "\xA1Teje bien qui\xE9n teje el \xFAltimo, guerrero tigre!"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 9
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "\xA1Muchas gracias! Este personaje maquiav\xE9lico casi tuvo \xE9xito!
+      Pero gracias a ti, el Museo Dom Robert se ha salvado."
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 5
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "\xBFQU\xC9? Peque\xF1o personaje? Yo? \xBFEl gran Vladimir? \xA1No te permito
+      hablar as\xED! Me vengar\xE9 !"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 9
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "De nada, Salvador, \xA1siempre estamos felices de poner fin a las acciones
+      de Vladimir! Y luego nos hizo un agradable paseo en el coraz\xF3n del Museo
+      Dom Robert."
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "Y gracias a ti mi amigo por habernos acompa\xF1ado a lo largo de esta aventura.
+      Nada hubiera sido posible sin tu ayuda. Antes de regresar, tengo una peque\xF1a
+      sorpresa para ti, \xA1justo al lado del mostrador de informaci\xF3n de arriba!"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

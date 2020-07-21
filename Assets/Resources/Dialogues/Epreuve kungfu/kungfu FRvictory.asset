@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: kungfu FRvictory
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Bien jou\xE9, Al et Bob. Nous voil\xE0 d\xE9barrass\xE9s des nuisibles
+      ! Maintenant on va s\u2019occuper de toi, Vladimir !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "MAUDITS AS DE LA JUNGLE ! Vous avez peut-\xEAtre r\xE9ussi \xE0 m\u2019emp\xEAcher
+      de finaliser mon chef d\u2019oeuvre, mais vous ne m\u2019arr\xEAterez jamais
+      ! Mouhahaha ! Fuyons\u2026FUYONS !!! Mais avec panache ! "
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Miguel, \xE7a te dit une petite partie de ch\xE2teau de cartes ?"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Oh oui m\u2019sieur Maurice !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: machine FRintro
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: " Les As, je ne comprends pas, le m\xE9tier \xE0 tisser ne fonctionne plus.
+      Quelqu\u2019un a d\xFB s\u2019en servir sans regarder la notice avant !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Il est tout cass\xE9 maintenant\u2026 Est-ce que vous pouvez m\u2019aider
+      \xE0 le r\xE9parer ?\xBB"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Effectivement, le m\xE9tier \xE0 tisser ne fonctionne plus ! Gilbert, une
+      id\xE9e ?"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
+    clip: {fileID: 0}
+    mood: 1
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Reconstruire une machine aussi rustique\u2026 Pfff aucun probl\xE8me !"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Alors pas de temps \xE0 perdre, Gilbert, \xE0 toi de jouer ! "
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "H\xE9 petit ! Je vais t'aider \xE0 reconstruire le m\xE9tier \xE0 tisser.
+      Pour cela tu n'as qu'\xE0 suivre mes instructions et chosir les bons \xE9l\xE9ments.
+      Ensuite, \xE0 toi de bien les positionner."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "Avant toute chose, commen\xE7ons par monter le b\xE2ti. Il va donc nous
+      falloir des mat\xE9riaux."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    clip: {fileID: 0}
+    mood: 2
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

@@ -1,0 +1,212 @@
+{
+    "items": [
+        {
+            "key": "presentation",
+            "value": "Present"
+        },
+        {
+            "key": "titre",
+            "value": "The megalomania of the tapestry"
+        },
+        {
+            "key": "lancer la partie",
+            "value": "Start the game"
+        },
+        {
+            "key": "parametres",
+            "value": "Settings"
+        },
+        {
+            "key": "startBtn",
+            "value": "Start"
+        },
+        {
+            "key": "settingsBtn",
+            "value": "Settings"
+        },
+        {
+            "key": "bruitages",
+            "value": "Sound effects :"
+        },
+        {
+            "key": "audio",
+            "value": "Audio"
+        },
+        {
+            "key": "langue",
+            "value": "Languages"
+        },
+        {
+            "key": "help0",
+            "value": "Initialization text for the help panel."
+        },
+        {
+            "key": "help1",
+            "value": "We are in the main scene."
+        },
+        {
+            "key": "help2",
+            "value": "We are in the trial test."
+        },
+        {
+            "key": "ep0h0",
+            "value": "Hold down the mouse button for 3 seconds."
+        },
+        {
+            "key": "minute",
+            "value": "minute"
+        },
+        {
+            "key": "secondes",
+            "value": "seconds"
+        },
+        {
+            "key": "voir la fiche",
+            "value": "Read the archive"
+        },
+        {
+            "key": "oui",
+            "value": "yes"
+        },
+        {
+            "key": "non",
+            "value": "no"
+        },
+        {
+            "key": "quitter l'aventure",
+            "value": "LEAVE THE ADVENTURE ?"
+        },
+        {
+            "key": "quitter l'epreuve",
+            "value": "STOP THE INTERACTION IN PROGRESS ?"
+        },
+        {
+            "key": "es tu sur aventure",
+            "value": "Please note you will return to the title screen and you will lose all of your progress. Are you sure ?"
+        },
+        {
+            "key": "es tu sur epreuve",
+            "value": "You will return to the scan screen. Are you sure ?"
+        },
+        {
+            "key": "legende-1",
+            "value": "Museum Map"
+        },
+        {
+            "key": "legende0",
+            "value": "Elevator"
+        },
+        {
+            "key": "legende1",
+            "value": "Path of the visit"
+        },
+        {
+            "key": "legende2",
+            "value": "Interaction"
+        },
+        {
+            "key": "legende3",
+            "value": "Water closet"
+        },
+        {
+            "key": "legende4",
+            "value": "PRM Access"
+        },
+        {
+            "key": "legende5",
+            "value": "Stairs"
+        },
+        {
+            "key": "legende6",
+            "value": "2nd floor entrance"
+        },
+        {
+            "key": "legende7",
+            "value": "Reception"
+        },
+        {
+            "key": "legende8",
+            "value": "Red Court"
+        },
+        {
+            "key": "legende9",
+            "value": "Ground floor"
+        },
+        {
+            "key": "legende10",
+            "value": "High gallery"
+        },
+        {
+            "key": "legende11",
+            "value": "Footbridge"
+        },
+        {
+            "key": "scan recherche",
+            "value": "Scan search..."
+        },
+        {
+            "key": "scan analyse en cours",
+            "value": "Masterpiece analysis in progress ..."
+        },
+        {
+            "key": "scan validation",
+            "value": "Scan OK!"
+        },
+        {
+            "key": "scan erreur titre",
+            "value": "Scan error"
+        },
+        {
+            "key": "scan erreur",
+            "value": "Hmmm, there must be an error... But certainly not in the program! Try to get closer to the symbol or to better frame it and relaunch a scan… Grmmbll..."
+        },
+        {
+            "key": "photo prends place",
+            "value": "Take place in the target!"
+        },
+        {
+            "key": "photo analyse",
+            "value": "Please wait while your photo\nis being sent to the printer."
+        },
+        {
+            "key": "photo validation",
+            "value": "Printing finished!\nGo get your photo!"
+        },
+        {
+            "key": "exemplaires",
+            "value": "copies"
+        },
+        {
+            "key": "imprimer",
+            "value": "print"
+        },
+        {
+            "key": "différences trouvées",
+            "value": "found differences"
+        },
+        {
+            "key": "motifs trouvés",
+            "value": "found motifs"
+        },
+        {
+            "key": "couleurs remplacées",
+            "value": "replaced coulours"
+        },
+        {
+            "key": "teintes réalisées",
+            "value": "realized dyes"
+        },
+        {
+            "key": "pièces placées",
+            "value": "placed pieces"
+        },
+        {
+            "key": "moustiques gobés",
+            "value": "eaten mosquitoes"
+        },
+        {
+            "key": "piliers détruits",
+            "value": "destroyed pillars"
+        }
+    ]
+}

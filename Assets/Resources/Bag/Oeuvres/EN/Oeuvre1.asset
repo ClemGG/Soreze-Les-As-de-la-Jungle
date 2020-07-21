@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre1
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: ea1b123f0d49ba8459bf0945ac62cd40, type: 3}
+  title: Lauds
+  date: (1907-1997)
+  author: Dom Robert
+  materials: Smooth bass tapestry, wool and cotton
+  reference: "Cardboard from 1981, \nWeaving Atelier Goubely, Aubusson, 1991. \n300x200cm"
+  questionG: What is the name of the flower which is mainly represented in this tapestry?
+  descriptionG: Umbels, flowers of common fields, fill the space, woven in a palette
+    of blues, greens, pinks and whites, rare in Dom Robert. Each flower has a different
+    stage of flowering. In 1963, Dom Robert began a series of weavings around the
+    umbelliferae.
+  questionD: What does the name of the work "Lauds" mean?
+  descriptionD: Lauds is the morning service, the prayer of the monks at dawn, from
+    the Latin word which means "praise". Dom Robert was a monk and an artist.

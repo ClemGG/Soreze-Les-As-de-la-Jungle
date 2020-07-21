@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre5
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: f35c23aaaea5cf64e91d7e64441bd730, type: 3}
+  title: The Creation of Man
+  date: 1999
+  author: John oliver
+  materials: Low smooth tapestry, wool and cotton
+  reference: "Cardboard from 1946. \nWeaving Atelier de la Beauze, Aubusson, 2004.
+    \n400x340cm"
+  questionG: Who was offered this tapestry?
+  descriptionG: "The tapestry was acquired by the French State and then offered in
+    1954 by President Ren\xE9 Coty to the Queen of the Netherlands. What a wonderful
+    gift!"
+  questionD: What are the character's shoes in the center of the tapestry?
+  descriptionD: "The central figure represents God in slippers. He also wears the
+    blue work apron of the monks of which Dom Robert was a member, the monks of En
+    Calcat. The monastery is located 10 minutes from Sor\xE8ze, in the town of Dourgne
+    and it is still in operation."

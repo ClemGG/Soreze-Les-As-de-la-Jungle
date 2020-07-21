@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre1
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: ea1b123f0d49ba8459bf0945ac62cd40, type: 3}
+  title: Laudes
+  date: (1907 - 1997)
+  author: Dom Robert
+  materials: Tapisserie basse lisse, laine et coton
+  reference: "Carton de 1981, \nTissage Atelier Goubely, \nAubusson, 1991. \n300x200cm"
+  questionG: "Quel est le nom de la fleur qui est repr\xE9sent\xE9e principalement
+    dans cette tapisserie?"
+  descriptionG: "Les ombelles, fleurs des champs communes, remplissent l'espace, tiss\xE9es
+    dans une palette de bleus, verts, roses et blancs, rare chez Dom Robert. Chaque
+    fleur pr\xE9sente un stade diff\xE9rents de floraison. D\xE8s 1963, Dom Robert
+    commence une s\xE9rie de tissages autour des ombellif\xE8res."
+  questionD: Que signifie le nom de l'oeuvre "Laudes"?
+  descriptionD: "Les laudes, c'est l'office du matin, la pri\xE8re des moines au lever
+    du jour, du mot latin qui signifie \"louanges\". Dom Robert \xE9tait un moine
+    et un artiste."

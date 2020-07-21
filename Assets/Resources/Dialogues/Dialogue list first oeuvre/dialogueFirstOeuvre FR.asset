@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
+  m_Name: dialogueFirstOeuvre FR
+  m_EditorClassIdentifier: 
+  done: 0
+  autoEnd: 0
+  delayAutomaticClosure: 0
+  repliques:
+  - text: "Tu as d\xE9sormais acc\xE8s \xE0 des informations sur l\u2019oeuvre que
+      tu viens de sauver ! Va dans la sacoche du grand guerrier-tigre, pour consulter
+      ta premi\xE8re fiche oeuvre. Continue l\u2019aventure pour en d\xE9bloquer
+      d\u2019autres et en apprendre plus sur l\u2019art !"
+    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 0
+  - text: "Merci Salvador, on ira voir \xE7a, m\xEAme si l\u2019art qu\u2019on pr\xE9f\xE8re
+      nous\u2026 c\u2019est l\u2019art martial ! Banza\xEFiii !"
+    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 2
+    arrowOrientation: 1

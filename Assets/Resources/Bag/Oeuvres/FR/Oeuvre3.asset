@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre3
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: 7c39d92808544294f9d80b5b65685f4e, type: 3}
+  title: "M\xE9tier \xE0 tisser"
+  date: (En usage jusqu'en 2005)
+  author: 
+  materials: Atelier Goubely
+  reference: En usage jusqu'en 2005 par l'Atelier de la Beauze
+  questionG: "Observe bien le m\xE9tier \xE0 tisser et l'oeuvre, d'apr\xE8s toi dans
+    quel sens est tiss\xE9e la tapisserie dite d'Aubusson?"
+  descriptionG: "La tapisserie d\u2019Aubusson s\u2019appuie sur une image pr\xE9par\xE9e
+    par un peintre cartonnier. Le tissage est effectu\xE9 manuellement par un lissier
+    sur l\u2019envers de la tapisserie, \xE0 partir de laines teintes artisanalement
+    : un proc\xE9d\xE9 exigeant au co\xFBt important.  Class\xE9es au patrimoine mondial
+    de l'UNESCO depuis 2009, les tapisseries d\u2019Aubusson sont une r\xE9f\xE9rence
+    dans le monde entier."
+  questionD: "Que signifie la tomb\xE9e de m\xE9tier?"
+  descriptionD: "C'est l'expression employ\xE9e pour d\xE9signer la phase finale de
+    la cr\xE9ation de la tapisserie. C'est le moment o\xF9 l'on coupe les fils qui
+    relie la tapisserie au m\xE9tier \xE0 tisser et ainsi faire \"tomber\" la tapisserie,
+    permettant pour la premi\xE8re fois de la d\xE9couvrir dans son ensemble et dans
+    \xE0 l'endroit."

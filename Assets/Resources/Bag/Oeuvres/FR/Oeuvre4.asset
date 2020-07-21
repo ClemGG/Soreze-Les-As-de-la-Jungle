@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
+  m_Name: Oeuvre4
+  m_EditorClassIdentifier: 
+  unlocked: 0
+  img: {fileID: 21300000, guid: caa640635a911504f8a1ba713278ba0e, type: 3}
+  title: "L'Et\xE9"
+  date: (1907 - 1997)
+  author: Dom Robert
+  materials: Tapisserie basse lisse, laine et coton
+  reference: "Carton de 1941. \nTissage Atelier Tabard, Aubusson, 1947, ex.5, \n224x328
+    cm. \nPr\xEAt de la Cit\xE9 Internationale de la Tapisserie. Aubusson, n\xB0inv.2006.7.1"
+  questionG: "C\u2019est rigolo la fa\xE7on dont Dom Robert interpr\xE9tait la faune
+    et la flore !"
+  descriptionG: "La tapisserie comporte les grands th\xE8mes que Dom Robert d\xE9clinera
+    par la suite : les animaux de basse-cour, les arbres, les fleurs et les papillons.
+    La forme ovo\xEFde contenant la sc\xE8ne centrale va devenir une des caract\xE9ristiques
+    de ses compositions."
+  questionD: "L\u2019espace \xE9tait donc construit par un autre artiste qui a inspir\xE9
+    Dom Robert, Jean Lur\xE7at ?"
+  descriptionD: "Ici, c\u2019est la palette propos\xE9e par Jean Lur\xE7at qui est
+    retenue : fond vert-bleu et masse importante d\u2019un rouge profond sur lesquels
+    se d\xE9tachent les blancs et les jaunes. La bordure rouge et l\u2019inscription
+    dans le cartouche en bas \xE0 droite relient cette oeuvre \xE0 l\u2019enluminure
+    et \xE0 la tapisserie m\xE9di\xE9vale."
