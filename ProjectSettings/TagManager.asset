@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - weak point
+  - enemy
+  - ui transition shader
+  - numero art/painting
+  - mix couleurs/bol resultat
+  - comparaison/painting
+  - FxTemporaire
+  - Photo/Camera
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - piece
+  - slot
+  - 
+  - weakPoint
+  - enemy/fourmi
+  - enemy/moustique
+  - numero art/painting
+  - mix couleurs/static
+  - mix couleurs/dynamic
+  - comparaison/painting
+  - enemy/enemy
+  - enemy/obstacle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background
+    uniqueID: 783165911
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Particle UI
+    uniqueID: 2964668121
+    locked: 0
+  - name: Foreground
+    uniqueID: 2218403723
+    locked: 0

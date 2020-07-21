@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/test/ImageTracking/ImageTracking.unity
+    guid: e0b018a3c3b5cfd4c8e316706ec0a18c
+  - enabled: 0
+    path: Assets/Scenes/test/test AR.unity
+    guid: 6a0dfcd50e2beaf4890e764ebe086e7c
+  - enabled: 1
+    path: Assets/Scenes/Main menu.unity
+    guid: a6884b1958b4e784fb561cc567d4c4ec
+  - enabled: 1
+    path: Assets/Scenes/Main scene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/epreuve mix de couleurs.unity
+    guid: a23051ac6416bfc478ec2e9111f21b39
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/epreuve numero art.unity
+    guid: 8ce39a0cca54754408564c2d7c6d3b00
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/epreuve 7 differences.unity
+    guid: 979ce13196d6874439d50da1b4d54fd6
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/epreuve junior.unity
+    guid: 310641712a7bd0744b2668a4333cd79b
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/epreuve machine a tisser.unity
+    guid: 76cf1751243788646ab7d7df8bc21569
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/epreuve kungfu moustiques.unity
+    guid: 2115691ad3bc60e479de525285f5d627
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/epreuve kungfu bambous.unity
+    guid: 618da08bac1f63d4f82298a9afd64c0d
+  - enabled: 1
+    path: Assets/Scenes/Scenes Epreuves/scene photo.unity
+    guid: ffaf15617d019584a9aa2dfe13cf9986
+  m_configObjects:
+    com.unity.xr.arkit.PlayerSettings: {fileID: 11400000, guid: 1b452ff4ae3094c73885e13e36219c64,
+      type: 2}
+    com.unity.xr.management.arkit_loader: {fileID: 11400000, guid: bd752265462894a6693f74ce5111693d,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 0d2d6f3fb283f004ba8b33cf7622e8d2,
+      type: 2}
