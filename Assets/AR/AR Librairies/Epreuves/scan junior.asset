@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: scan junior
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5303942410042390048
+  m_GuidHigh: 10295065471460073897
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4852704538292040521
+      m_GuidHigh: 2336383208554402206
+    m_SerializedTextureGuid:
+      m_GuidLow: 13642634290520842070
+      m_GuidHigh: 641141554958478424
+    m_Size: {x: 0.1, y: 0.07364439}
+    m_SpecifySize: 1
+    m_Name: scan img junior
+    m_Texture: {fileID: 2800000, guid: ff0edf565f9abd5458ac0aead8cae508, type: 3}
