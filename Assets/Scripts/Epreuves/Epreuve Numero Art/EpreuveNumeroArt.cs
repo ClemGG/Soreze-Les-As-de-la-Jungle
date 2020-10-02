@@ -1,38 +1,44 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using System;
+using System.Collections.Generic;
 
 public class EpreuveNumeroArt : Epreuve
 {
+
+    #region Variables
+
+
     [Space(10)]
     [Header("Scripts & Components : ")]
     [Space(10)]
 
     [Tooltip("Le script de rotation de la roulette")]
-    public InfiniteRotation infiniteRotationScript;
+    [SerializeField] InfiniteRotation infiniteRotationScript;
+
+    [Tooltip("L'Animator du canon.")]
+    [SerializeField] Animator canonAnim;
 
     [Tooltip("Les symboles Valider à afficher qd une couleur est complétée")]
-    public Transform validationIcons;
+    [SerializeField] Transform validationIcons;
 
     [Space(10)]
     [Tooltip("La liste de tous les triggers contenant les sprites de couleur")]
-    public NumeroArtSprite[] numeroArtSprites;
+    [SerializeField] NumeroArtSprite[] numeroArtSprites;
 
     [Space(10)]
     [Header("Raycast : ")]
     [Space(10)]
 
     [Tooltip("Le layermask des sprites de couleur")]
-    public LayerMask paintingMask;
+    [SerializeField] LayerMask paintingMask;
 
     [Tooltip("Le point de spawn du projectile")]
-    public Transform spawnPoint;
+    [SerializeField] Transform spawnPoint;
     RaycastHit hit;
     Camera cam;
 
-    public float fireRate = .2f;
+    [SerializeField] float fireRate = .2f;
     float _fireRateTimer;
 
 
@@ -40,37 +46,43 @@ public class EpreuveNumeroArt : Epreuve
     [Header("Colours : ")]
     [Space(10)]
 
-    public Color currentColor;
-    public int currentColorIndex;
+    [SerializeField] Color currentColor;
+    [SerializeField] int currentColorIndex;
 
     [Tooltip("La liste des couleurs disponibles sur la roulette, rangées dans l'ordre")]
-    public Color[] colorPalette;
+    [SerializeField] Color[] colorPalette;
 
     [Tooltip("La liste de tous les sprites de couleur")]
     SpriteNAS[] spritesNAS;
+    SpriteNAS[] matchingColors;
     int score;
 
     [Space(10)]
     [Header("Audio : ")]
     [Space(10)]
 
-    public AudioClip bgmClip;
     public AudioClip goodClip;
     public AudioClip errorClip;
     public AudioClip victoryClip;
-
-
+    
+    
     public AudioClip shootClip;
     public AudioClip rouletteClip;
     public AudioClip[] impactClips;
 
     bool epreuveDone = false;
 
-    
+    #endregion
+
+
+
+
+
+
     #region Epreuve
 
 
-    
+
     //Appelée quand on change de quart sur la roulette
     public void ChangerCouleur(int index)
     {
@@ -129,7 +141,9 @@ public class EpreuveNumeroArt : Epreuve
             Projectile p = ObjectPooler.instance.SpawnFromPool("projectile", spawnPoint.position, Quaternion.identity).GetComponent<Projectile>();
             p.target = hit.point;
             p.SetProjectileColor(currentColor, currentColorIndex);
+
             AudioManager.instance.Play(shootClip);
+            canonAnim.Play("a_tir_canon");
         }
     }
 
@@ -138,11 +152,11 @@ public class EpreuveNumeroArt : Epreuve
     {
         //On récupère l'ID du sprite et on récupère sa couleur associée
 
-        SpriteNAS[] matchingColors = new SpriteNAS[0];
-        while (matchingColors.Length == 0)
+        do
         {
             matchingColors = Array.FindAll(spritesNAS, nas => nas.ID == ID);
         }
+        while (matchingColors.Length == 0);
         //print($"Couleur : {colorPalette[alea]} ; matchingColors : {matchingColors.Length}");
 
 
@@ -170,6 +184,12 @@ public class EpreuveNumeroArt : Epreuve
 
 
 
+
+
+
+
+
+
     #region Overrides
 
 
@@ -180,19 +200,20 @@ public class EpreuveNumeroArt : Epreuve
         scoreText.text = "0";
         finalScoreText.text = $"/{colorPalette.Length}";
 
-        //On récupère tous les sprites de la scène et on réinitialise le compte de couleurs
-        spritesNAS = FindObjectsOfType<SpriteNAS>();
-
         for (int i = 0; i < validationIcons.childCount; i++)
         {
             validationIcons.GetChild(i).gameObject.SetActive(false);
         }
+
+
 
         infiniteRotationScript.enabled = false;
         yield return StartCoroutine(base.Start());
         infiniteRotationScript.enabled = true;
 
 
+        //On récupère tous les sprites de la scène et on réinitialise le compte de couleurs
+        spritesNAS = FindObjectsOfType<SpriteNAS>();
 
         currentColor = Color.white;
         cam = Camera.main;
@@ -220,6 +241,7 @@ public class EpreuveNumeroArt : Epreuve
         }
 #endif
     }
+
 
 
     public override void GiveSolutionToPlayer(int index)
@@ -263,12 +285,18 @@ public class EpreuveNumeroArt : Epreuve
         }
 
         CheckVictory();
-
+        ResetHelpTimer();
     }
 
 
     protected override void OnVictory()
     {
+        //On affiche toutes les icônes de validation si jamais elles restent cachées à la victoire
+        for (int i = 0; i < validationIcons.childCount; i++)
+        {
+            validationIcons.GetChild(i).gameObject.SetActive(true);
+        }
+
         base.OnVictory();
         Exit(false);
     }

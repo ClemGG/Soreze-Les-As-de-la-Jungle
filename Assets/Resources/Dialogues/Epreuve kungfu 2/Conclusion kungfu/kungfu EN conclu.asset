@@ -15,4 +15,32 @@ MonoBehaviour:
   done: 0
   autoEnd: 0
   delayAutomaticClosure: 0
-  repliques: []
+  repliques:
+  - text: Thank you Jungle Bunch, this machiavellian character almost succeeded!
+      But thanks to you, Dom Robert's Museum is now saved ! Muchas gracias !
+    backgroundImg: {fileID: 21300000, guid: cb594fe1c09f4544090c1746dbc98e52, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: You're welcome, Salvador, we're always happy to put an end to Vladimir's
+      actions ! And it made us a nice walk at the Dom Robert's Museum.
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: And thank you to you my friend for having accompanied us throughout this
+      adventure. I have a little surprise for you under the arcades! Head towards
+      the entrance!
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1

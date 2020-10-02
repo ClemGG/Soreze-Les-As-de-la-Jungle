@@ -12,33 +12,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b4aaacd2d08d2e4d9e5f6718a3288d1, type: 3}
   m_Name: kungfu FRvictory
   m_EditorClassIdentifier: 
-  done: 0
+  done: 1
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "NOOOOOooonnn ! Me voil\xE0 fait, moi, le Grand Vladimir, en cage. Mais
-      Comment est-ce possible ? "
+  - text: "Noooooonnn ! Me voil\xE0 fait, moi, le Grand Vladimir, en cage. Mais Comment
+      est-ce possible ? "
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
     mood: 0
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-    clip: {fileID: 0}
   - text: "Bravo Miguel, un juste retour de b\xE2ton ! On dirait bien que t\u2019es
       pris les pieds dans la tapisserie Vladimir !"
     backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
     mood: 2
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-    clip: {fileID: 0}
   - text: Grrrr, tissera bien qui tissera le dernier Guerrier-Tigre !
     backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
     mood: 2
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-    clip: {fileID: 0}

@@ -1,10 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
 public class SpawnerMoustique : MonoBehaviour
 {
+
+
+
+
+    #region Variables
+
     [Space(10)]
     [Header("Scripts & Components : ")]
     [Space(10)]
@@ -18,6 +23,13 @@ public class SpawnerMoustique : MonoBehaviour
     EpreuveKungfu e;
 
 
+    #endregion
+
+
+
+
+
+    #region Mono
 
     // Start is called before the first frame update
     IEnumerator Start()
@@ -36,17 +48,18 @@ public class SpawnerMoustique : MonoBehaviour
         StartCoroutine(Spawn());
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    print($"Nb ennemis : {FindObjectsOfType<Moustique>().Length}, nb Moustiques : {EpreuveKungfuStatic.nbMoustiquesInScene}");
-    //}
 
+
+    #endregion
+
+
+
+    #region Spawn
 
     public IEnumerator Spawn()
     {
         bool restore = Physics.queriesHitBackfaces;
-        for (int i = 0; i < op.Pools[1].size; i++)
+        for (int i = 0; i < op.Pools[0].size; i++)
         {
             Vector3 newPos;
             do
@@ -63,38 +76,47 @@ public class SpawnerMoustique : MonoBehaviour
         Physics.queriesHitBackfaces = restore;
 
     }
-    public IEnumerator Respawn(Transform enemyToRespawn)
+
+
+
+    public void Respawn(Transform enemyToRespawn)
     {
-        Vector3 newPos;
-        do
-        {
-            newPos = GetRandomPosInCube();
-            yield return null;
-        }
-        while (Physics.BoxCast(newPos, Vector3.one, Vector3.zero, Quaternion.identity, 0f, obstacleMask));
+        Vector3 newPos = GetRandomPosInCube();
 
         enemyToRespawn.position = newPos;
         enemyToRespawn.rotation = Quaternion.Euler(0f, Random.Range(0f, 180f), 0f);
-        yield return null;
     }
+
+
 
     private Vector3 GetRandomPosInCube()
     {
-        return col.center + new Vector3(Random.Range(-col.size.x / 2f, col.size.x / 2f), 
-                                        Random.Range(-col.size.y / 2f, col.size.y / 2f), 
-                                        Random.Range(-col.size.z / 2f, col.size.z / 2f));
+        Vector3 pos = col.center + t.position;
+        Vector3 scale = Vector3.Scale(t.lossyScale, col.size) / 2f;
+        
+        return pos + new Vector3(Random.Range(-scale.x, scale.x), 
+                                        Random.Range(-scale.y, scale.y), 
+                                        Random.Range(-scale.z, scale.z));
     }
 
+
+    #endregion
 
 
 
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
+        if (!t)
+            t = transform;
+
         col = GetComponent<BoxCollider>();
 
-        Gizmos.color = new Color(0,1,0,.1f);
-        Gizmos.DrawCube(col.center, col.size);
+        Vector3 pos = col.center + t.position;
+        Vector3 scale = Vector3.Scale(t.lossyScale, col.size);
+
+        Gizmos.color = new Color(0,1,0,.5f);
+        Gizmos.DrawCube(pos, scale);
 
     }
 #endif

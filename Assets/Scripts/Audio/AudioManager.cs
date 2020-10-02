@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
-
-
-using Clement.Utilities.Maths;
 
 
 /* Concentre tous les sons joués pdt la partie
@@ -85,7 +80,11 @@ public class AudioManager : MonoBehaviour
         Son s = Array.Find(sons, son => son.clip.name == name);
 
         if (s != null)
+        {
+            s.clip.LoadAudioData();
             s.source.Play();
+
+        }
         else
             Debug.Log($"Erreur : Le nom \"{name}\" n'existe pas dans la liste des sons.");
     }
@@ -94,7 +93,11 @@ public class AudioManager : MonoBehaviour
         Son s = Array.Find(sons, son => son.clip.name == name);
 
         if (s != null)
+        {
+            s.clip.UnloadAudioData();
             s.source.Stop();
+
+        }
         else
             Debug.Log($"Erreur : Le nom \"{name}\" n'existe pas dans la liste des sons.");
     }
@@ -110,7 +113,11 @@ public class AudioManager : MonoBehaviour
         Son s = Array.Find(sons, son => son.clip == clip);
 
         if (s != null)
+        {
+            s.clip.LoadAudioData();
             s.source.Play();
+
+        }
         else
             Debug.Log($"Erreur : Le clip \"{clip.name}\" n'existe pas dans la liste des sons.");
     }
@@ -119,7 +126,11 @@ public class AudioManager : MonoBehaviour
         Son s = Array.Find(sons, son => son.clip == clip);
 
         if (s != null)
+        {
+            s.clip.UnloadAudioData();
             s.source.Stop();
+
+        }
         else
             Debug.Log($"Erreur : Le clip \"{clip.name}\" n'existe pas dans la liste des sons.");
     }
@@ -137,7 +148,11 @@ public class AudioManager : MonoBehaviour
         Son s = sons[indexs[alea]];
 
         if (s != null)
+        {
+            s.clip.LoadAudioData();
             s.source.Play();
+
+        }
         else
             Debug.Log($"Erreur : L'ID n° \"{indexs[alea]}\" n'existe pas dans la liste des sons.");
     }
@@ -149,7 +164,11 @@ public class AudioManager : MonoBehaviour
         Son s = Array.Find(sons, son => son.clip.name == noms[alea]);
 
         if (s != null)
-            s.source.Play();
+        {
+            s.clip.UnloadAudioData();
+            s.source.Stop();
+
+        }
         else
             Debug.Log($"Erreur : Le nom \"{noms[alea]}\" n'existe pas dans la liste des sons.");
     }

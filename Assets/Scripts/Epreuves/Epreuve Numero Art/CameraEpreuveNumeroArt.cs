@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CameraEpreuveNumeroArt : GodMode
+﻿public class CameraEpreuveNumeroArt : GodMode
 {
+
+#if UNITY_EDITOR || UNITY_STANDALONE
     EpreuveNumeroArt e;
 
     protected override void Start()
@@ -11,4 +9,6 @@ public class CameraEpreuveNumeroArt : GodMode
         e = (EpreuveNumeroArt)Epreuve.instance;
         base.Start();
     }
+
+#endif
 }

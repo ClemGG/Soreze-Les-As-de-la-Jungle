@@ -9,8 +9,12 @@
             "value": "The megalomania of the tapestry"
         },
         {
-            "key": "lancer la partie",
-            "value": "Start the game"
+            "key": "nouvelle partie",
+            "value": "New game"
+        },
+        {
+            "key": "reprendre partie",
+            "value": "Resume game"
         },
         {
             "key": "parametres",
@@ -207,6 +211,46 @@
         {
             "key": "piliers détruits",
             "value": "destroyed pillars"
+        },
+        {
+            "key": "machine_outil1",
+            "value": "Feet"
+        },
+        {
+            "key": "machine_outil2",
+            "value": "Tension supports"
+        },
+        {
+            "key": "machine_outil3",
+            "value": "Bench"
+        },
+        {
+            "key": "machine_outil4",
+            "value": "Twins"
+        },
+        {
+            "key": "machine_outil5",
+            "value": "Plank"
+        },
+        {
+            "key": "machine_outil6",
+            "value": "Rollers"
+        },
+        {
+            "key": "machine_outil7",
+            "value": "Slide"
+        },
+        {
+            "key": "machine_outil8",
+            "value": "Pedal"
+        },
+        {
+            "key": "machine_outil9",
+            "value": "Serrated wheels"
+        },
+        {
+            "key": "machine_outil10",
+            "value": "Vines"
         }
     ]
 }

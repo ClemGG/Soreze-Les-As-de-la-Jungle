@@ -19,16 +19,8 @@ MonoBehaviour:
   - text: TAPER TAPER TAPER !!
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
+    clip: {fileID: 0}
     mood: 0
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-    clip: {fileID: 0}
-  - text: AAAaaahhhhh !.... Va-t-en, maudit primate !
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
-    mood: 0
-    side: 1
-    bubbleSize: 0
-    arrowOrientation: 0
-    clip: {fileID: 0}

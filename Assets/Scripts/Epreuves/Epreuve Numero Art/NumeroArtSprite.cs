@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [System.Serializable]
@@ -27,6 +24,8 @@ public class NumeroArtSprite : MonoBehaviour
 
     private EpreuveNumeroArt epreuve;
 
+    //One l'appelle plus depuis la Start. On l'appelle depuis le script de l'épreuve au moment où elle commence
+    //por charger la scène plus vite
     private void Start()
     {
         epreuve = (EpreuveNumeroArt)Epreuve.instance;

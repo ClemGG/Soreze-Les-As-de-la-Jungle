@@ -25,8 +25,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Il est tout cass\xE9 maintenant\u2026 Est-ce que vous pouvez m\u2019aider
-      \xE0 le r\xE9parer ?\xBB"
+  - text: "Est-ce que vous pouvez m\u2019aider \xE0 le r\xE9parer ?"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
@@ -34,43 +33,7 @@ MonoBehaviour:
     side: 1
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Effectivement, le m\xE9tier \xE0 tisser ne fonctionne plus ! Gilbert, une
-      id\xE9e ?"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
-    clip: {fileID: 0}
-    mood: 1
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
   - text: "Reconstruire une machine aussi rustique\u2026 Pfff aucun probl\xE8me !"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 2
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Alors pas de temps \xE0 perdre, Gilbert, \xE0 toi de jouer ! "
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 2
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "H\xE9 petit ! Je vais t'aider \xE0 reconstruire le m\xE9tier \xE0 tisser.
-      Pour cela tu n'as qu'\xE0 suivre mes instructions et chosir les bons \xE9l\xE9ments.
-      Ensuite, \xE0 toi de bien les positionner."
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 2
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Avant toute chose, commen\xE7ons par monter le b\xE2ti. Il va donc nous
-      falloir des mat\xE9riaux."
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}

@@ -46,11 +46,29 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: piece
+    uniqueID: 165517201
+    locked: 0
+  - name: slot
+    uniqueID: 1328147043
+    locked: 0
+  - name: enemy/moustique
+    uniqueID: 1072011925
+    locked: 0
+  - name: numero art/painting
+    uniqueID: 277477347
+    locked: 0
+  - name: comparaison/painting
+    uniqueID: 338216933
+    locked: 0
   - name: Background
     uniqueID: 783165911
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 2085770347
     locked: 0
   - name: Particle UI
     uniqueID: 2964668121

@@ -25,8 +25,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Salvador will be able to start working again! We must now find the ugly
-      mosquitoes responsible for looting\u2026"
+  - text: Salvador will be able to start working again!
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
     clip: {fileID: 0}

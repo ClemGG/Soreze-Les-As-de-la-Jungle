@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static UnityEngine.Debug;
 
 
 namespace Clement.Utilities
@@ -15,25 +12,11 @@ namespace Clement.Utilities
         public static List<T> FindAllObjectsInSceneOfType<T>() where T : class
         {
             List<T> objectsInScene = new List<T>();
-            //GameObject[] gos = Resources.FindObjectsOfTypeAll(typeof(T)) as GameObject[];
-
-
-            //foreach (GameObject go in gos)
-            //{
-            //    if (go.hideFlags == HideFlags.NotEditable || go.hideFlags == HideFlags.HideAndDontSave)
-            //        continue;
-
-            //    if (!EditorUtility.IsPersistent(go.transform.root.gameObject))
-            //        continue;
-
-            //    objectsInScene.Add(go.GetComponent<T>());
-            //}
 
             T[] array = GameObject.FindObjectsOfType(typeof(T)) as T[];
 
             foreach (T @object in array)
             {
-                //(@object.ToString());
                 objectsInScene.Add(@object);
             }
 

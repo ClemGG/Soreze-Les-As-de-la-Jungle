@@ -16,13 +16,28 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - backgroundImg: {fileID: 0}
+  - text: Okay, now that calm has returned to the Dom Robert Museum, what would you
+      say to keep a memory of our adventure? Shall we take a little group photo?
+    backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
     mood: 0
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
+  - text: Oh yes, a photo, Miguel loves photos !
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
     clip: {fileID: 0}
-    text: "Place-toi dans le cadre et pr\xE9pare ton plus beau sourire pour la photo
-      ! Demande peut-\xEAtre \xE0 quelqu\u2019un de t\u2019aider pour appuyer sur
-      le bouton. Tu es pr\xEAt ? 3,2,1\u2026OUISTITIIII !"
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: Come on guys, let's take a pose !
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

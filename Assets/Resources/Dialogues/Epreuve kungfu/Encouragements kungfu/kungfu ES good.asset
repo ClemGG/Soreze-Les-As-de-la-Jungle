@@ -15,12 +15,4 @@ MonoBehaviour:
   done: 0
   autoEnd: 1
   delayAutomaticClosure: 1
-  repliques:
-  - text: Hmmm, delicious !
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 968e6a8a5374cf84e8313d5ba024f060, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
+  repliques: []

@@ -16,28 +16,18 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "Parfait, merci Salvador ! On va pouvoir apprendre tout en s\u2019amusant,
-      et on n\u2019h\xE9sitera pas \xE0 demander de l\u2019aide \xE0 ton disciple
-      !"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+  - text: "Parfait, merci Salvador ! On n n\u2019h\xE9sitera pas \xE0 demander de
+      l\u2019aide \xE0 ton disciple si besoin !"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 1
     bubbleSize: 2
     arrowOrientation: 1
-  - text: "Et toi, es-tu pr\xEAt \xE0 relever le d\xE9fi ? La mission risque d\u2019\xEAtre
-      difficile et nous avons besoin de ton aide !"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 2
-    arrowOrientation: 1
-  - text: "Allez, en route les amis ! Les As de la Jungle...\n<size=120><color=#cf5708>A
+  - text: "Et toi, es-tu pr\xEAt \xE0 relever le d\xE9fi ?\nLes As de la Jungle...\n<size=120><color=#cf5708>A
       LA RESCOUSSE\_!\_</color></size>"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 00598ac1b520cce44829e2dcdceb7716, type: 2}
     clip: {fileID: 8300000, guid: 16928943a59dd63459d7129dfdfd312c, type: 3}
     mood: 6

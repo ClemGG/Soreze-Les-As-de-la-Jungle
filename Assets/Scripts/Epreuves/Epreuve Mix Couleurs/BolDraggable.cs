@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,7 +6,6 @@ using UnityEngine.UI;
 public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 
-    //public Transform limitMinX, limitMaxX;
     public Image ombre;
     [Space(10)]
     [Header("Color : ")]
@@ -18,12 +15,13 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     public ColorID colorIndex;
     public AnimationCurve animCurve;
     public float animSpeed = 2f;
-    bool isAnimating = false, isDragging = false, startedDragging = false;
+    bool startedDragging = false;
+    [HideInInspector] public bool introDone = false;
+
 
 
     //Order in layer
     int orderBack;
-    int orderParticle;
     int orderFront;
 
     ParticleSystemRenderer psr;
@@ -34,11 +32,16 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     Camera cam;
     Transform t;
-    //Rigidbody rb;
     Rigidbody2D rb;
     BoxCollider2D bc;
     EpreuveMixCouleursV2 e;
     RectTransform rt;
+
+
+    [HideInInspector] public Vector3 startPoint;
+
+
+
 
 
     private void Start()
@@ -46,14 +49,12 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         e = (EpreuveMixCouleursV2)Epreuve.instance;
         cam = Camera.main;
         t = transform;
-        //startPoint = t.position;
         rt = GetComponent<RectTransform>();
         startPoint = rt.position;
 
 
 
         bc = GetComponent<BoxCollider2D>();
-        //rb = GetComponent<Rigidbody>();
         rb = GetComponent<Rigidbody2D>();
         rb.isKinematic = true;
 
@@ -63,47 +64,14 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         psr.GetComponent<ParticleSystem>().Stop();
 
         orderFront = imgFront.sortingOrder;
-        orderParticle = psr.sortingOrder;
         orderBack = imgBack.sortingOrder;
 
     }
 
 
 
-    Vector3 startPoint;
-    //Vector3 screenPoint;
-    //Vector3 offset;
-    //public float dstFromCamera = 4f;
-
-
-    //void OnMouseDown()
-    //{
-    //    e.isDragging = true;
-    //    screenPoint = Camera.main.WorldToScreenPoint(t.position);
-    //    offset = t.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-    //}
-
-    //void OnMouseDrag()
-    //{
-    //    if (e.isDragging && !e.EpreuveFinished)
-    //    {
-    //        Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, dstFromCamera);
-    //        Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
-    //        curPosition.x = Mathf.Clamp(curPosition.x, limitMinX.position.x, limitMaxX.position.x);
-
-    //        //rb.MovePosition(t.position + curPosition * Time.deltaTime);
-    //        t.position = curPosition;
-    //    }
-    //}
-
-    //private void OnMouseUp()
-    //{
-    //    e.isDragging = false;
-    //    t.position = startPoint;
-    //}
-
-
-    public void LateUpdate()
+    //Change la couleur de l'ombre
+    public void ChangeShadowColor()
     {
         if (startedDragging && !e.EpreuveFinished) 
         { 
@@ -115,31 +83,30 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
 
 
-    Collider2D col;
+    //Si le bol touche la calebasse, jouer l'animation de remplissage
     private void OnTriggerEnter2D(Collider2D c)
     {
         if(c.CompareTag("mix couleurs/bol resultat") && !e.EpreuveFinished && !e.isAnimating && !e.bolResultat.isAnimating)
         {
 
-
-            //OnMouseUp();
+            e.stopIntroAnim = true;   //Utilisé uniquement dans l'anim d'intro
             StartCoroutine(BolAnim());
         }
     }
 
 
 
-
+    //initialisation des paramètres au début du drag
     public void OnBeginDrag(PointerEventData eventData)
     {
-        if (!e.isAnimating && !e.EpreuveFinished && !e.bolResultat.isAnimating)
+        if (!e.isAnimating && introDone && !e.EpreuveFinished && !e.bolResultat.isAnimating)
         {
             OnEndDrag(eventData);
             startedDragging = true;
 
 
             e.isDragging = true;
-
+            //print($"begin drag : {name}");
 
             imgFront.sortingOrder = 21;
             psr.sortingOrder = 22;
@@ -149,32 +116,19 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
     public void OnDrag(PointerEventData eventData)
     {
-
-        if (e.isDragging && !e.EpreuveFinished && !e.isAnimating && !e.bolResultat.isAnimating)
+        //Placer le bol sur la position de la souris
+        //(Converti en pixels car c'est un canvas) 
+        if (e.isDragging && introDone && !e.EpreuveFinished && !e.isAnimating && !e.bolResultat.isAnimating)
         {
-            Vector2 localPosition = Vector2.zero;
+            //print($"drag : {name}");
 
-
-            eventData.position = new Vector3
-                (
-                    //Mathf.Clamp(eventData.position.x, 200, 1848),
-                    //Mathf.Clamp(eventData.position.y, 150, 1386),
-                    Mathf.Clamp(eventData.position.x, screenMargin.x, Screen.width - screenMargin.x),
-                    Mathf.Clamp(eventData.position.y, screenMargin.y, Screen.height - screenMargin.y),
-                    0f
-                );
-
-
-            RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, eventData.position, cam, out localPosition);
-
-
-            rt.position = rt.TransformPoint(localPosition);
-
+            MoveBolAnim(eventData.position);
 
         }
     }
 
 
+    //réinitialisation des paramètres à la fin du drag
     public void OnEndDrag(PointerEventData eventData)
     {
         if (!e.isAnimating && !e.EpreuveFinished)
@@ -182,7 +136,9 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
             e.isDragging = false;
             rt.position = startPoint;
 
+            ChangeShadowColor();
 
+            //print($"end drag : {name}");
 
             imgFront.sortingOrder = orderFront;
             psr.sortingOrder = orderFront;
@@ -191,9 +147,27 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
     }
 
 
+    public void MoveBolAnim(Vector3 pos)
+    {
+        pos = new Vector3
+                (
+                    Mathf.Clamp(pos.x, screenMargin.x, Screen.width - screenMargin.x),
+                    Mathf.Clamp(pos.y, screenMargin.y, Screen.height - screenMargin.y),
+                    0f
+                );
+
+
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(rt, pos, cam, out Vector2 localPosition);
+        rt.position = rt.TransformPoint(localPosition);
+
+        ChangeShadowColor();
+
+    }
+
     private IEnumerator BolAnim()
     {
         e.validateBtn.interactable = false;
+        e.clearButton.interactable = false;
         e.isAnimating = true;
         bc.enabled = false;
 
@@ -201,9 +175,12 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         Vector3 startPos = rt.position;
         Quaternion startRot = rt.rotation;
 
+
+        //Si la calebasse n'est pas pleine, on joue l'animation de remplissage
         if (e.currentCombination.Count < 3)
         {
 
+            //On déplace et tourne le bol pour qu'il soit au dessus de la calebasse
             while (timer < 1f)
             {
                 timer += Time.deltaTime * animSpeed;
@@ -214,6 +191,8 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
             e.calebasseFront.sortingOrder = 24;
 
+
+            //On joue l'effet de liquide
             AudioManager.instance.Play(e.verseClip);
             psr.GetComponent<ParticleSystem>().Play();
             yield return new WaitForSeconds(1f);
@@ -225,7 +204,7 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
 
             timer = 0f;
 
-
+            //On ramène sa rotation à la normale
             while (timer < 1)
             {
                 timer += Time.deltaTime * animSpeed * 3f;
@@ -236,6 +215,7 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         timer = 0f;
 
 
+        //On ramène ensuite le bol à son point de départ
         while (timer < 1f)
         {
             timer += Time.deltaTime * animSpeed;
@@ -247,6 +227,7 @@ public class BolDraggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEnd
         e.calebasseFront.sortingOrder = -1;
         e.isAnimating = false;
         e.validateBtn.interactable = e.currentCombination.Count > 1;
+        e.clearButton.interactable = true;
 
         OnEndDrag(null);
     }

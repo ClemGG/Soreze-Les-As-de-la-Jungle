@@ -34,16 +34,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Lo siento Miguel, \xA1pero no ten\xEDamos otra opci\xF3n!"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "\xA1Continuemos la visita al museo en busca del pr\xF3ximo s\xEDmbolo!
-      Vienes con nosotros ?"
+  - text: "\xA1Continuemos la visita al museo en busca del pr\xF3ximo s\xEDmbolo!"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
     clip: {fileID: 0}

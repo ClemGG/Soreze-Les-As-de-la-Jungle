@@ -25,18 +25,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Une oeuvre qui marquera le d\xE9but d\u2019une nouvelle p\xE9riode artistique
-      au Mus\xE9e Dom Robert, la plus grande de toute, la plus\u2026VLADIMIRESQUE
-      !"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: Vladimir, encore toi ?! Toujours dans les mauvais coups. Tu ne resteras
-      donc jamais tranquille ?!
+  - text: Vladimir, encore toi ?! Toujours dans les mauvais coups !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -63,20 +52,10 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Cette fois, tu ne pourras pas te mettre en travers de ma route ! Gardes,
-      emp\xEAchez-le de s\u2019emparer de mon oeuvre. Enzo, L\xE9o, Hugo, Th\xE9o,
-      Paolo, Pierrot \u2026 A l\u2019attaque !"
+  - text: "Gardes, emp\xEAchez-le de s\u2019emparer de mon oeuvre. Enzo, L\xE9o,
+      Hugo, Th\xE9o, Paolo, Pierrot \u2026 A l\u2019attaque !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
-    clip: {fileID: 0}
-    mood: 2
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Oh non, des moustiques-tigres, leurs piq\xFBres font tr\xE8s tr\xE8s tr\xE8s
-      mal! "
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
     mood: 2
     side: 0
@@ -85,14 +64,6 @@ MonoBehaviour:
   - text: Miguel pas aimer quand vilain moustique piquer Miguel !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
-    clip: {fileID: 0}
-    mood: 2
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: On ne pourra jamais passer, comment faire ?
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 2
     side: 0

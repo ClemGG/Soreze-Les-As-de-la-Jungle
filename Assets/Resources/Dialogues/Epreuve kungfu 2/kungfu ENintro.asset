@@ -16,11 +16,11 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+  - text: BEAT BEAT BEAT !!
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
+    clip: {fileID: 0}
     mood: 0
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-    clip: {fileID: 0}
-    text: Hello, english, bla bla bla...

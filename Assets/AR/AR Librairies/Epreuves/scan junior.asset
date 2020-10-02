@@ -21,7 +21,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 13642634290520842070
       m_GuidHigh: 641141554958478424
-    m_Size: {x: 0.1, y: 0.07364439}
+    m_Size: {x: 2.8, y: 2.062043}
     m_SpecifySize: 1
     m_Name: scan img junior
     m_Texture: {fileID: 2800000, guid: ff0edf565f9abd5458ac0aead8cae508, type: 3}

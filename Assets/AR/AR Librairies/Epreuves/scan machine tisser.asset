@@ -19,9 +19,9 @@ MonoBehaviour:
       m_GuidLow: 5710038026128677896
       m_GuidHigh: 2173966808796775066
     m_SerializedTextureGuid:
-      m_GuidLow: 7895940114710583392
-      m_GuidHigh: 5099283959828556441
-    m_Size: {x: 0.1, y: 0.07364439}
+      m_GuidLow: 11449554405840711202
+      m_GuidHigh: 18111862144460591833
+    m_Size: {x: 0.297, y: 0.2902419}
     m_SpecifySize: 1
     m_Name: scan img machine tisser
-    m_Texture: {fileID: 2800000, guid: 2914d86003b36d9499aa6d8abe4bc446, type: 3}
+    m_Texture: {fileID: 0}

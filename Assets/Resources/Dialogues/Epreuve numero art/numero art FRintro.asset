@@ -16,36 +16,18 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "Maurizio, cette tapisserie a \xE9t\xE9 sauvagement attaqu\xE9e et tous
-      les fils ont \xE9t\xE9 retir\xE9s ! Il n\u2019y a plus aucune couleur ! Je suis
-      d\xE9vast\xE9 ! "
+  - text: "Maurizio, il n\u2019y a plus aucune couleur sur cette tapisserie ! Les
+      As, vous devez rendre \xE0 cette oeuvre son bel aspect d\u2019origine, por
+      favor !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Les As, vous devez m\u2019aider ! Restaurez cette oeuvre pour lui rendre
-      son bel aspect d\u2019origine, por favor !"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Les amis, j\u2019ai besoin de vous ! Il faut redonner ses couleurs \xE0
-      cette belle tapisserie ! "
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 1
     bubbleSize: 0
     arrowOrientation: 0
   - text: "J\u2019ai une id\xE9e Maurice, pourquoi ne pas utiliser le canon, avec
-      tous les fruits dont nous disposons, pour projeter des couleurs ? "
+      tous les fruits dont nous disposons, pour projeter des couleurs ?"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -53,8 +35,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Bonne id\xE9e Gilbert, on va faire comme \xE7a ! Miguel, am\xE8ne-nous
-      le canon s\u2019il te pla\xEEt !"
+  - text: "Bonne id\xE9e Gilbert ! Miguel, am\xE8ne-nous le canon s\u2019il te pla\xEEt
+      !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -75,14 +57,6 @@ MonoBehaviour:
       beaucoup de munitions !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 2
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: 'Tirer, tirer tirer !!!! '
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
     clip: {fileID: 0}
     mood: 2
     side: 0

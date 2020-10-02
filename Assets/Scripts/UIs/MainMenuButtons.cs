@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainMenuButtons : MonoBehaviour
 {
     public SettingsPanelButtons settingsPanel;
+    public GameObject resumeButton, animIntroBlocker, resetBagOnStartup;
 
 
     public static MainMenuButtons instance;
@@ -19,14 +18,26 @@ public class MainMenuButtons : MonoBehaviour
 
         instance = this;
 
-        //Quand on lance l'application, on vide les PlayerPrefs pour effacer la progression des joueurs ainsi que les paramètres (son et langue)
-        PlayerPrefs.DeleteAll();
+
     }
 
 
 
     private void Start()
     {
+        //Si on a pas de partie enregistrée, on cache le bouton reprendre
+        //pour ne laisser que le bouton nouvelle partie
+        animIntroBlocker = FindObjectOfType<AnimIntroBlocker>().gameObject;
+        resetBagOnStartup = FindObjectOfType<ResetBagOnStartup>().gameObject;
+        animIntroBlocker.SetActive(false);
+        resetBagOnStartup.SetActive(false);
+
+        if (!PlayerPrefs.HasKey("partie en cours"))
+        {
+            resumeButton.SetActive(false);
+        }
+
+
         //On active le panel des paramètres et on change la langue avant de le refermer
 
         settingsPanel.gameObject.SetActive(true);
@@ -46,8 +57,18 @@ public class MainMenuButtons : MonoBehaviour
 
 
     //Appelée par le bouton Play
-    public void PlayButton()
+    public void PlayButton(bool eraseSave)
     {
+        //Si on crée une nouvelle partie, on efface la sauvegarde.
+        //On recrée la clé de la langue pour éviter de la perdre
+        if (eraseSave)
+        {
+            string curLangue = PlayerPrefs.GetString("langue");
+            PlayerPrefs.DeleteAll();
+            PlayerPrefs.SetString("langue", curLangue);
+        }
+
+
         //On met la langue par défaut sur FR si le joueur ne l'a pas déjà mis
 
         if (!PlayerPrefs.HasKey("langue"))
@@ -60,6 +81,23 @@ public class MainMenuButtons : MonoBehaviour
         settingsPanel.gameObject.SetActive(false);
 
 
+        if (eraseSave)
+        {
+            //C'est une nouvelle partie, on supprime les playerPrefs
+            //et on cache les oeuvres du sac
+            if(resetBagOnStartup) resetBagOnStartup.SetActive(true);
+            Destroy(animIntroBlocker);
+
+        }
+        else
+        {
+            //Comme on reprend la partie, on ne veut pas activer la cinématique d'intro,
+            //donc on envoie un objet la désactiver
+            if(animIntroBlocker) animIntroBlocker.SetActive(true);
+            Destroy(resetBagOnStartup);
+        }
+
+
 
         //On lance la scène ppale
         ScreenTransitionImageEffect.instance.FadeToScene(1);
@@ -69,16 +107,4 @@ public class MainMenuButtons : MonoBehaviour
 
 
 
-    //Quand on quitte le jeu, on efface la progression du joueur ainsi que les paramètres (son et langue)
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteAll();
-    }
-
-
-    //Quand on retourne au menu ppal, on efface la progression du joueur ainsi que les paramètres (son et langue)
-    private void OnLevelWasLoaded(int level)
-    {
-        PlayerPrefs.DeleteAll();
-    }
 }

@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Ins ES Epreuve kungfu
   m_EditorClassIdentifier: 
   nomEpreuve: La guarida de Vladimir
-  instructions: "\xA1Ayuda a Al y Bob a tragarse todos los mosquitos! Apunte con el
-    objetivo, presione el bot\xF3n y atrape con su lengua. \xA1Haz que desaparezcan
-    y despeja el camino!"
+  instructions: "\xA1Ayuda a Al y Bob a tragarse todos los mosquitos! Apunte con
+    el objetivo, presione el bot\xF3n y atrape con su lengua para despejar el camino!"

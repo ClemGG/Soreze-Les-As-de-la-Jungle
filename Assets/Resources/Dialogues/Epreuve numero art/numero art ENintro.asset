@@ -16,28 +16,10 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: 'Maurizio, this tapestry was savagely attacked and all the threads were
-      removed! There is no color left ! I am devastated ! '
+  - text: Maurizio, there is no more color on this tapestry! Jungle Bunch, you must
+      restore this work to its original beautiful appearance, por favor!
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: Jungle Bunch, you must help me ! Restore this work to its original beautiful
-      appearance, por favor !
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: Guys, I need your help! We must restore its colors to this beautiful tapestry
-      !
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 0
@@ -72,14 +54,6 @@ MonoBehaviour:
   - text: Sorry Miguel, but we're going to need yellow too ... and lots of ammo !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: Shoot, shoot, shoot !!!!
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 0

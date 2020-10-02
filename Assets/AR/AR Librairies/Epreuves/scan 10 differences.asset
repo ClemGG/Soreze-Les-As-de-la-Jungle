@@ -21,7 +21,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 9823572469399682114
       m_GuidHigh: 13447546803830837224
-    m_Size: {x: 0.1, y: 0.07364439}
+    m_Size: {x: 3.17, y: 2.3345273}
     m_SpecifySize: 1
     m_Name: scan img 7 differences
     m_Texture: {fileID: 2800000, guid: 07dffc42571d8854e8cfc6e691489fba, type: 3}

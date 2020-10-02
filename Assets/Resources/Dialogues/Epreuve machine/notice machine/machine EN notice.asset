@@ -25,8 +25,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: We also need tension supports. There are also 4. Go ahead, I'm looking at
-      you!
+  - text: We also need tension supports. There are also 4. Go ahead, I'm looking
+      at you!
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -50,7 +50,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: And finally the board.
+  - text: And finally the plank.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -58,8 +58,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: Perfect ! The structure is in place! Now position the 2 rollers, front and
-      rear.
+  - text: Perfect ! The structure is in place! Now position the 2 rollers, front
+      and rear.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -83,7 +83,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: Come on, we're almost done. Now add serrated wheels to the mechanism.
+  - text: Come on, we're almost done. Now add the serrated wheels to the mechanism.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}

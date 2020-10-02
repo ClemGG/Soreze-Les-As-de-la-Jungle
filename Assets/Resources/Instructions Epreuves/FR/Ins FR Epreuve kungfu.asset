@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomEpreuve: L'antre de Vladimir
   instructions: "Aide Al et Bob \xE0 avaler tous les moustiques ! Vise avec la cible,
-    appuie sur le bouton et attrape-les avec leurs langues. Fais-les tous dispara\xEEtre
-    et lib\xE8re le passage !"
+    appuie sur le bouton et attrape-les avec leurs langues pour lib\xE9rer le passage
+    !"

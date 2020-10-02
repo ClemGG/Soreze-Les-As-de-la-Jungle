@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +8,6 @@ public class ColorCheckerV3 : MonoBehaviour
     [Header("Scripts & Components : ")]
     [Space(10)]
 
-    private EpreuveMixCouleursV2 epreuve;
     public Animator bolAnim;
 
     [Space(10)]
@@ -26,20 +24,10 @@ public class ColorCheckerV3 : MonoBehaviour
 
 
 
-    private void Start()
-    {
-        epreuve = (EpreuveMixCouleursV2)Epreuve.instance;
-
-        liquideImg.color = Color.white;
-
-    }
-
-
     private void Update()
     {
-        isAnimating = bolAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "idle";
-
-        full = isAnimating && bolAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "errorV2";
+        isAnimating = bolAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "a_mix_idle";
+        full = isAnimating && bolAnim.GetCurrentAnimatorClipInfo(0)[0].clip.name != "a_mix_error";
     }
 
 

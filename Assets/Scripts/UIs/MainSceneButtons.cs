@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainSceneButtons : MonoBehaviour
 {
-
+    #region Variables
 
     [Space(10)]
     [Header("Scripts & Components : ")]
@@ -44,17 +41,6 @@ public class MainSceneButtons : MonoBehaviour
 
 
     [Space(10)]
-    [Header("Help : ")]
-    [Space(10)]
-
-
-    int currentLevel = -1;  //Utilisée pour savoir si l'on doit réinitialiser le sac ou non
-
-
-
-
-
-    [Space(10)]
     [Header("Cinematique intro : ")]
     [Space(10)]
 
@@ -63,6 +49,12 @@ public class MainSceneButtons : MonoBehaviour
 
 
     public static MainSceneButtons instance;
+
+
+    #endregion
+
+
+    #region Mono
 
     //Singleton
     private void Awake()
@@ -79,6 +71,48 @@ public class MainSceneButtons : MonoBehaviour
     }
 
 
+
+    private void OnLevelWasLoaded(int level)
+    {
+        //Pour libérer de la place en mémoire
+        ApplicationManager.CollectGarbage();
+
+
+
+        if (level == 0)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+
+
+            //Si on est de retour à la scène ppale, on réinitialise tous les scripts des panels
+            if (level == 1)
+            {
+                for (int i = 0; i < panelButtons.Length; i++)
+                {
+                    panelButtons[i].SetActive(true);
+                }
+
+            }
+            else
+            {
+                for (int i = 0; i < panelButtonsToHideOnEpreuve.Length; i++)
+                {
+                    panelButtonsToHideOnEpreuve[i].SetActive(false);
+                }
+            }
+        }
+    }
+
+
+    #endregion
+
+
+
+    #region Menu
 
     //Appelée par les boutons de la scène ppale et par les panels du canvas pour afficher un panel précis
     public void TogglePanel(GameObject panel)
@@ -158,18 +192,18 @@ public class MainSceneButtons : MonoBehaviour
         TogglePanel(panels[0]);
         int level = SceneManager.GetActiveScene().buildIndex;
 
-        //Si on est dans la scène photo ou celle des moustiques, on supprime le dialogue de victoire
-        //pour ne pas avoir le panel de discussion ouvert
-        if (level >= 7) 
-        {
-            GameObject go = FindObjectOfType<MainSceneDialogueList>().gameObject;
-            if(go)
-                Destroy(go);
-        }
-        else if(level != 1)
+        //Si on n'a pas réussi l'épreuve, on supprime le dialogue de victoire
+        //pour ne pas avoir le panel de discussion ouvert au retour sur la scène ppale
+        
+        MainSceneDialogueList go = FindObjectOfType<MainSceneDialogueList>();
+        if (go)
+            Destroy(go.gameObject);
+            
+        if(level != 1)
         {
             //Sinon, on marque l'épreuve comme terminée pour ne pas pouvoir la continuer pendant la transition de retour
             FindObjectOfType<Epreuve>().EpreuveFinished = true;
+
         }
         
         //On retourne à la scène ppale si on est en cours d'épreuve, au menu ppal sinon
@@ -178,45 +212,5 @@ public class MainSceneButtons : MonoBehaviour
 
 
 
-
-    private void OnLevelWasLoaded(int level)
-    {
-        currentLevel = level;
-
-        //Si on est de retour au menu ppal, on reset le sac des oeuvres et on détruit ce gameObject
-        if(level == 0)
-        {
-            contentPanelBag.transform.parent.GetComponent<BagPanelButtons>().ResetAllOeuvresAndCollectibles();
-            contentPanelBag.transform.parent.GetComponent<BagPanelButtons>().OnEnable();
-
-            Destroy(gameObject);
-            return;
-        }
-        else
-        {
-            //Si on est de retour à la scène ppale, on réinitialise tous les scripts des panels
-            if(level == 1)
-            {
-                for (int i = 0; i < panelButtons.Length; i++)
-                {
-                    panelButtons[i].SetActive(true);
-                }
-
-            }
-            else
-            {
-                for (int i = 0; i < panelButtonsToHideOnEpreuve.Length; i++)
-                {
-                    panelButtonsToHideOnEpreuve[i].SetActive(false);
-                }
-            }
-
-        }
-    }
-
-    //Quand on quitte le jeu depuis la scène ppale, on vide les PlayerPrefs pour effacer la progression des joueurs ainsi que les paramètres (son et langue)
-    private void OnApplicationQuit()
-    {
-        PlayerPrefs.DeleteAll();
-    }
+    #endregion
 }

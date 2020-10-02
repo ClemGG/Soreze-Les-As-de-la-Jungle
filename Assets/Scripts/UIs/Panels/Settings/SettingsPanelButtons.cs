@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SettingsPanelButtons : MonoBehaviour
 {
@@ -38,8 +36,13 @@ public class SettingsPanelButtons : MonoBehaviour
     {
         for (int i = 0; i < AudioManager.instance.sons.Length; i++)
         {
+            if (active)
+                AudioManager.instance.sons[i].clip.LoadAudioData();
+            else
+                AudioManager.instance.sons[i].clip.UnloadAudioData();
 
-            AudioManager.instance.sons[i].source.volume = active ? AudioManager.instance.sons[i].volume : 0f;
+
+            AudioManager.instance.sons[i].source.gameObject.SetActive(active);
         }
         PlayerPrefs.SetInt("bruitages", active ? 1 : 0);
         PlayerPrefs.SetInt("musique", active ? 1 : 0);

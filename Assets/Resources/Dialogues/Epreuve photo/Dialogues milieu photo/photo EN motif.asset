@@ -36,7 +36,7 @@ MonoBehaviour:
     arrowOrientation: 0
   - text: You can now decorate your picture by adding patterns. Drag them over the
       image to add some and double-tap on to remove it. To remove everything at once,
-      press the trash button.
+      press the trash can.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

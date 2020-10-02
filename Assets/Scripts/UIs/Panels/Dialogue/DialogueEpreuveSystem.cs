@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,6 +6,8 @@ using TMPro;
 
 public class DialogueEpreuveSystem : MonoBehaviour
 {
+    #region Variables
+
 
     [Space(10)]
     [Header("Scripts & Components : ")]
@@ -22,15 +22,7 @@ public class DialogueEpreuveSystem : MonoBehaviour
 
 
     public GameObject continueArrow;
-
-
-    [Space(10)]
-
-    public TextMeshProUGUI characterName;
     public TextMeshProUGUI dialogueText;
-
-    [Space(10)]
-
     public Image characterImg;
 
 
@@ -39,6 +31,7 @@ public class DialogueEpreuveSystem : MonoBehaviour
     [Space(10)]
 
     public float writeSpeed = .05f;
+    StringBuilder sb;
 
     [Space(10)]
 
@@ -50,6 +43,16 @@ public class DialogueEpreuveSystem : MonoBehaviour
     //Appelées une fois le dialogue terminé
     public delegate void OnDialogueEnded();
     public OnDialogueEnded onDialogueEnded;
+
+
+
+    #endregion
+
+
+
+
+
+    #region Mono
 
 
     private void OnLevelWasLoaded(int level)
@@ -68,7 +71,23 @@ public class DialogueEpreuveSystem : MonoBehaviour
         }
 
         instance = this;
+
+
+        //On l'initialise une fois pour pouvoir écrire chaque ligne lettre par lettre
+        sb = new StringBuilder(500);
+
     }
+
+
+
+    #endregion
+
+
+
+
+
+    #region Dialogue
+
 
 
 
@@ -85,15 +104,6 @@ public class DialogueEpreuveSystem : MonoBehaviour
     }
 
 
-    //Appelée pour jouer la réplique suivvante
-    public void ReadReplique(Replique replique)
-    {
-        currentIndex = 0;
-        currentDialogue = null;
-
-        StopAllCoroutines();
-        StartCoroutine(DisplayReplique(replique));
-    }
 
     public void StopDialogue()
     {
@@ -109,16 +119,20 @@ public class DialogueEpreuveSystem : MonoBehaviour
 
     public void NextReplique()
     {
+
+
         //Si on clique sur continuer alors qu'on est en train d'écrire le texte, on l'écrit tout en une fois
         if (isWriting)
         {
             StopAllCoroutines();
             WriteAlltext();
         }
-
         //Sinon, on écrit le texte un caractère à la fois
         else
         {
+
+            StopCoroutine(DisplayDialogue());
+
             //Tant que le dialogue n'est pas fini, on affiche la réplique suivante
             if (currentDialogue)
             {
@@ -149,6 +163,7 @@ public class DialogueEpreuveSystem : MonoBehaviour
     //Ecrit tout le texte de la réplique en cours d'un coup
     public void WriteAlltext()
     {
+        //print("Current Index : " + currentIndex.ToString());
         Replique r = null;
         
         isWriting = false;
@@ -163,19 +178,21 @@ public class DialogueEpreuveSystem : MonoBehaviour
             r = currentReplique;
         }
 
-            dialogueText.text = r.text;
-
-            characterImg.sprite = r.character.characterMedaillon;
+        dialogueText.text = r.text;
+        characterImg.sprite = r.character.characterMedaillon;
 
         if(currentDialogue)
-            currentDialogue.done = currentIndex == currentDialogue.repliques.Length - 1;
+            currentDialogue.done = currentIndex >= currentDialogue.repliques.Length - 1;
         
     }
+
+
 
 
     //Ecrit chaque caractère un à un de la réplique en cours
     private IEnumerator DisplayDialogue()
     {
+        //print("Current Index : " + currentIndex.ToString());
         dialogueText.text = null;
         isWriting = true;
 
@@ -188,7 +205,6 @@ public class DialogueEpreuveSystem : MonoBehaviour
 
         //On affiche le personnage en cours
         characterImg.sprite = r.character.characterMedaillon;
-        characterName.text = r.character.characterName;
 
         continueArrow.SetActive(false);
 
@@ -206,50 +222,79 @@ public class DialogueEpreuveSystem : MonoBehaviour
 
         float t = 0f;
         int stringIndex = 0;
-        StringBuilder sb = new StringBuilder(500);
+        char[] text = r.text.ToCharArray();
 
-        while (isWriting)
+        sb.Clear();
+
+        if (text.Length > 0)
         {
 
-            if (t < writeSpeed)
+            while (isWriting)
             {
-                t += Time.deltaTime;
-            }
-            else
-            {
-                t = 0f;
-                sb.Append(r.text[stringIndex]);
-                stringIndex++;
 
-                dialogueText.text = sb.ToString();
-
-                if (stringIndex == r.text.Length)
+                if (t < writeSpeed)
                 {
-                    isWriting = false;
-                    continueArrow.SetActive(true);
+                    t += Time.deltaTime;
+                }
+                else
+                {
+                    t = 0f;
+                    sb.Append(text[stringIndex]);
+                    stringIndex++;
+
+                    dialogueText.text = sb.ToString();
+
+                    if (stringIndex == text.Length)
+                    {
+                        isWriting = false;
+                        continueArrow.SetActive(true);
+                    }
+
                 }
 
+                yield return null;
             }
-
-            yield return null;
         }
 
-
-        currentDialogue.done = currentIndex == currentDialogue.repliques.Length - 1;
+        currentDialogue.done = currentIndex >= currentDialogue.repliques.Length - 1;
 
         //On écrit la réplique suivante
         if (currentDialogue.done && currentDialogue.autoEnd)
         {
-            yield return new WaitForSeconds(currentDialogue.delayAutomaticClosure);
+
+            WaitForSeconds wait = new WaitForSeconds(currentDialogue.delayAutomaticClosure);
+            yield return wait;
+
             NextReplique();
         }
+
+        yield return null;
 
     }
 
 
 
+
+
+    //Appelée pour jouer la réplique suivante
+    public void ReadReplique(Replique replique)
+    {
+        currentIndex = 0;
+        currentDialogue = null;
+        onDialogueEnded = null;
+
+        StopAllCoroutines();
+        StartCoroutine(DisplayReplique(replique));
+    }
+
+
+
+
+
+
+
     //Fait la même chose que DisplayDialogue() mais écrit uniquement une suele réplique.
-    //Utilisé dans les épreuves pour afficher une consign eou un message d'erreur.
+    //Utilisé dans les épreuves pour afficher une consigne ou un message d'erreur.
 
     Replique currentReplique;
     private IEnumerator DisplayReplique(Replique r)
@@ -258,10 +303,10 @@ public class DialogueEpreuveSystem : MonoBehaviour
         isWriting = true;
         currentReplique = r;
 
+        //Pour l'épreuve de la machine à tisser, pour faire apparaître le tissu de vladimir
         r.onRepliqueStarted?.Invoke();
 
         characterImg.sprite = r.character.characterMedaillon;
-        characterName.text = r.character.characterName;
 
         continueArrow.SetActive(false);
 
@@ -275,36 +320,45 @@ public class DialogueEpreuveSystem : MonoBehaviour
 
         float t = 0f;
         int stringIndex = 0;
-        StringBuilder sb = new StringBuilder(500);
+        char[] text = r.text.ToCharArray();
 
-        while (isWriting)
+        sb.Clear();
+
+        if (text.Length > 0)
         {
 
-            if (t < writeSpeed)
+            while (isWriting)
             {
-                t += Time.deltaTime;
-            }
-            else
-            {
-                t = 0f;
-                sb.Append(r.text[stringIndex]);
-                stringIndex++;
 
-                dialogueText.text = sb.ToString();
-
-                if (stringIndex == r.text.Length)
+                if (t < writeSpeed)
                 {
-                    isWriting = false;
-                    continueArrow.SetActive(true);
+                    t += Time.deltaTime;
+                }
+                else
+                {
+                    t = 0f;
+                    sb.Append(text[stringIndex]);
+                    stringIndex++;
+
+                    dialogueText.text = sb.ToString();
+
+                    if (stringIndex == text.Length)
+                    {
+                        isWriting = false;
+                        continueArrow.SetActive(true);
+                    }
+
                 }
 
+                yield return null;
             }
-
-            yield return null;
         }
 
+        yield return null;
 
     }
+
+    #endregion
 
 }
 

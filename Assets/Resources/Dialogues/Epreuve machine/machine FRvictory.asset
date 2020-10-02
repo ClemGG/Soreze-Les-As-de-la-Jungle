@@ -34,24 +34,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Mais qu\u2019est-ce que c\u2019est ?"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "On dirait du tissu\u2026 "
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "C\u2019est un morceau de tapisserie. Et c\u2019est surement \xE7a qui bloquait
-      la machine !"
+  - text: "C\u2019est un morceau de tapisserie! Et c\u2019est surement \xE7a qui
+      bloquait la machine !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}

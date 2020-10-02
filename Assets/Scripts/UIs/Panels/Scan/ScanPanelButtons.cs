@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 using UnityEngine.XR.ARFoundation;
-using UnityEngine.XR.ARSubsystems;
 public class ScanPanelButtons : MonoBehaviour
 {
     [Tooltip("Les différents composants de ce panel.")]
@@ -17,6 +14,7 @@ public class ScanPanelButtons : MonoBehaviour
 
     public bool isScanning = false;
     ARTrackedImage curTrackedImage;
+    ImageTracker imageTracker;
 
     [Tooltip("Permet de passer outre la vérification des épreuves pour accéder à la photo finale.")]
     public bool bypass = false;
@@ -57,9 +55,16 @@ public class ScanPanelButtons : MonoBehaviour
     }
 
 
+    //Appelé par le bouton de scan
     //Quand le panel de scan est activé, on réinitialise le timer et les sous-panels
     public void OnEnable()
     {
+        if (!imageTracker)
+            imageTracker = FindObjectOfType<ImageTracker>();
+
+        if (imageTracker)
+            imageTracker.enabled = true;
+
         timer = 0f;
         isScanning = true;
 
@@ -77,6 +82,10 @@ public class ScanPanelButtons : MonoBehaviour
     //Quand le panel de scan est désactivé, on réinitialise le timer
     public void OnDisable()
     {
+
+        if (imageTracker)
+            imageTracker.enabled = false;
+
         AudioManager.instance.Play(startScanClip);
         AudioManager.instance.Stop(scanLoopClip);
         isScanning = false;
@@ -86,26 +95,7 @@ public class ScanPanelButtons : MonoBehaviour
 
     void Update()
     {
-        ////pour les tests
-        //if (Input.GetMouseButtonDown(0) && !panelErreur.activeSelf)
-        //{
-        //    if (!shouldCount)
-        //    {
-        //        shouldCount = true;
-        //        ShowHidePanel(panelScan, false);
-        //        ShowHidePanel(panelAnalyse, true);
-        //        ShowHidePanel(panelLoading, true);
-        //        ShowHidePanel(panelValidation, false);
-        //    }
-        //    else
-        //    {
-        //        timer = 0f;
-        //        shouldCount = false;
-        //        ShowHidePanel(panelLoading, false);
-        //        ShowHidePanel(panelValidation, true);
-        //    }
-        //}
-
+     
         //On continue de scanner tant que le timer n'est pas atteint, puis on affiche le panel d'erreur
         if (isScanning)
         {
@@ -164,6 +154,7 @@ public class ScanPanelButtons : MonoBehaviour
 
 
     //Tout est dans le nom
+    //Appelée par l'ImageTracker quand l'oeuvre est scannée et reconnue
     public void ShowDialogueFirstScanThenLoadEpreuve(ARTrackedImage trackedImage)
     {
         curTrackedImage = trackedImage;
@@ -290,10 +281,4 @@ public class ScanPanelButtons : MonoBehaviour
 
     }
 
-    //public void ResetTimer()
-    //{
-    //    timer = 0f;
-    //    shouldCount = true;
-    //    DialogueEpreuveSystem.instance.onDialogueEnded -= ResetTimer;
-    //}
 }

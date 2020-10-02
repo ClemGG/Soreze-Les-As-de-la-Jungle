@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Projectile : MonoBehaviour, IPooledObject
 {
@@ -9,7 +7,9 @@ public class Projectile : MonoBehaviour, IPooledObject
     [Header("Scripts & Components : ")]
     [Space(10)]
 
+
     MeshRenderer rend;
+    MeshFilter filter;
     Transform t;
     EpreuveNumeroArt e;
     Rigidbody rb;
@@ -18,9 +18,12 @@ public class Projectile : MonoBehaviour, IPooledObject
     [Header("Projectile : ")]
     [Space(10)]
 
+    [Tooltip("Les apparences que pourra prendre le projectile.")]
+    [SerializeField] ProjectileAppearance[] skins;
+
     [HideInInspector] public int ID;
     [HideInInspector] public Color projectileColor;
-    [HideInInspector] public float speed = 10f;
+    public float speed = 10f;
     [HideInInspector] public Vector3 target;
 
 
@@ -36,7 +39,9 @@ public class Projectile : MonoBehaviour, IPooledObject
     {
         projectileColor = col;
         ID = index;
-        rend.material.SetColor("_Color", col);
+
+        filter.mesh = skins[index].mesh;
+        rend.material.SetTexture("_MainTex", skins[index].mainTex);
     }
 
 
@@ -44,11 +49,20 @@ public class Projectile : MonoBehaviour, IPooledObject
     {
         if (!t) t = transform;
         if (!rend) rend = t.GetChild(0).GetComponent<MeshRenderer>();
+        if (!filter) filter = t.GetChild(0).GetComponent<MeshFilter>();
         if (!e) e = (EpreuveNumeroArt)Epreuve.instance;
         if(!rb) rb = GetComponent<Rigidbody>();
 
         rb.velocity = Vector3.zero;
         t.LookAt(target);
 
+    }
+
+
+    [System.Serializable]
+    public struct ProjectileAppearance
+    {
+        public Mesh mesh;
+        public Texture mainTex;
     }
 }

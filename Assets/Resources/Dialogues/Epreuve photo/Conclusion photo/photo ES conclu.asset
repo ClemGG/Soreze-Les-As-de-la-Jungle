@@ -18,7 +18,7 @@ MonoBehaviour:
   repliques:
   - text: "\xA1Gracias de nuevo por ayudarnos a poner orden en el Museo Dom Robert!
       \xA1Esperamos verte pronto para nuevas aventuras!"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 6
@@ -26,7 +26,7 @@ MonoBehaviour:
     bubbleSize: 0
     arrowOrientation: 0
   - text: Blop blop blop !!!!
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 3e60fbedcc082a246b3fb706a2e8ddc8, type: 2}
     clip: {fileID: 0}
     mood: 2
@@ -34,8 +34,8 @@ MonoBehaviour:
     bubbleSize: 1
     arrowOrientation: 1
   - text: "Ah s\xED, \xA1gracias por record\xE1rmelo Junior! \xA1Antes de partir,
-      no olvides recoger tu foto en la recepci\xF3n del museo!"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+      no olvides recoger tu foto en la recepci\xF3n del museo devolviendo el iPawn!"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
   - text: "Vamos, amigos, vamos a la guarida. Quiz\xE1s alguien nos est\xE9 esperando
       con una nueva misi\xF3n.\n\n<size=120><color=#cf5708>Panda de la Selva : \xA1AL
       RESCATE! </color></size> "
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 00598ac1b520cce44829e2dcdceb7716, type: 2}
     clip: {fileID: 0}
     mood: 6

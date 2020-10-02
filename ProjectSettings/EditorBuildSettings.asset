@@ -5,12 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/test/ImageTracking/ImageTracking.unity
-    guid: e0b018a3c3b5cfd4c8e316706ec0a18c
-  - enabled: 0
-    path: Assets/Scenes/test/test AR.unity
-    guid: 6a0dfcd50e2beaf4890e764ebe086e7c
   - enabled: 1
     path: Assets/Scenes/Main menu.unity
     guid: a6884b1958b4e784fb561cc567d4c4ec
@@ -42,7 +36,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes Epreuves/scene photo.unity
     guid: ffaf15617d019584a9aa2dfe13cf9986
   m_configObjects:
+    com.unity.xr.arcore.PlayerSettings: {fileID: 11400000, guid: 0f5c778d6e05c484f9cf8e9ef626cf56,
+      type: 2}
     com.unity.xr.arkit.PlayerSettings: {fileID: 11400000, guid: 1b452ff4ae3094c73885e13e36219c64,
+      type: 2}
+    com.unity.xr.management.arcore_loader: {fileID: 11400000, guid: cf94b9490a3db48f9b39ada88f5ae753,
       type: 2}
     com.unity.xr.management.arkit_loader: {fileID: 11400000, guid: bd752265462894a6693f74ce5111693d,
       type: 2}

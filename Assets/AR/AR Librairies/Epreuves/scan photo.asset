@@ -19,9 +19,9 @@ MonoBehaviour:
       m_GuidLow: 5166827895745592915
       m_GuidHigh: 3666357160910093199
     m_SerializedTextureGuid:
-      m_GuidLow: 262433323172194073
-      m_GuidHigh: 3121762491362968889
-    m_Size: {x: 0.1, y: 0.07991453}
+      m_GuidLow: 15687367128443661641
+      m_GuidHigh: 3549107421759696522
+    m_Size: {x: 0.21, y: 0.2970484}
     m_SpecifySize: 1
     m_Name: scan img photo
-    m_Texture: {fileID: 2800000, guid: 8ce7671959b703a43905d43272ba522b, type: 3}
+    m_Texture: {fileID: 2800000, guid: c0062d49b949d9b48a6eb06765f64031, type: 3}

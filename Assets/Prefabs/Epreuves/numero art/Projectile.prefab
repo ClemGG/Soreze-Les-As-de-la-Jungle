@@ -59,7 +59,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baad260ac76efc14e946446f92255eb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  skins:
+  - mesh: {fileID: 3122426411123949812, guid: 5a8b5455f2bd8854cb6dec7fdeb5bc3d, type: 3}
+    mainTex: {fileID: 2800000, guid: 6965172b57d70af4bb789b6e86d40385, type: 3}
+    normalMap: {fileID: 2800000, guid: 13c09056fe421c543ab488ac257f3cc0, type: 3}
+  - mesh: {fileID: 3705943128869824967, guid: a50832792511ba145b53b3bd9b6084f5, type: 3}
+    mainTex: {fileID: 2800000, guid: 3831d2fb93375b044a9a8907c5becf45, type: 3}
+    normalMap: {fileID: 2800000, guid: 4bb74400cf1e4bc4298258b337328045, type: 3}
+  - mesh: {fileID: -3397448602026635884, guid: c3544c2b03e9a9a43927ba8dcb67b4fe, type: 3}
+    mainTex: {fileID: 2800000, guid: d21482a7c85d7be458b92db241828271, type: 3}
+    normalMap: {fileID: 2800000, guid: 71a7185ca3930974eb60dc95ab789ee6, type: 3}
+  - mesh: {fileID: 2655106034114507464, guid: aca5fa6897b7f1b4a94bfc00dbb4d07f, type: 3}
+    mainTex: {fileID: 2800000, guid: 26603de9347c51349b20ae7fd3b174f0, type: 3}
+    normalMap: {fileID: 2800000, guid: 25abde0072664de4fbb8d44269a2c826, type: 3}
+  - mesh: {fileID: -5543119733271671733, guid: 9b58e339dbc638e49b9f1e0a623f64b4, type: 3}
+    mainTex: {fileID: 2800000, guid: 6a4783a71da381649938d1e138e6dff6, type: 3}
+    normalMap: {fileID: 2800000, guid: 6a4783a71da381649938d1e138e6dff6, type: 3}
+  - mesh: {fileID: 4691239157752788447, guid: 62d5fb678dd47b14fa2ba62750c66fb5, type: 3}
+    mainTex: {fileID: 2800000, guid: 13ef06230af0de44f97ce68322cfb532, type: 3}
+    normalMap: {fileID: 2800000, guid: e50ed45a43ceab749bce53954b867704, type: 3}
+  - mesh: {fileID: -3410896925900676270, guid: 54cc0040fe8e53d42ae669ba73154519, type: 3}
+    mainTex: {fileID: 2800000, guid: 94de9eac1b5bc9b45a495c1b8a53170f, type: 3}
+    normalMap: {fileID: 2800000, guid: e0ff5c272fa003d409692a35ac14b880, type: 3}
+  - mesh: {fileID: 1544524198990481040, guid: 37ccbf8222f0d0341a5e9f932ea5e73f, type: 3}
+    mainTex: {fileID: 2800000, guid: f67b00c574b02994d8fd79a99dcfd3e8, type: 3}
+    normalMap: {fileID: 2800000, guid: ed353d362a3727940b1069c99ecdeb58, type: 3}
+  ID: 0
+  projectileColor: {r: 0, g: 0, b: 0, a: 0}
+  speed: 15
+  target: {x: 0, y: 0, z: 0}
 --- !u!54 &250130028
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -87,6 +115,7 @@ GameObject:
   - component: {fileID: 7149475402267795610}
   - component: {fileID: 5051431641624565642}
   - component: {fileID: 6766621344127000852}
+  - component: {fileID: 5415340420592911386}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -130,6 +159,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -154,3 +184,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &5415340420592911386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2480026104081284237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c28fe889e5e48fc98cf49774ae5b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMaxRotSpeed: {x: -120, y: 120}

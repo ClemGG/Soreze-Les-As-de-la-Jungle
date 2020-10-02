@@ -19,9 +19,9 @@ MonoBehaviour:
       m_GuidLow: 4657377526127495324
       m_GuidHigh: 9065310522030867645
     m_SerializedTextureGuid:
-      m_GuidLow: 1320834737653650981
-      m_GuidHigh: 15060230404618036152
-    m_Size: {x: 0.1, y: 0.07364439}
+      m_GuidLow: 13300452827103201755
+      m_GuidHigh: 16966462859673082842
+    m_Size: {x: 0.297, y: 0.2902419}
     m_SpecifySize: 1
     m_Name: scan img kung fu
-    m_Texture: {fileID: 2800000, guid: 20d796258c321254b8a3cbaec2af00d1, type: 3}
+    m_Texture: {fileID: 0}

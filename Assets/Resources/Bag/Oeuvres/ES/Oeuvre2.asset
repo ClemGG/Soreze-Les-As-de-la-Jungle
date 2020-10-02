@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc8e23c0fbe71604a96999a424d56c63, type: 3}
   m_Name: Oeuvre2
   m_EditorClassIdentifier: 
+  ID: 3
   unlocked: 0
   img: {fileID: 21300000, guid: 27882679ea343cd4a8b0f0c2fdd6af50, type: 3}
   title: "Jard\xEDn de sirenas"
@@ -23,8 +24,8 @@ MonoBehaviour:
   questionG: "\xBFQu\xE9 animales se encuentran en este tapiz?"
   descriptionG: "Podemos observar 7 peces, algunos camarones, un peque\xF1o pez plano
     y 2 cangrejos ermita\xF1os, uno de los cuales, si se mira de cerca, con un sombrero
-    bastante extra\xF1o. Es el del obispo llamado la mitra, mencionado en concha en
-    este tapiz."
+    bastante extra\xF1o. Es el del obispo llamado la mitra, mencionado en concha
+    en este tapiz."
   questionD: "Seg\xFAn usted, \xBFcu\xE1ntas horas de tejido tard\xF3 en terminar
     este tapiz?"
   descriptionD: "Para este tapiz de casi 6 metros cuadrados y debido a su delicadeza,

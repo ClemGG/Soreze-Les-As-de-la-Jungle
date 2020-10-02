@@ -1,18 +1,19 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class EpreuveMachineTisser : Epreuve
 {
+
+    #region Variables
+
     [Space(10)]
     [Header("Scripts & Components : ")]
     [Space(10)]
 
+    
     [Tooltip("Les pièces de la machine à replacer")]
-    public MachinePiece[] machinePieces;
+    [SerializeField] MachinePiece[] machinePieces;
 
     [Space(10)]
 
@@ -21,46 +22,54 @@ public class EpreuveMachineTisser : Epreuve
 
     [Space(10)]
 
-    public GameObject planPanel, btnPlanPanel, btnReplay;
+    public GameObject planPanel, btnPlanPanel, btnReplay, machineParent;
 
     [Space(10)]
 
-    [Tooltip("Les boutons de la boîte à outils")]
-    public Button[] allButtonsInInventory;
+    [Tooltip("Les boutons de la boîte à outils, rangées dans l'ordre qu'ils apparaissent dans la boîte à outils.")]
+    [SerializeField] Button[] allButtonsInInventory;
 
     [Space(10)]
 
-    public CameraControllerMachineTisser cam;
-    public DialogueList noticeDialogueList;
+    [SerializeField] CameraControllerMachineTisser cam;
+    [SerializeField] DialogueList noticeDialogueList;
 
     [Space(20)]
 
-    public Image tissuVladimir;
+    [SerializeField] Image tissuVladimir;
 
     [Space(10)]
     [Header("Pieces : ")]
     [Space(10)]
 
     public int currentPieceIndex = 0;
-    int piecesFound = 0;
+
+    //Pour éviter le bug qui ferme la boîte à outils et place la pièce au même moment,
+    //ce qui cache le bouton d'ouverture de la boite et empêche de terminer l'épreuve
+    [HideInInspector] public bool allowedToPlacePiece = true;
 
     [Space(10)]
 
-    public float delayBeforeSendingHelp = 180f;
-    float helpTimer;
+    float waitClickTimer;
 
     [Space(10)]
     [Header("Audio : ")]
     [Space(10)]
 
-    public AudioClip bgmClip;
     public AudioClip goodClip;
     public AudioClip errorClip;
     public AudioClip victoryClip;
     public AudioClip outilsClip;
 
 
-    public AudioClip[] piecesInOrderClips;
+    [SerializeField] AudioClip[] piecesInOrderClips;
+
+
+
+    #endregion
+
+
+
 
 
 
@@ -69,6 +78,14 @@ public class EpreuveMachineTisser : Epreuve
     //Appelé par les boutons de la boîte à outils pour instancier une nouvelle pièce à placer
     public void SpawnPiece(int index)
     {
+
+        //Pour éviter le bug qui ferme la boîte à outils et place la pièce au même moment,
+        //ce qui cache le bouton d'ouverture de la boite et empêche de terminer l'épreuve
+        //Démarre le délai dans l'Update pour bloquer le clic de la souris
+        allowedToPlacePiece = false;
+
+
+
         TogglePlanPanel();
         MachinePiece mp = machinePieces[index];
 
@@ -78,7 +95,10 @@ public class EpreuveMachineTisser : Epreuve
         {
 
             machinePieces[i].gameObject.SetActive(i == index && !machineSlots[i].done);
-            allButtonsInInventory[i].interactable = i != index && !machineSlots[i].done;
+
+            bool enable = i != index && !machineSlots[i].done;
+            allButtonsInInventory[i].interactable = enable;
+            
             
         }
 
@@ -101,14 +121,21 @@ public class EpreuveMachineTisser : Epreuve
 
 
 
+
+
+
+
+
     //Appelé par l'aide et au moment où l'on dépose une nouvelle pièce sur la machine
     public void PlacePieceOnSlot(MachinePiece machinePiece, MachineSlot machineSlot, bool increaseIndex)
     {
 
         machinePiece.gameObject.SetActive(false);
-        //Destroy(machinePiece.gameObject);
         machineSlot.done = true;
         machineSlot.ShowBase(true);
+
+        allButtonsInInventory[currentPieceIndex].interactable = false;
+        allButtonsInInventory[currentPieceIndex].transform.GetChild(0).gameObject.SetActive(true);
 
 
 
@@ -117,8 +144,12 @@ public class EpreuveMachineTisser : Epreuve
         //On active le collider de la nouvelle pièce placée et on va chercher la consigne pour la pièce suivante
         currentPieceIndex += increaseIndex ? 1 : 0;
         EnableCurColider(currentPieceIndex);
-        DialogueEpreuveSystem.instance.gameObject.SetActive(true);
-        DialogueEpreuveSystem.instance.ReadReplique(GetCorrectNoticeDialogue().repliques[currentPieceIndex]);
+
+        if (currentPieceIndex <= machinePieces.Length - 1)
+        {
+            DialogueEpreuveSystem.instance.gameObject.SetActive(true);
+            DialogueEpreuveSystem.instance.ReadReplique(GetCorrectNoticeDialogue().repliques[currentPieceIndex]);
+        }
 
         UpdateScoreUI();
 
@@ -137,10 +168,7 @@ public class EpreuveMachineTisser : Epreuve
         {
             if (increaseIndex)
             {
-                if (piecesInOrderClips[currentPieceIndex])
-                    AudioManager.instance.Play(piecesInOrderClips[currentPieceIndex]);
-                else
-                    AudioManager.instance.Play(goodClip);
+                AudioManager.instance.Play(goodClip);
             }
             else
             {
@@ -150,10 +178,6 @@ public class EpreuveMachineTisser : Epreuve
     }
 
 
-    public void CheckVictory()
-    {
-
-    }
 
     //Pour récupérer la consigne suivante
     private Dialogue GetCorrectNoticeDialogue()
@@ -183,12 +207,17 @@ public class EpreuveMachineTisser : Epreuve
     }
 
 
+
+
     
     //Pour relire la consigne en cours
     public void ReplayNotice()
     {
-        DialogueEpreuveSystem.instance.gameObject.SetActive(true);
-        DialogueEpreuveSystem.instance.ReadReplique(GetCorrectNoticeDialogue().repliques[currentPieceIndex]);
+        if (currentPieceIndex < machinePieces.Length - 1)
+        {
+            DialogueEpreuveSystem.instance.gameObject.SetActive(true);
+            DialogueEpreuveSystem.instance.ReadReplique(GetCorrectNoticeDialogue().repliques[currentPieceIndex]);
+        }
     }
 
     //Si on s'est trompé de pièce, on affiche la réplique correspondante
@@ -203,6 +232,7 @@ public class EpreuveMachineTisser : Epreuve
             dialogBadAnswerGiven = true;
         }
     }
+
 
 
     //Pour afficher / cacher le texte de consigne en bas de l'écran
@@ -226,14 +256,17 @@ public class EpreuveMachineTisser : Epreuve
 
             }
 
+            //Pour éviter le bug qui ferme la boîte à outils et place la pièce au même moment,
+            //ce qui cache le bouton d'ouverture de la boite et empêche de terminer l'épreuve
+            //Démarre le délai dans l'Update pour bloquer le clic de la souris
+            allowedToPlacePiece = false;
+
             planPanel.SetActive(!planPanel.activeSelf);
             btnPlanPanel.SetActive(!btnPlanPanel.activeSelf);
         }
             AudioManager.instance.Play(outilsClip);
     }
 
-
-    #endregion
 
 
 
@@ -242,23 +275,29 @@ public class EpreuveMachineTisser : Epreuve
 
     public void ShowTissuVladimir()
     {
-        StartCoroutine(ShowTissuCo(1f));
 
         for (int i = 0; i < dialoguesVictory.listeDialogueEpreuve.Count; i++)
         {
             dialoguesVictory.listeDialogueEpreuve[i].repliques[1].onRepliqueStarted -= ShowTissuVladimir;
         }
+
+        StartCoroutine(ShowTissuCo(1f));
     }
     public void HideTissuVladimir()
     {
-        StartCoroutine(ShowTissuCo(-1f));
 
         for (int i = 0; i < dialoguesVictory.listeDialogueEpreuve.Count; i++)
         {
-            dialoguesVictory.listeDialogueEpreuve[i].repliques[6].onRepliqueEnded -= ShowTissuVladimir;
+            int length = dialoguesVictory.listeDialogueEpreuve[i].repliques.Length-1;
+            dialoguesVictory.listeDialogueEpreuve[i].repliques[length].onRepliqueEnded -= HideTissuVladimir;
         }
+
+
+        StartCoroutine(ShowTissuCo(-1f));
+
     }
-    private IEnumerator ShowTissuCo(float increaseValue)
+
+    public IEnumerator ShowTissuCo(float increaseValue)
     {
 
         tissuVladimir.gameObject.SetActive(true);
@@ -305,6 +344,16 @@ public class EpreuveMachineTisser : Epreuve
 
 
 
+    #endregion
+
+
+
+
+
+
+
+
+
 
 
 
@@ -316,7 +365,33 @@ public class EpreuveMachineTisser : Epreuve
 
     protected override IEnumerator Start()
     {
+        //Au démarrage, on affiche les pièces en transparence
+        //(on active aussi le parent car il est désactivé par l'ImageTracker)
+        machineParent.SetActive(true);
+        for (int i = 0; i < machineSlots.Length; i++)
+        {
+            if (!machineSlots[i].done)
+                machineSlots[i].ShowTransparent();
+        }
+
+
+
         //Dans le Start, on cache la boîte à outils et le bouton replayNotice
+
+        for (int i = 0; i < machinePieces.Length; i++)
+        {
+            allButtonsInInventory[i].transform.GetChild(0).gameObject.SetActive(false);
+
+
+            MachinePiece mp = machinePieces[i];
+            mp.gameObject.SetActive(false);
+            yield return null;
+        }
+
+
+        scoreText.text = "0";
+        finalScoreText.text = "/" + allButtonsInInventory.Length.ToString();
+
 
         btnPlanPanel.SetActive(false);
         btnReplay.SetActive(false);
@@ -326,31 +401,48 @@ public class EpreuveMachineTisser : Epreuve
         btnPlanPanel.SetActive(false);
         btnReplay.SetActive(true);
 
-        for (int i = 0; i < machinePieces.Length; i++)
-        {
-
-            MachinePiece mp = machinePieces[i];
-            mp.gameObject.SetActive(false);
-            yield return null;
-        }
-
-        scoreText.text = "0";
-        finalScoreText.text = "/" + allButtonsInInventory.Length.ToString();
+       
 
 
 
 
-        tissuVladimir.gameObject.SetActive(false);
 
         //Pour afficher le bout de tissu de vladimir dans le dialogue de victoire
+        tissuVladimir.gameObject.SetActive(false);
         for (int i = 0; i < dialoguesVictory.listeDialogueEpreuve.Count; i++)
         {
+            int length = dialoguesVictory.listeDialogueEpreuve[i].repliques.Length-1;
             dialoguesVictory.listeDialogueEpreuve[i].repliques[1].onRepliqueStarted += ShowTissuVladimir;
-            dialoguesVictory.listeDialogueEpreuve[i].repliques[6].onRepliqueEnded += HideTissuVladimir;
+            dialoguesVictory.listeDialogueEpreuve[i].repliques[length].onRepliqueEnded += HideTissuVladimir;
         }
 
         EnableCurColider(0);
     }
+
+    protected override void Update()
+    {
+        base.Update();
+
+
+
+        //Pour éviter le bug qui ferme la boîte à outils et place la pièce au même moment,
+        //ce qui cache le bouton d'ouverture de la boite et empêche de terminer l'épreuve
+        //Démarre le délai dans l'Update pour bloquer le clic de la souris
+
+        if (waitClickTimer < .1f && !allowedToPlacePiece)
+        {
+            waitClickTimer += Time.deltaTime;
+        }
+        else
+        {
+            allowedToPlacePiece = true;
+            waitClickTimer = 0f;
+        }
+    }
+
+
+
+
 
 
     public override void UpdateScoreUI()
@@ -374,54 +466,40 @@ public class EpreuveMachineTisser : Epreuve
         btnPlanPanel.SetActive(true);
         DialogueEpreuveSystem.instance.onDialogueEnded -= OnEpreuveStarted;
 
+
     }
 
 
     //Apelle l'aide
     public override void GiveSolutionToPlayer(int index)
     {
-        //print(index);
+        ResetHelpTimer();
 
-        //A la première aide, on affiche ttes le spièces manquantes en transparent
-        if(index == 0)
+        if (index == 0 || index == 2)
+        {
+            machineSlots[currentPieceIndex].ShowSurbrillance();
+
+        }
+        else if (index == 1 || index == 3)
+        {
+            PlacePieceOnSlot(machinePieces[currentPieceIndex], machineSlots[currentPieceIndex], true);
+        }
+
+
+        //Pour la dernière aide, on met ttes les pièces restantes
+        else
         {
             for (int i = 0; i < machineSlots.Length; i++)
             {
-                if(!machineSlots[i].done)
-                    machineSlots[i].ShowTransparent();
-            }
-        }
+                if (i < currentPieceIndex)
+                    continue;
 
-        //Pour les pièces 2 à 5, on affiche en surbrillance l'endroit où mettre la prochaine pièce
-        else 
-        {
-            if (index == 1 || index == 3)
-            {
-                machineSlots[currentPieceIndex].ShowSurbrillance();
-
-            }
-            else if (index == 2 || index == 4)
-            {
-                PlacePieceOnSlot(machinePieces[currentPieceIndex], machineSlots[currentPieceIndex], true);
+                //print($"{i} {currentPieceIndex}");
+                PlacePieceOnSlot(machinePieces[i], machineSlots[i], true);
+                //On n'augmente pas le currentPieceIndex ici si l'on souhaite afficher le score du joueur / le nombre de pièces qu'il a manquées
             }
 
-
-            //Pour la dernière aide, on met ttes les pièces restantes
-            else
-            {
-                for (int i = 0; i < machineSlots.Length; i++)
-                {
-                    if (i < currentPieceIndex)
-                        continue;
-
-                    //print($"{i} {currentPieceIndex}");
-                    piecesFound = allButtonsInInventory.Length;
-                    PlacePieceOnSlot(machinePieces[i], machineSlots[i], true);
-                    //On n'augmente pas le currentPieceIndex ici si l'on souhaite afficher le score du joueur / le nombre de pièces qu'il a manquées
-                }
-
-                OnEpreuveEnded(true);
-            }
+            OnEpreuveEnded(true);
         }
     }
 

@@ -16,11 +16,29 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+  - text: "Noooooonnn! \xA1Aqu\xED estoy, YO, el Gran Vladimir, en una jaula! \xBFPero
+      c\xF3mo es posible?"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
     mood: 0
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
+  - text: "\xA1Bien hecho Miguel, una reacci\xF3n violenta! Parece que tienes los
+      pies en el tapiz de Vladimir."
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
-    text: ARRRRRRRRRRRRIBAAAA !
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0
+  - text: "\xA1Teje bien qui\xE9n teje el \xFAltimo, guerrero tigre!"
+    backgroundImg: {fileID: 0}
+    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 0
+    arrowOrientation: 0

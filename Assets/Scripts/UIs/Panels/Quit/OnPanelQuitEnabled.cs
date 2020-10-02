@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 //Cette classe est appelée pour afficher les écrans de confirmations quand on quitte la scène ppale ou une épreuve
 

@@ -16,17 +16,8 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "Mi querido Maurizio. Como puede ver, se han agregado patrones odiosos a
-      este tapiz. \xA1Este magn\xEDfico trabajo ha perdido todo su encanto!"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Haz lo que sea necesario para convertirlo de nuevo en el majestuoso tapiz
-      que sol\xEDa ser, por favor."
+  - text: "Mi querido Maurizio. Como puede ver, a este tapiz se han agregado patrones
+      odiosos. \xA1Encu\xE9ntrelos por favor!"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
@@ -50,8 +41,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "No te preocupes Miguel, no puedes ver bien desde esta distancia, tienes
-      que acercarte. \xA1Vayan a trabajar, amigos, abran mucho los ojos!"
+  - text: "No te preocupes Miguel. \xA1Vayan a trabajar, amigos, abran mucho los
+      ojos!"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

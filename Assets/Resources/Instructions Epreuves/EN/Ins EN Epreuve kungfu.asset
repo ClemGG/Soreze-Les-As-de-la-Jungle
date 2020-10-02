@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: Ins EN Epreuve kungfu
   m_EditorClassIdentifier: 
   nomEpreuve: Vladimir's lair
-  instructions: Help Al and Bob swallow all the mosquitoes! Aim with the target, press
-    the button and catch them with their tongues. Make them all disappear and clear
-    the way!
+  instructions: Help Al and Bob swallow all the mosquitoes! Aim with the target,
+    press the button and catch them with their tongues to clear the way!

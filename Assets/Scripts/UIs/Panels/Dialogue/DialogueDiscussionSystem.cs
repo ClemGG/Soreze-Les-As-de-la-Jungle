@@ -1,21 +1,22 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 using static Clement.Utilities.Textures;
+using UnityEngine.XR.ARFoundation;
 
 public class DialogueDiscussionSystem : MonoBehaviour
 {
 
-
+    #region Variables
 
 
     [Space(10)]
     [Header("Scripts & Components : ")]
     [Space(10)]
+
+
 
     public GameObject dialoguePanel;
     public static DialogueDiscussionSystem instance;
@@ -49,6 +50,7 @@ public class DialogueDiscussionSystem : MonoBehaviour
     public Image characterLeftImg;
     public Image characterRightImg;
     public Image backgroundImg;
+    public GameObject previousButton;
 
 
 
@@ -92,6 +94,11 @@ public class DialogueDiscussionSystem : MonoBehaviour
     public Vector2[] allBulleSizes;
 
 
+    #endregion
+
+
+    #region Mono
+
     private void OnLevelWasLoaded(int level)
     {
         onDialogueEnded = null;
@@ -109,11 +116,19 @@ public class DialogueDiscussionSystem : MonoBehaviour
 
         instance = this;
         backgroundImg.material = new Material(blendTextureMaterial);
+
     }
+    #endregion
+
+
+    #region Dialogue
+
 
     // Appelée depuis le script DialogueTrigger, lui-même appelée une fois l'animation show du dialogue se termine
     public void StartDialogue(Dialogue dialogue)
     {
+        previousButton.SetActive(false);
+
         //On initialise les paramètres et on lance la première réplique si le dialogue n'est pas vide
         currentIndex = 0;
         rightHasAppeared = leftHasAppeared = dialogue.done = false;
@@ -121,7 +136,10 @@ public class DialogueDiscussionSystem : MonoBehaviour
         currentDialogue = dialogue;
         if(currentDialogue.repliques.Length == 0 || currentDialogue == null)
         {
+            //Si on quitte un mini-jeu, on repart dans la scène ppale avec un dialogue vide.
+            //Donc on regarde si on a réussi la 1ère oeuvre et on affiche le dialogue de la 1ère oeuvre.
             EndEpreuve();
+
         }
         else
         {
@@ -140,8 +158,12 @@ public class DialogueDiscussionSystem : MonoBehaviour
     public void NextReplique()
     {
 
+
         if (isFading || ScreenTransitionImageEffect.instance.isTransitioning)
             return;
+
+        previousButton.SetActive(true);
+
 
         StopCoroutine(DisplayDialogue());
         currentDialogue.repliques[currentIndex].onRepliqueEnded?.Invoke();
@@ -156,8 +178,31 @@ public class DialogueDiscussionSystem : MonoBehaviour
         {
             //Sinon, on termine le dialogue
             EndEpreuve();
-
         }
+
+    }
+
+
+    //Appelée pour jouer la réplique précédente, si le joueur l'a passé trop vite
+    public void PreviousReplique()
+    {
+
+
+        if (isFading || ScreenTransitionImageEffect.instance.isTransitioning)
+            return;
+
+
+        StopCoroutine(DisplayDialogue());
+
+        //S'il reste des répliques à remonter, on joue la précédente
+        if (currentIndex > 0)
+        {
+            currentIndex--;
+            StartCoroutine(DisplayDialogue());
+        }
+
+        previousButton.SetActive(currentIndex != 0);
+
     }
 
     private void EndEpreuve()
@@ -184,6 +229,7 @@ public class DialogueDiscussionSystem : MonoBehaviour
         {
             firstOeuvreDone = true;
             FindObjectOfType<DialogueTrigger>().PlayNewDialogue(dialogueListFirstOeuvre);
+
         }
         else
         {
@@ -369,9 +415,13 @@ public class DialogueDiscussionSystem : MonoBehaviour
         //On passe ensuite à la réplique suivante
         if (currentDialogue.done && currentDialogue.autoEnd)
         {
-            yield return new WaitForSeconds(currentDialogue.delayAutomaticClosure);
+            WaitForSeconds wait = new WaitForSeconds(currentDialogue.delayAutomaticClosure);
+            yield return wait;
+
             NextReplique();
         }
     }
 
+
+    #endregion
 }

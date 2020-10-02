@@ -16,7 +16,8 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: Okay, I think we've gone around, all the false pattern have been found !
+  - text: Okay, I think we've gone around, all the false pattern have been found
+      !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -41,8 +42,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: Come on friends, we continue, there are still certainly clues in the museum
-      that will allow us to discover where Vladimir is hiding !
+  - text: Come on guys, let's continue !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

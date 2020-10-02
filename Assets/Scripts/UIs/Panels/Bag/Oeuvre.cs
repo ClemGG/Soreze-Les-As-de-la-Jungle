@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 [System.Serializable]
 [CreateAssetMenu(fileName = "new Oeuvre", menuName = "Oeuvre", order = 3)]
 public class Oeuvre : ScriptableObject
 {
+    public int ID;
     public bool unlocked = false;
     public Sprite img;
 

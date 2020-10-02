@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectPooler : MonoBehaviour {
@@ -74,11 +73,14 @@ public class ObjectPooler : MonoBehaviour {
         obj.SetActive(false);
         obj.SetActive(true);
 
-        IPooledObject pooledObj = obj.GetComponent<IPooledObject>();
+        IPooledObject[] pooledObjs = obj.GetComponentsInChildren<IPooledObject>();
 
-        if (pooledObj != null)
+        for (int i = 0; i < pooledObjs.Length; i++)
         {
-            pooledObj.OnObjectSpawn();
+            if (pooledObjs[i] != null)
+            {
+                pooledObjs[i].OnObjectSpawn();
+            }
         }
 
         poolDictionary[tag].Enqueue(obj);

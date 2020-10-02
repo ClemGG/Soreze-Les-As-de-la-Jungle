@@ -15,12 +15,4 @@ MonoBehaviour:
   done: 0
   autoEnd: 1
   delayAutomaticClosure: 1
-  repliques:
-  - text: "Y ese crujiente, \xA1mmm!"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 376714a2bf7239642a4df14b80cc9a28, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
+  repliques: []

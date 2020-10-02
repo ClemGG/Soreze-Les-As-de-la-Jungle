@@ -1,41 +1,47 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using TMPro;
 
 public class EpreuveMixCouleursV2 : Epreuve
 {
+    #region Variables
+
     [Space(10)]
     [Header("Scripts & Components : ")]
     [Space(10)]
 
     [Tooltip("L'animator pour faire bouger le bol")]
     [SerializeField] Animator bolAnim;
+    Coroutine bolAnimCo;
 
 
     [Tooltip("Le script responsable du mélange des couleurs")]
     public ColorCheckerV3 bolResultat;
 
     [Tooltip("Les particules à afficher qd un mélange est réalisé")]
-    public GameObject correctParticle, successParticle, erreurParticle;
+    [SerializeField] GameObject correctParticle, successParticle, erreurParticle;
+
+    [Tooltip("Les traces de peinture de la calebasse à afficher une fois une couleur ajoutée")]
+    [SerializeField] Image[] tracesPeinture;
 
     [Space(10)]
 
     [Tooltip("Le ScriptableObject contenant la liste des combinaisons de couleur à réaliser")]
-    public ColorCombinationScriptableObject allCombinationsSO;
-    public Button validateBtn;
+    [SerializeField] ColorCombinationScriptableObject allCombinationsSO;
+    public Button validateBtn, clearButton;
 
     [Space(10)]
 
-    public Canvas canvasBols;
-    public Canvas canvasEpreuve;
+    [SerializeField] Canvas canvasBols;
+    [SerializeField] Canvas canvasEpreuve;
 
 
     [Space(10)]
 
-    public bool isDragging = false;
-    public bool isAnimating = false;
+    [HideInInspector] public bool isDragging = false;
+    [HideInInspector] public bool isAnimating = false;
 
     [Tooltip("Le point où doivent s'arrêter les bols avant de verser leur couleur")]
     public RectTransform animEndPoint; 
@@ -43,11 +49,17 @@ public class EpreuveMixCouleursV2 : Epreuve
     [Tooltip("Le sprite avant de la calebasse. Utilisé pour afficher correctement les effets de particule")]
     public Canvas calebasseFront;
 
+
+
+
+
+
+
+
     [Space(10)]
     [Header("Colors : ")]
     [Space(10)]
 
-    int currentColorToCreateIndex = 0;
     int curNbOfColorsCreated = 0;
 
     [Space(10)]
@@ -58,14 +70,17 @@ public class EpreuveMixCouleursV2 : Epreuve
     [Space(10)]
 
     [Tooltip("Variable exposée affichant la combinaison actuellement dans le bol.")]
-    public List<ColorID> currentCombination;
+    [HideInInspector] public List<ColorID> currentCombination;
+
+
+
+
 
 
     [Space(10)]
     [Header("Audio : ")]
     [Space(10)]
 
-    public AudioClip bgmClip;
     public AudioClip goodClip;
     public AudioClip errorClip;
     public AudioClip victoryClip;
@@ -74,6 +89,23 @@ public class EpreuveMixCouleursV2 : Epreuve
     public AudioClip verseClip;
     public AudioClip videBolClip;
 
+
+
+
+
+
+
+    [Space(10)]
+    [Header("Anim d'intro : ")]
+    [Space(10)]
+
+    [Tooltip("Les deux bols à déplacer pour remplir la 1ère couleur automatiquement.")]
+    [SerializeField] BolDraggable firstAnimBol;
+    [SerializeField] BolDraggable secondAnimBol;
+    [HideInInspector] public bool stopIntroAnim = false;    //Utilisé pour arrêter les bols une fois l'anim de remplissage lancée
+
+
+    #endregion
 
 
     #region Epreuve avec bols
@@ -100,24 +132,53 @@ public class EpreuveMixCouleursV2 : Epreuve
             validateBtn.interactable = true;
 
         }
+
+
+        //On affiche une nouvelle trace de peinture
+        StartCoroutine(ShowTracesPeintureCo(allCombinationsSO.GetColorFromID(id), currentCombination.Count-1));
     }
 
 
     //Appelée par le bouton reset
     public void ResetColors() 
     {
-        bolAnim.Play("errorV2");
+        bolAnim.Play("a_mix_error");
         validateBtn.interactable = false;
 
         currentCombination.Clear();
         bolResultat.ResetFioleColor();
+
+        //On cache les traces de peinture
+        StopAllCoroutines();
+        StartCoroutine(ShowTracesPeintureCo(Color.clear));
     }
 
 
 
+    //Si on veut faire disparaître les traces, on fait un lerp vers Color.clear
+    //Sinon, le lerp ira de Color.clear (donc transparent) à la couleur de la peinture
+    //S'il n'y a as d'index passé en pramètre, on change toutes les traces
+    private IEnumerator ShowTracesPeintureCo(Color newColor, int index = -1)
+    {
+        
+        float timer = 0f;
 
+        while(timer < 1f)
+        {
+            timer += Time.deltaTime * 1.5f;
 
+            for (int i = 0; i < tracesPeinture.Length; i++)
+            {
+                if (index == -1 || index == i)
+                { 
+                    Color c = tracesPeinture[i].color;
+                    tracesPeinture[i].color = Color.Lerp(c, newColor, timer);
+                }
+            }
 
+            yield return null;
+        }
+    }
 
 
 
@@ -140,7 +201,11 @@ public class EpreuveMixCouleursV2 : Epreuve
 
     }
 
-    Coroutine bolAnimCo;
+
+
+
+
+
     //Appelée par le bouton de mélange
     public void ValidateCombination(bool auto)
     {
@@ -161,7 +226,10 @@ public class EpreuveMixCouleursV2 : Epreuve
                 break;
             }
 
+
         }
+
+        //print(index);
 
         //Si on a un résultat correct, on ajoute la combinaison à la liste des mélanges réalisés
         if (correct && !allColorUIs[index].done)
@@ -175,9 +243,9 @@ public class EpreuveMixCouleursV2 : Epreuve
 
             if (bolAnimCo != null)
                 StopCoroutine(bolAnimCo);
-                bolAnimCo = StartCoroutine(bolResultat.AddColorCo(curCC.colorResult));
-                bolAnim.Play("laineV2");
-            //}
+
+            bolAnimCo = StartCoroutine(bolResultat.AddColorCo(curCC.colorResult));
+            bolAnim.Play("a_mix_correct");
 
             validateBtn.interactable = false;
             currentCombination.Clear();
@@ -211,7 +279,15 @@ public class EpreuveMixCouleursV2 : Epreuve
                 erreurParticle.SetActive(true);
                 ResetColors();
         }
+
+
+        //On cache les traces de peinture
+        StartCoroutine(ShowTracesPeintureCo(Color.clear));
     }
+
+
+
+
 
     //Permet de comparer notre combinaison actuelle avec la liste de tous les mélanges
     private bool ListIsCorrect(List<ColorID> compared, List<ColorID> listToProduce)
@@ -242,6 +318,13 @@ public class EpreuveMixCouleursV2 : Epreuve
 
     }
 
+
+
+
+
+
+
+
     //Vérifie si les conditions de victoire sont réunies
     public void CheckVictory()
     {
@@ -261,7 +344,6 @@ public class EpreuveMixCouleursV2 : Epreuve
         }
 
 
-    //Vérifie si les conditions de victoire sont réunies
     }
 
 
@@ -273,13 +355,6 @@ public class EpreuveMixCouleursV2 : Epreuve
 
 
     #region Epreuves
-
-
-
-    public Color GetColorFromID(ColorID newID)
-    {
-        return allCombinationsSO.GetColorFromID(newID);
-    }
 
 
 
@@ -302,24 +377,108 @@ public class EpreuveMixCouleursV2 : Epreuve
 
     protected override IEnumerator Start()
     {
+
+
+
         //On setup le score et on initialise la combinaison actuelle
 
-
         scoreText.text = "0";
-        finalScoreText.text = $"/{allCombinationsSO.allPossibleCombinations.Length}";
-
-        yield return StartCoroutine(base.Start());
+        finalScoreText.text = $"/{allColorUIs.Length}";
 
         currentCombination = new List<ColorID>();
         validateBtn.interactable = false;
 
+        yield return StartCoroutine(base.Start());
+
+
     }
+
+
+    //Quand on lance l'épreuve, on veut remplir automtiquement la première couleur automatiquement.
+    //Ca permet d'indiquer au joueur ce qu'il doit faire et qu'il peut faire glisser les bols.
+    protected override void OnEpreuveStarted()
+    {
+        base.OnEpreuveStarted();
+        StartCoroutine(FillFirstColorCo());
+    }
+
+
+
+
+
+
+    private IEnumerator FillFirstColorCo()
+    {
+        //Pour l'anim d'intro on déplace chacun des bols un à un vers la calebasse.
+        //Les couleurs seront automatiquement ajoutées au moment du trigger.
+        //On attend que chaque bol soit retourné à son point de départ avant de passer à l'étape suivante.
+        //Une fois les couleurs ajoutées, on valide la combinaison.
+
+        clearButton.interactable = false;
+
+        yield return StartCoroutine(MoveBolToCalebasse(firstAnimBol));
+        yield return StartCoroutine(MoveBolToCalebasse(secondAnimBol));
+
+        //Si le joueur n'a pas appuyé sur le bouton valider pdt l'anim, on peut mélanger
+        if(currentCombination.Count > 1)
+            ValidateCombination(false);
+
+
+        //On débloque ensuite tous les bols
+        BolDraggable[] bols = FindObjectsOfType<BolDraggable>();
+        for (int i = 0; i < bols.Length; i++)
+        {
+            bols[i].introDone = true;
+        }
+
+        clearButton.interactable = true;
+
+
+
+    }
+
+
+    private IEnumerator MoveBolToCalebasse(BolDraggable bol)
+    {
+        bol.introDone = true;
+        stopIntroAnim = false;
+        PointerEventData ped = new PointerEventData(EventSystem.current) { position = bol.transform.position };
+
+        bol.OnBeginDrag(ped);
+        float timer = 0f;
+
+
+
+        while (!stopIntroAnim && timer < 1f)
+        {
+            timer += 1f * Time.deltaTime;
+
+            ped.position = Vector3.Lerp(bol.startPoint, new Vector3(Screen.width, Screen.height, bol.startPoint.z), timer);
+            bol.MoveBolAnim(ped.position);
+            yield return null;
+        }
+
+        bol.OnEndDrag(ped);
+
+
+        //Tant que le bol est en animation, on délaie la fin de la coroutine avant d'enchaîner
+        while (isAnimating)
+        yield return null;
+
+        bol.introDone = false;
+
+    }
+
+
 
 
 
     //Appelle l'aide
     public override void GiveSolutionToPlayer(int index)
     {
+        ResetHelpTimer();
+
+
         //On affiche une tâche de couleur au hasard dans la liste
         if (index < 2)
         {
@@ -361,7 +520,6 @@ public class EpreuveMixCouleursV2 : Epreuve
                 AddColorToMix(colorsToMix[i]);
             }
 
-            curNbOfColorsCreated++;
             ValidateCombination(true);
             CheckVictory();
         }

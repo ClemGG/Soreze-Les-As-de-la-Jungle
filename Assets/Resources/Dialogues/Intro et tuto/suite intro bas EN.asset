@@ -16,9 +16,9 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: The i.PAWN, as I just said, will allow us to analyze the masterpieces and
-      repair them. We have to find the images left by Salvador to find out which
-      pieces have been modified, by pressing this button.
+  - text: The i.PAWN will allow us to analyze the works and repair them. We have
+      to find the images left by Salvador to know which works have been modified.
+      Use this button to scan upholstery and symbols on the ground.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -26,8 +26,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: By pressing this button, we open the Settings menu, very useful in order
-      to activate or not the sound but also to change language.
+  - text: To find out where they are and those you have found, you can consult the
+      museum map here.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -35,27 +35,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: And if you're ever lost, check the museum map on your iPad. You'll be able
-      to find all the tests you've passed and the ones you're missing to find the
-      culprit.
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: As for this button, it allows you to go back to the very beginning of the
-      adventure or to leave a challenge if it is too difficult for you. It will allow
-      you to continue exploring the museum if you feel like it.
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: Well, I think I went around.
+  - text: Finally, this button allows you to quit a challenge if it is ever too difficult
+      for you. You can continue to explore the museum if you feel like it.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -72,18 +53,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: One last thing, if you get stuck, you can always ask my disciple for help.
-      He will be happy to help you, he knows Art almost as much as I do !
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: Besides, as soon as you have successfully completed a challenge, you will
-      be able to access special informations for each masterpiece by clicking on
-      the bag of the great tiger warrior.
+  - text: One last thing, if you ever get stuck, my disciple here will be happy to
+      help you, he knows almost as much about the art as I do!
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}

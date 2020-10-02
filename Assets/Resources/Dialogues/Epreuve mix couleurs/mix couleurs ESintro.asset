@@ -16,25 +16,8 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "Maurizio, \xA1esto es un desastre, UN DESASTRE, una terrible desgracia!"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "No me queda color para restaurar los tapices. \xA1Todas las ollas est\xE1n
-      vac\xEDas! "
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Amigos, si dejo mis notas que contienen las recetas, \xBFpodr\xEDan ayudarme
-      a rehacer los colores?"
+  - text: "\xA1Maurizio, es un desastre ! Ya no tengo ning\xFAn color para restaurar
+      los tapices. \xBFPuedes ayudarme a hacerlo de nuevo?"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
@@ -43,76 +26,6 @@ MonoBehaviour:
     bubbleSize: 0
     arrowOrientation: 0
   - text: "Ciertamente, siempre hay algo en este museo \u2026"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Maurice, tenemos que volver a la fuente del problema ... y algo me dice
-      que nos estamos acercando, las pistas que quedan lo demuestran una vez m\xE1s. "
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "\xA1Mira bien, miles de peque\xF1os rastros de piernas en los bordes de
-      las macetas, en el mismo lugar donde estaban los pigmentos antes de que desaparecieran!"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Pero s\xED, tienes raz\xF3n Gilbert. \xBFQu\xE9 crees que podr\xEDa ser?"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Con huellas tan peque\xF1as, justo alrededor de las macetas, solo puede
-      ser Aedesalbopictus, y m\xE1s precisamente Stegomyia."
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "\xBFDe qu\xE9?"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "\xA1Mosquitos, Mauricio, mosquitos! Ciertamente vinieron a tragarse toda
-      la pintura con su ba\xFAl. Esto explica c\xF3mo todo desapareci\xF3 tan r\xE1pido."
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Ok Gilbert, primero haz lo que Salvador nos pidi\xF3 que hagamos recreando
-      los tonos de colores robados, \xA1luego iremos por el camino de los mosquitos
-      multicolores! "
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Y t\xFA, mi amigo, \xBFcrees que puedes ayudarnos en esta tarea?"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

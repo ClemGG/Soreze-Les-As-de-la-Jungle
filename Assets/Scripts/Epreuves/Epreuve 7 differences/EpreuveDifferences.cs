@@ -1,12 +1,11 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
-using System;
 
 public class EpreuveDifferences : Epreuve
 {
+    #region Variables
+
     [Space(10)]
     [Header("Scripts & Components : ")]
     [Space(10)]
@@ -28,17 +27,21 @@ public class EpreuveDifferences : Epreuve
     [Header("Audio : ")]
     [Space(10)]
 
-    public AudioClip bgmClip;
-    public AudioClip goodClip;
-    public AudioClip errorClip;
-    public AudioClip victoryClip;
-    public AudioClip crayonClip;
+    [SerializeField] AudioClip goodClip;
+    [SerializeField] AudioClip errorClip;
+    [SerializeField] AudioClip victoryClip;
+    [SerializeField] AudioClip crayonClip;
+
+
+    #endregion
+
+
 
 
 
     #region Epreuve
 
-    //Appelée par l'aide
+    //Appelée par l'aide et les différences
     public void HighlightDifferences(int index)
     {
         if (EpreuveFinished)
@@ -57,10 +60,9 @@ public class EpreuveDifferences : Epreuve
         else
         {
             cross.SetActive(false); 
-            ResetHelpTimer();
 
 
-            differences[index].interactable = false; // Lance l'animation qui diminue l'alpha des boutons
+            differences[index].interactable = false; // Lance l'animation qui entoure les boutons
 
             differencesFound++;
             UpdateScoreUI();
@@ -106,10 +108,14 @@ public class EpreuveDifferences : Epreuve
 
     protected override IEnumerator Start()
     {
+
+
+
         //On setup le score et on active le sboutons des différences
         cross.SetActive(false);
         scoreText.text = differencesFound.ToString();
         finalScoreText.text = $" / {differences.Length}";
+
 
         for (int i = 0; i < differences.Length; i++)
         {
@@ -125,6 +131,7 @@ public class EpreuveDifferences : Epreuve
 
 
     }
+
 
 
     public override void GiveSolutionToPlayer(int index)
@@ -151,8 +158,9 @@ public class EpreuveDifferences : Epreuve
                 if (differences[i].interactable)
                 {
                     HighlightDifferences(i);
+                    ResetHelpTimer();
 
-                    if(index == 2)
+                    if (index == 2)
                         break;
                 }
             }

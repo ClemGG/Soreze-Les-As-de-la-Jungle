@@ -27,7 +27,7 @@ MonoBehaviour:
     arrowOrientation: 0
   - text: "MAUDITS AS DE LA JUNGLE ! Vous avez peut-\xEAtre r\xE9ussi \xE0 m\u2019emp\xEAcher
       de finaliser mon chef d\u2019oeuvre, mais vous ne m\u2019arr\xEAterez jamais
-      ! Mouhahaha ! Fuyons\u2026FUYONS !!! Mais avec panache ! "
+      !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
     clip: {fileID: 0}

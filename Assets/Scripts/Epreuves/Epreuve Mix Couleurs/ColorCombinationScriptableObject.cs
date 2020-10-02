@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Color Combination", menuName = "Color Combination")]
 public class ColorCombinationScriptableObject : ScriptableObject
 {
     public ColorCombination[] allPossibleCombinations;
-
+    public ColorAndID[] colorAndIDs;
 
 
 
@@ -24,25 +22,27 @@ public class ColorCombinationScriptableObject : ScriptableObject
         return null;
     }
 
+
+
+
+
+    //Utilisée pour colorier les traces de la calebasse
     public Color GetColorFromID(ColorID newID)
     {
         if (newID == ColorID.Null)
-            return Color.white;
+            return Color.clear;
 
-
-        foreach (ColorCombination cc in allPossibleCombinations)
+        for (int i = 0; i < colorAndIDs.Length; i++)
         {
-            if (cc.colorsToMix.Count == 1)
+            if (colorAndIDs[i].id == newID)
             {
-                if (cc.colorsToMix[0] == newID)
-                {
-                    return cc.colorResult;
-                }
+                return colorAndIDs[i].color;
             }
         }
 
-        return Color.white; //Renvoie du blanc en cas d'erreur
+        return Color.clear; //Renvoie du blanc en cas d'erreur
     }
+
 
 
 
@@ -54,22 +54,22 @@ public class ColorCombinationScriptableObject : ScriptableObject
 
         List<ColorCombination> allDuplicates = new List<ColorCombination>();
 
-        foreach (ColorCombination cc in allPossibleCombinations)
+        for (int i = 0; i < allPossibleCombinations.Length; i++)
         {
-            if (cc.colorResultID == idToReach)
-                allDuplicates.Add(cc);
+            if (allPossibleCombinations[i].colorResultID == idToReach)
+                allDuplicates.Add(allPossibleCombinations[i]);
         }
         if (allDuplicates.Count > 0)
         {
-            foreach (ColorCombination cc in allDuplicates)
+            for (int i = 0; i < allPossibleCombinations.Length; i++)
             {
-                cc.colorsToMix.Sort();
+                allPossibleCombinations[i].colorsToMix.Sort();
 
                 bool correct = true;
 
-                for (int i = 0; i < cc.colorsToMix.Count; i++)
+                for (int j = 0; j < allPossibleCombinations[i].colorsToMix.Count; i++)
                 {
-                    if (cc.colorsToMix[i] != list[i])
+                    if (allPossibleCombinations[i].colorsToMix[j] != list[i])
                     {
                         correct = false;
                         break;
@@ -97,21 +97,21 @@ public class ColorCombinationScriptableObject : ScriptableObject
 
         List<ColorCombination> allDuplicates = new List<ColorCombination>();
 
-        foreach (ColorCombination cc in allPossibleCombinations)
+        for (int i = 0; i < allPossibleCombinations.Length; i++)
         {
-            if (cc.colorResult == colorToReach.colorResult)
-                allDuplicates.Add(cc);
+            if (allPossibleCombinations[i].colorResult == colorToReach.colorResult)
+                allDuplicates.Add(allPossibleCombinations[i]);
         }
 
         if (allDuplicates.Count > 0)
         {
-            foreach (ColorCombination cc in allDuplicates)
+            for (int i = 0; i < allDuplicates.Count; i++)
             {
-                cc.colorsToMix.Sort();
+                allDuplicates[i].colorsToMix.Sort();
 
-                if (cc.colorsToMix == list)
+                if (allDuplicates[i].colorsToMix == list)
                 {
-                    return cc.colorResult;
+                    return allDuplicates[i].colorResult;
                 }
             }
         }
@@ -121,40 +121,12 @@ public class ColorCombinationScriptableObject : ScriptableObject
 
 
 
-    //public Color AverageColors(List<ColorID> list, Color currentColor)
-    //{
-    //    Color lastColor = Color.white;
 
-    //    for (int i = 0; i < list.Count; i++)
-    //    {
-    //        switch (list[i])
-    //        {
-    //            case ColorID.Rouge:
-    //                currentColor = i == 0 ? Color.red : currentColor.LerpColor(lastColor, Color.red);
-    //                break;
+}
 
-    //            case ColorID.Vert:
-    //                currentColor = i == 0 ? Color.yellow : currentColor.LerpColor(lastColor, Color.yellow);
-    //                break;
-
-    //            case ColorID.Bleu:
-    //                currentColor = i == 0 ? Color.blue : currentColor.LerpColor(lastColor, Color.blue);
-    //                break;
-
-    //            case ColorID.Noir:
-    //                currentColor = i == 0 ? Color.black : new Color(currentColor.r - .33f, currentColor.g - .33f, currentColor.b - .33f);
-    //                break;
-
-    //            case ColorID.Blanc:
-    //                currentColor = i == 0 ? Color.white : new Color(currentColor.r + .33f, currentColor.g + .33f, currentColor.b + .33f);
-    //                break;
-    //        }
-
-    //        lastColor = currentColor;
-    //    }
-
-
-    //    return currentColor;
-    //}
-
+[System.Serializable]
+public struct ColorAndID
+{
+    public ColorID id;
+    public Color color;
 }

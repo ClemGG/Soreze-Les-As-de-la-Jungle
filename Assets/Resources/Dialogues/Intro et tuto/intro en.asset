@@ -17,61 +17,42 @@ MonoBehaviour:
   delayAutomaticClosure: 0
   repliques:
   - text: Hey, hi Salvador! What brings you around?
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 1
     bubbleSize: 1
     arrowOrientation: 1
-  - text: Ah, Maurizio, I'm glad to see you!
+  - text: "Maurizio! It is a disaster ! The Dom Robert museum is in great danger!
+      Our works have been vandalized ... You must do something r\xE1pido por favor!"
+    backgroundImg: {fileID: 21300000, guid: cb594fe1c09f4544090c1746dbc98e52, type: 3}
+    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
+    clip: {fileID: 0}
+    mood: 1
+    side: 0
+    bubbleSize: 1
+    arrowOrientation: 1
+  - text: "Don\u2019t worry Salvador, we\u2019ll take care of it. \nWill you tell
+      us a little more?"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 1
+    bubbleSize: 0
+    arrowOrientation: 1
+  - text: Thanks Jungle Bunch! I marked you the locations of the interactions on
+      the map of the museum with your image Maurizio.
     backgroundImg: {fileID: 21300000, guid: cb594fe1c09f4544090c1746dbc98e52, type: 3}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
     mood: 5
     side: 0
-    bubbleSize: 1
-    arrowOrientation: 0
-  - text: "It's a disaster ! It\u2019s a terrible misfortune! The Dom Robert museum
-      is in great danger! Everything is upside down! "
-    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 1
-    side: 0
-    bubbleSize: 1
-    arrowOrientation: 0
-  - text: Maurizio, you have to do something fast ... We can't leave the museum like
-      that for the public! It is not possible ! Masterpieces have been vandalized,
-      everything is in disorder, you must help me, por favor!
-    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 1
-    side: 0
     bubbleSize: 0
     arrowOrientation: 1
-  - text: "Don\u2019t worry Salvador, we\u2019ll take care of it. You're right, this
-      beautiful museum does not deserve this! \n\nWill you tell us a little more?"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 1
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Thank you so much Jungle Bunch ! \nTo help you, let me tell you about
-      the magnificent works that have been vandalized! I marked the locations of
-      the interactions on the museum map with an image of Maurizio."
-    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 5
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
   - text: Thank you Salvador, we now know where to start our investigation.
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
@@ -81,24 +62,15 @@ MonoBehaviour:
   - text: "Ah Maurice! This is the perfect opportunity to present my latest invention:
       the Interpretor Pad for an Advanced Wild Nature, or more simply... \n\n<size=120><color=#ffca00>
       The i.PAWN ! </color></size>"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
     mood: 6
     side: 0
     bubbleSize: 0
     arrowOrientation: 1
-  - text: With this tool, we will be able to scan the pieces directly and highlight
-      any problems.
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 1
-    arrowOrientation: 1
   - text: Blop blop.
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 3e60fbedcc082a246b3fb706a2e8ddc8, type: 2}
     clip: {fileID: 0}
     mood: 2
@@ -106,19 +78,10 @@ MonoBehaviour:
     bubbleSize: 1
     arrowOrientation: 1
   - text: "Indeed Junior, it's a tablet ! But much more elaborated\u2026"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 1
-    bubbleSize: 1
-    arrowOrientation: 1
-  - text: Oh Gilbert, what a wonderful invention! But, tell us, how does it work
-      ?
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
-    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
     bubbleSize: 1
     arrowOrientation: 1

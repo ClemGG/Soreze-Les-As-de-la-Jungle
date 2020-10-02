@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 
 
@@ -15,19 +13,9 @@ public class MainSceneDialogueList : MonoBehaviour
     [Tooltip("Le dialogue à jouer une fois arrivé sur la scène principale.")]
     public DialogueList newDialogueDiscussionList;
 
-    public static MainSceneDialogueList instance;
 
-
-    //Singleton
     private void Awake()
     {
-        if (instance)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        instance = this;
         DontDestroyOnLoad(gameObject);
 
     }
@@ -36,21 +24,11 @@ public class MainSceneDialogueList : MonoBehaviour
     //Lance le dialogue au retour sur la scène ppale
     private void OnLevelWasLoaded(int level)
     {
-        //Si on passe l'intro, on se débarrasse de ce script. Sinon on joue le dialogue
+
+
         if (level == 1)
         {
-            if (!FindObjectOfType<AnimIntro>().bypassIntro)
-            {
-                StartCoroutine(ReplaceDialogueTrigger());
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-        }
-        else
-        {
-            Destroy(gameObject);
+            StartCoroutine(ReplaceDialogueTrigger());
         }
 
     }

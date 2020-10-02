@@ -34,16 +34,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "D\xE9sol\xE9 Miguel, mais on n\u2019avait pas le choix !"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 2
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
   - text: "Continuons la visite du mus\xE9e \xE0 la recherche du prochain symbole
-      ! Tu viens avec nous ?"
+      !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
     clip: {fileID: 0}

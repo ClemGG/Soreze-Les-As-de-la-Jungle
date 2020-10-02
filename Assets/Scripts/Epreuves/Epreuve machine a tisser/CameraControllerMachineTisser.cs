@@ -1,17 +1,200 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraControllerMachineTisser : MonoBehaviour
 {
+
+
+    #region Variables
+
     EpreuveMachineTisser epreuve;
+
+
+    [Space(10)]
+    [Header("Piece : ")]
+    [Space(10)]
+
+    public LayerMask pieceAndSlotMask;
+    Camera mainCam;
+    [HideInInspector] public Transform piecePosOnThisCam;
+
+    [HideInInspector] public MachinePiece currentPiece;
+    MachineSlot lastSlot;
+
+    #endregion
+
+
+
+
+    #region Mono
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        epreuve = (EpreuveMachineTisser)Epreuve.instance;
+        mainCam = GetComponent<Camera>();
+        piecePosOnThisCam = mainCam.transform.GetChild(0);
+
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+        originalRotation = transform.localRotation; //la rotation de depart est la rotation locale du transform
+#endif
+    }
+
+
+    void Update()
+    {
+        if (!epreuve.EpreuveFinished)
+        {
+#if UNITY_EDITOR || UNITY_STANDALONE
+            RotateCamera();
+            MoveCamera();
+
+
+            //Pour s'assurer qu'on ne peut ajouter la pièce qu'en cliquant au centre de l'écran.
+            //Ca évitera de faire disparaître le btn de la boîte à outils
+            Vector2 clickPoint = mainCam.ScreenToViewportPoint(Input.mousePosition);
+            if (Input.GetMouseButtonDown(0) && Vector2.Distance(clickPoint, Vector2.one/2f) < .2f && epreuve.allowedToPlacePiece)
+            {
+                GetPiece();
+            }
+#else
+            if(Input.touchCount == 1)
+            {
+                Vector2 clickPoint = mainCam.ScreenToViewportPoint(Input.GetTouch(0).position);
+                if (Input.GetTouch(0).phase == TouchPhase.Began &&
+                    Vector2.Distance(clickPoint, Vector2.one/2f) < .2f &&
+                    epreuve.allowedToPlacePiece)
+                {
+                    GetPiece();
+                }
+            }
+#endif
+
+
+
+        }
+    }
+
+    public void FixedUpdate()
+    {
+
+        //Si la boîte à outils est ouverte, on empêche le placement des pièces
+        if (epreuve.planPanel.activeSelf)
+            return;
+
+
+        if (Raycast(out RaycastHit hit))
+        {
+            //Debug.Log("touché", gameObject);
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("slot"))
+            {
+
+                MachineSlot slotHit = hit.collider.GetComponent<MachineSlot>();
+                lastSlot = slotHit;
+
+                if (currentPiece)
+                {
+
+                    if (IndexesMatch(hit))
+                    {
+                        slotHit.ShowSurbrillance();
+                    }
+                    else if(!slotHit.done)
+                    {
+                        slotHit.ShowTransparent();
+                        slotHit.isInSurbrillance = false;
+                    }
+                }
+                else if (!slotHit.done)
+                {
+                    slotHit.ShowTransparent();
+                    slotHit.isInSurbrillance = false;
+                }
+            }
+
+
+
+        }
+        else if (lastSlot && !lastSlot.done)
+        {
+            lastSlot.ShowTransparent();
+            lastSlot.isInSurbrillance = false;
+            lastSlot = null;
+        }
+    }
+
+    #endregion
+
+
+
+
+
+
+    #region Machine
+
+    public void GetPiece()
+    {
+
+        //Si la boîte à outils est ouverte, on empêche le placement des pièces
+        if (epreuve.planPanel.activeSelf)
+            return;
+
+        if (Raycast(out RaycastHit hit))
+        {
+            //Debug.Log("touché", gameObject);
+
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("slot"))
+            {
+
+                if (currentPiece)
+                {
+
+                    if (IndexesMatch(hit))
+                    {
+                        epreuve.PlacePieceOnSlot(currentPiece, epreuve.machineSlots[currentPiece.slotIndex], true);
+                    }
+                    else
+                    {
+                        epreuve.ShowDialogueBadAnswer();
+                        AudioManager.instance.Play(epreuve.errorClip);
+
+                    }
+                }
+            }
+
+
+
+        }
+    }
+
+
+    private bool IndexesMatch(RaycastHit hit)
+    {
+        MachineSlot mp = hit.collider.gameObject.GetComponent<MachineSlot>();
+        return mp.slotIndex == currentPiece.slotIndex && currentPiece.slotIndex == epreuve.currentPieceIndex;
+    }
+    private bool Raycast(out RaycastHit hit)
+    {
+        Ray ray = mainCam.ViewportPointToRay(Vector3.one / 2f);
+        return Physics.Raycast(ray, out hit, pieceAndSlotMask);
+    }
+
+    #endregion
+
+
+
+
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+
+    #region Variables
 
     [Space(10)]
     [Header("Movement : ")]
     [Space(10)]
 
     [SerializeField] float vitesseDeplacement = 10f;
-    float temp = 0f;
 
 
     [Space]
@@ -30,61 +213,7 @@ public class CameraControllerMachineTisser : MonoBehaviour
     Quaternion originalRotation; //Quaternion contenant la rotation de départ
 
 
-    [Space(10)]
-    [Header("Piece : ")]
-    [Space(10)]
-
-    public LayerMask pieceAndSlotMask;
-    Camera mainCam;
-    [HideInInspector] public Transform piecePosOnThisCam;
-
-    [HideInInspector] public MachinePiece currentPiece;
-    RaycastHit hit;
-
-
-
-
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        epreuve = (EpreuveMachineTisser)Epreuve.instance;
-        mainCam = GetComponent<Camera>();
-        piecePosOnThisCam = mainCam.transform.GetChild(0);
-
-        originalRotation = transform.localRotation; //la rotation de depart est la rotation locale du transform
-        temp = vitesseDeplacement;
-    }
-
-
-    void Update()
-    {
-        if (!epreuve.EpreuveFinished)
-        {
-#if UNITY_EDITOR
-            RotateCamera();
-            MoveCamera();
-#endif
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                GetPiece();
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-
-
+    #endregion
 
     private void RotateCamera()
     {
@@ -120,77 +249,8 @@ public class CameraControllerMachineTisser : MonoBehaviour
         return Mathf.Clamp(angle, min, max);
     }
 
+#endif
 
 
 
-    public void GetPiece()
-    {
-
-        if (Raycast())
-        {
-            //Debug.Log("touché", gameObject);
-
-            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("slot"))
-            {
-
-                if (currentPiece)
-                {
-
-                    if (IndexesMatch(hit) && currentPiece.slotIndex == epreuve.currentPieceIndex)
-                    {
-                        epreuve.PlacePieceOnSlot(currentPiece, epreuve.machineSlots[currentPiece.slotIndex], true);
-                    }
-                    else
-                    {
-                        epreuve.ShowDialogueBadAnswer();
-                        AudioManager.instance.Play(epreuve.errorClip);
-
-                        //currentPiece.transform.parent = currentPiece.originalParent;
-                        //currentPiece.transform.position = currentPiece.startPos;
-                        //currentPiece.transform.eulerAngles = currentPiece.startEuler;
-                    }
-                }
-            }
-            //else if (hit.collider.gameObject.layer == LayerMask.NameToLayer("piece"))
-            //{
-            //    MachinePiece mp = hit.collider.gameObject.GetComponent<MachinePiece>();
-
-            //    if (currentPiece)
-            //    {
-            //        currentPiece.transform.parent = currentPiece.originalParent;
-            //        currentPiece.transform.position = currentPiece.startPos;
-            //        currentPiece.transform.eulerAngles = currentPiece.startEuler;
-
-            //        mp.transform.position = piecePosOnThisCam.position;
-            //        mp.transform.eulerAngles = piecePosOnThisCam.eulerAngles;
-            //        mp.transform.parent = piecePosOnThisCam;
-
-            //        currentPiece = mp;
-            //    }
-            //    else
-            //    {
-            //        mp.transform.position = piecePosOnThisCam.position;
-            //        mp.transform.eulerAngles = piecePosOnThisCam.eulerAngles;
-            //        mp.transform.parent = piecePosOnThisCam;
-
-            //        currentPiece = mp;
-            //    }
-            //}
-
-
-
-        }
-    }
-
-
-    private bool IndexesMatch(RaycastHit hit)
-    {
-        MachineSlot mp = hit.collider.gameObject.GetComponent<MachineSlot>();
-        return mp.slotIndex == currentPiece.slotIndex;
-    }
-    private bool Raycast()
-    {
-        Ray ray = mainCam.ViewportPointToRay(Vector3.one / 2f);
-        return Physics.Raycast(ray, out hit, pieceAndSlotMask);
-    }
 }

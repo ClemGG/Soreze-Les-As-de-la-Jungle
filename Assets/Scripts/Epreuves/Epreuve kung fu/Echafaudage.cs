@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Echafaudage : Enemy
@@ -14,15 +13,7 @@ public class Echafaudage : Enemy
     public int nbLives = 3;
     public bool isDead;
 
-    protected override IEnumerator ChangeDirection()
-    {
-        yield break;
-    }
 
-    protected override void MoveTowardsWeakPoint()
-    {
-        
-    }
 
 
     //Marche aussi pour mobile
@@ -31,9 +22,11 @@ public class Echafaudage : Enemy
         DestroyThisEnemy();
     }
 
+
+
     public override void DestroyThisEnemy()
     {
-        if (epreuve.EpreuveFinished)
+        if (epreuve.EpreuveFinished || isDead)
             return;
 
         nbLives--;
@@ -48,8 +41,8 @@ public class Echafaudage : Enemy
             AudioManager.instance.Play(epreuve.bambousClip);
 
             isDead = true;
-            epreuve.CheckVictory();
             base.DestroyThisEnemy();
+            epreuve.CheckVictory();
 
         }
         else

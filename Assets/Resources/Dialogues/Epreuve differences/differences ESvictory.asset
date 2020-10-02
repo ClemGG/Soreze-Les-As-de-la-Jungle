@@ -42,8 +42,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Vamos amigos, continuamos, \xA1todav\xEDa hay pistas en el museo que nos
-      permitir\xE1n descubrir d\xF3nde se esconde Vladimir!"
+  - text: Vamos amigos, continuamos.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

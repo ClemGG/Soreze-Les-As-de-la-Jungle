@@ -9,8 +9,12 @@
             "value": "La megalomanía del tapiz"
         },
         {
-            "key": "lancer la partie",
-            "value": "Comienza el juego"
+            "key": "nouvelle partie",
+            "value": "Nuevo juego"
+        },
+        {
+            "key": "reprendre partie",
+            "value": "Reanudar el juego"
         },
         {
             "key": "parametres",
@@ -207,6 +211,46 @@
         {
             "key": "piliers détruits",
             "value": "piliers détruits"
+        },
+        {
+            "key": "machine_outil1",
+            "value": "Pies"
+        },
+        {
+            "key": "machine_outil2",
+            "value": "Soportes de tensión"
+        },
+        {
+            "key": "machine_outil3",
+            "value": "Banco"
+        },
+        {
+            "key": "machine_outil4",
+            "value": "Gemelos"
+        },
+        {
+            "key": "machine_outil5",
+            "value": "Tablero"
+        },
+        {
+            "key": "machine_outil6",
+            "value": "Rodillos"
+        },
+        {
+            "key": "machine_outil7",
+            "value": "Diapositiva"
+        },
+        {
+            "key": "machine_outil8",
+            "value": "Pedal"
+        },
+        {
+            "key": "machine_outil9",
+            "value": "Ruedas dentadas"
+        },
+        {
+            "key": "machine_outil10",
+            "value": "Vides"
         }
     ]
 }

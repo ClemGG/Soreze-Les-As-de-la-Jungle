@@ -16,7 +16,7 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "Tienes que encontrar la representaci\xF3n de un coral rojo."
+  - text: "Tienes que encontrar la representaci\xF3n de un \"Corail rouge\"."
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -24,7 +24,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Y ahora encuentra una Gorgona p\xFArpura."
+  - text: Y ahora encuentra una "Gorgone pourpre".
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -32,7 +32,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: Ahora necesitamos una estrella de mar roja ...
+  - text: Ahora necesitamos una "Etoile de mer rouge" ...
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Luego una Pagure en una an\xE9mona de manto ..."
+  - text: "Luego una \"Bernard-l'hermite\" en una \"an\xE9mone manteau\" ..."
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Encuentra un camar\xF3n rosado ..."
+  - text: Encuentra un "Crevette rose" ...
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -56,7 +56,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Ahora tenemos que encontrar un pez le\xF3n marr\xF3n ..."
+  - text: Ahora tenemos que encontrar un "Rascasse brune" ...
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "\xBFPuedes encontrar un pepino de mar ...?"
+  - text: "\xBFPuedes encontrar un \"Concombre de mer\" ?"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -72,7 +72,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: Y un gusano tubico ...?
+  - text: "\xBFY un \"Ver de mer annelide\" ?"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -80,8 +80,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "\xA1Vamos, m\xE1s de dos! Esta vez, necesitas un cangrejo en una an\xE9mona
-      par\xE1sita ..."
+  - text: "\xA1Vamos, m\xE1s de dos! Esta vez, necesitas un \"Crabe\" en una \"anemone
+      parasite\" ... ..."
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -89,7 +89,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Y finalmente, \xA1encuentra a Blennie ocelada!"
+  - text: "Y finalmente, \xA1encuentra a \"Poisson de roche\"!"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

@@ -1,24 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-//public enum ColorID
-//{
-//    Null = -1,
-//    Magenta = 0,
-//    Jaune = 1,
-//    Cyan = 2,
-//    Noir = 3,
-//    Blanc = 4,
-//    Rouge = 5,
-//    Vert = 6,
-//    Bleu = 7,
-//    Violet = 8,
-//    Orange = 10,
-//    Saumon = 11,
-//    Gris = 12,
-//    JauneClair = 13,
-//};
 
 public enum ColorID
 {

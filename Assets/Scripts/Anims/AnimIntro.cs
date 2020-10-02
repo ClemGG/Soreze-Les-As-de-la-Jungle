@@ -1,11 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.XR.ARFoundation;
 
 public class AnimIntro : MonoBehaviour
 {
+    #region Variables
+
+
+
     [Tooltip("Permet de passer l'intro pour les tests.")]
     public bool bypassIntro = false;
 
@@ -38,12 +41,12 @@ public class AnimIntro : MonoBehaviour
 
     [Tooltip("Le son de la cinématique à arrêter.")]
     [SerializeField] GameObject ambientJungleAudioSource;
-    [Tooltip("Le son de la cinématique à arrêter.")]
-    [SerializeField] AudioClip rescousseClip;
 
     //Les systèmes de dialogue
     DialogueDiscussionSystem dd;
     DialogueEpreuveSystem de;
+
+    #endregion
 
 
     private IEnumerator Start()
@@ -53,7 +56,7 @@ public class AnimIntro : MonoBehaviour
         if (bypassIntro)
         {
             MainSceneButtons.instance.introDone = true;
-            HelpPanelButtons.instance.btnCameleon.gameObject.SetActive(false);
+            HelpPanelButtons.instance.cameleon.SetActive(false);
 
             //On récupère les systèmes de dialogue de cette façon car leurs panels seront désacivés au lancement de la scène ppale.
             //Cette fonction est le seul moyen de les retrouver par script
@@ -75,7 +78,7 @@ public class AnimIntro : MonoBehaviour
 
         //On active le caméléon pour le tuto si on ne passe pas l'intro
         if (!MainSceneButtons.instance.introDone)
-            HelpPanelButtons.instance.btnCameleon.gameObject.SetActive(true);
+            HelpPanelButtons.instance.cameleon.SetActive(true);
 
 
         //On active le panel de la cinématique et on cache les icônes du tuto
@@ -115,6 +118,10 @@ public class AnimIntro : MonoBehaviour
 
 
 
+
+
+
+
     //Appelée une fois le dialogue en bas de l'écran lancé pour activer une des icônes du tuto à chaque clic.
     //On assigne chaque icône à une réplique quiva se charger d'appeler la fonction DisplayNextTutoObject() une fois lue
     private IEnumerator WaitFadeCo()
@@ -122,9 +129,10 @@ public class AnimIntro : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         tutoDialogueTrigger.dialogueType = DialogueTrigger.DialogueType.Epreuve;
 
-        foreach (Dialogue d in tutoDialogueList.listeDialogueEpreuve)
+        for (int i = 0; i < tutoDialogueList.listeDialogueEpreuve.Count; i++)
         {
-            d.repliques[0].onRepliqueStarted += DisplayNextTutoObject;
+            tutoDialogueList.listeDialogueEpreuve[i].repliques[0].onRepliqueStarted += DisplayNextTutoObject;
+            yield return null;
         }
 
         tutoDialogueTrigger.PlayNewDialogue(tutoDialogueList);
@@ -161,9 +169,9 @@ public class AnimIntro : MonoBehaviour
     //Appelée à la fin du dialogue tuto pour jouer la 2ème discussion en plein écran
     private void PlayNextDiscussion()
     {
-        foreach (Dialogue d in tutoDialogueList.listeDialogueEpreuve)
+        for (int i = 0; i < tutoDialogueList.listeDialogueEpreuve.Count; i++)
         {
-            d.repliques[0].onRepliqueStarted -= DisplayNextTutoObject;
+            tutoDialogueList.listeDialogueEpreuve[i].repliques[0].onRepliqueStarted -= DisplayNextTutoObject;
         }
 
         StartCoroutine(WaitFade2Co());
@@ -202,7 +210,7 @@ public class AnimIntro : MonoBehaviour
         MainSceneButtons.instance.introDone = true;
 
         //On cache le caméléon pour ne l'afficher que dans les épreuves
-        HelpPanelButtons.instance.btnCameleon.gameObject.SetActive(false);
+        HelpPanelButtons.instance.cameleon.SetActive(false);
 
         panelIntro.SetActive(false);
         dd = DialogueDiscussionSystem.instance;

@@ -16,9 +16,10 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "L\u2019i.PATTE, comme je viens de le dire, va nous permettre d\u2019analyser
-      les oeuvres et de les r\xE9parer. Nous devons trouver les images laiss\xE9s
-      par Salvador pour savoir quelles oeuvres scanner, en appuyant sur ce bouton."
+  - text: "L\u2019i.PATTE va nous permettre d\u2019analyser les oeuvres et de les
+      r\xE9parer. Nous devons trouver les images laiss\xE9s par Salvador pour savoir
+      quelles oeuvres ont \xE9t\xE9 modifi\xE9es. Utilise ce bouton pour scanner
+      les tapissseries et syboles au sol. "
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -26,8 +27,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "En appuyant sur ce bouton, nous ouvrons le menu param\xE8tres, tr\xE8s
-      utile pour activer ou non le son mais aussi choisir une langue."
+  - text: "Pour savoir o\xF9 elles se trouvent et celles que tu as retrouv\xE9es,
+      tu peux consulter le plan du mus\xE9e ici."
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -35,9 +36,8 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Et si jamais tu es perdu, consulte le plan du mus\xE9e sur ton iPatte.
-      Tu pourras y retrouver toutes les \xE9preuves que tu as r\xE9ussies et celles
-      qui te manquent pour retrouver le coupable."
+  - text: "Enfin, ce bouton permet de quitter un d\xE9fi si jamais il est trop difficile
+      pour toi. Tu pourras continuer d'explorer le mus\xE9e si tu en as envie."
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -45,25 +45,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Quant \xE0 ce bouton, il permet de revenir au tout d\xE9but de l\u2019aventure
-      ou de quitter un d\xE9fi si jamais elle est trop difficile pour toi. Ca te
-      pemettra de continuer d'explorer le mu\xE9e si tu en as envie."
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: ... Bon, je crois que j'ai fait le tour.
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "OK Gilbert, c\u2019est cool, on va tester \xE7a. Identifions une oeuvre
+  - text: "OK Gilbert, c\u2019est super, on va tester \xE7a. Identifions une oeuvre
       et voyons si \xE7a marche. "
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
@@ -72,19 +54,9 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Ah et une derni\xE8re chose, si jamais vous \xEAtes bloqu\xE9s, vous pouvez
-      toujours demander de l\u2019aide \xE0 mon disciple. Il se fera une joie de
-      vous aider, il s\u2019y conna\xEEt presque autant que moi en art !"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "D\u2019ailleurs, d\xE8s que vous aurez r\xE9ussi un d\xE9fi, vous aurez
-      acc\xE8s \xE0 une fiche d\u2019oeuvre, en cliquant sur la sacoche du grand
-      guerrier-tigre."
+  - text: "Une derni\xE8re chose, si jamais vous \xEAtes bloqu\xE9s, vous pouvez
+      toujours demander de l\u2019aide \xE0 mon disciple, il s\u2019y conna\xEEt
+      presque autant que moi en art !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}

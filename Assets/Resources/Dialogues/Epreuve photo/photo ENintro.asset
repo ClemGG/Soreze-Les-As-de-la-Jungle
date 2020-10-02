@@ -16,10 +16,10 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: Well, now that we have solved Salvador's problem and calm has returned in
-      Dom Robert's Museum, how about keeping a memory of our adventure ? Shall we
-      take a small group photo ?
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+  - text: Well, now that we have solved Salvador's problem and calm has returned
+      in Dom Robert's Museum, how about keeping a memory of our adventure ? Shall
+      we take a small group photo ?
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     bubbleSize: 0
     arrowOrientation: 0
   - text: Oh yes, a picture, Miguel loving pictures !
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
     clip: {fileID: 0}
     mood: 0
@@ -35,7 +35,7 @@ MonoBehaviour:
     bubbleSize: 1
     arrowOrientation: 0
   - text: "Uh Maurice\u2026. I did not design the i.PAWN to serve as a vulgar camera\u2026"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
     mood: 1
@@ -44,24 +44,33 @@ MonoBehaviour:
     arrowOrientation: 1
   - text: Ohhh Gilbert, don't be a killjoy, it's fun to take a picture, especially
       with our friend who helped us so much !
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 0
     bubbleSize: 1
     arrowOrientation: 1
-  - text: 'Okay ... but it''s really because you insist on Batricia. '
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+  - text: 'Okay ... but it''s really because you insist, Batricia. '
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 1
     bubbleSize: 1
     arrowOrientation: 1
+  - text: Let's go back to the start of the route, uneder the arcades, the panorama
+      will be pretty!
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
+    clip: {fileID: 0}
+    mood: 0
+    side: 0
+    bubbleSize: 2
+    arrowOrientation: 1
   - text: Come on friends, we strike a pose !
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
+    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 6
     side: 0

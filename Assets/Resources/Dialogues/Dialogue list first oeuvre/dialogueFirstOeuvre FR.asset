@@ -20,7 +20,7 @@ MonoBehaviour:
       tu viens de sauver ! Va dans la sacoche du grand guerrier-tigre, pour consulter
       ta premi\xE8re fiche oeuvre. Continue l\u2019aventure pour en d\xE9bloquer
       d\u2019autres et en apprendre plus sur l\u2019art !"
-    backgroundImg: {fileID: 21300000, guid: 63bc4a90e993306479573485c979dce5, type: 3}
+    backgroundImg: {fileID: 21300000, guid: cb594fe1c09f4544090c1746dbc98e52, type: 3}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
     mood: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     arrowOrientation: 0
   - text: "Merci Salvador, on ira voir \xE7a, m\xEAme si l\u2019art qu\u2019on pr\xE9f\xE8re
       nous\u2026 c\u2019est l\u2019art martial ! Banza\xEFiii !"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0

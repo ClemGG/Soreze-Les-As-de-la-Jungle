@@ -1,19 +1,36 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Moustique : Enemy, IPooledObject
 {
 
+    #region Variables
+
 
     [Space(10)]
-    [Header("IA : ")]
+    [Header("Scripts & Components : ")]
     [Space(10)]
 
-    public LayerMask wallMask;
-    public float dstBeforeRespawn = 12f;
+
+    SpriteRenderer rend;
+    Animator anim;
+
+    Transform camT, rendT;
     SpawnerMoustique sm;
-    bool isRespawning, isGrowing;
+    Vector3 spawnerPos;
+
+
+
+
+    [Space(10)]
+    [Header("Movement : ")]
+    [Space(10)]
+
+
+    [SerializeField] float normalSpeed = 3f, rotSpeed = 2f;
+    [SerializeField] int rotIntervalleDirection = 45;
+    [SerializeField] AnimationCurve rotCurve;
+    Quaternion startRot;
 
     [Space(10)]
 
@@ -21,56 +38,48 @@ public class Moustique : Enemy, IPooledObject
     float randomDelay, timer;
 
 
-    protected bool notCaughtYet = true;
+    public LayerMask wallMask;
+    public float dstBeforeRespawn = 12f;
 
-    public override void DestroyThisEnemy()
+
+
+
+
+
+
+    #endregion
+
+
+
+    #region Mono
+
+
+    protected override void Start()
     {
-        EpreuveKungfuStatic.nbMoustiquesInScene--;
+        base.Start();
 
-        epreuve.CheckVictory();
+        rend = t.GetComponentInChildren<SpriteRenderer>();
+        anim = rend.GetComponent<Animator>();
+        rendT = rend.transform;
+        camT = Camera.main.transform;
 
-        base.DestroyThisEnemy();
+        spawnerPos = sm.transform.position;
 
     }
 
-    protected override void MoveTowardsWeakPoint()
-    {
-
-        if (target != null)
-        {
-            //if (target.destroyed)
-            //{
-            //    DestroyThisEnemy();
-            //    return;
-            //}
 
 
-            //t.Translate((target.transform.position - t.position).normalized * speedToUse * Time.deltaTime, Space.World);
-            //t.LookAt(target.transform);
-
-        }
-        //t.Translate(t.forward * speedToUse * Time.deltaTime, Space.World);
-
-
-    }
 
     private void Update()
     {
-        if (isCaught && notCaughtYet)
-        {
-            ObjectPooler.instance.SpawnFromPool("hit", t.position, Quaternion.identity);
-            notCaughtYet = false;
+        //pour garder le moustique face au joueur
+        if (rendT && camT) rendT.LookAt(camT.position);
 
-        }
-
-
-        if (isCaught)
-        {
-            StopAllCoroutines();
-            return;
-        }
+        //On arrête l'animation du moustique si on ne le voit pas
+        anim.enabled = isVisible = rend.isVisible;
 
 
+        //Déplacement et changement de direction
         if (timer < randomDelay)
         {
             timer += Time.deltaTime;
@@ -83,63 +92,60 @@ public class Moustique : Enemy, IPooledObject
         }
         t.Translate(t.forward * normalSpeed * Time.deltaTime, Space.World);
 
-        Vector3 spawnerPos = sm.transform.position;
-        float dstToCenter = (t.position - spawnerPos).sqrMagnitude;
 
-        if (dstToCenter > dstBeforeRespawn * dstBeforeRespawn && !isRespawning && !isGrowing)
+
+        //Pour replacer le moustique s'il s'éloigne trop
+        float dstToCenter = (t.position - spawnerPos).sqrMagnitude;
+        if (dstToCenter > dstBeforeRespawn * dstBeforeRespawn && !isRespawning && !isGrowing && !isTargeted)
         {
             StartCoroutine(RespawnThisEnemy());
         }
     }
 
-    private void FixedUpdate()
+
+
+    #endregion
+
+
+
+    #region Enemy
+
+
+
+
+
+    public override void DestroyThisEnemy()
     {
-        if (isCaught)
-            return;
+        EpreuveKungfuStatic.nbMoustiquesInScene--;
 
-        Ray r = new Ray(t.position, t.forward);
-        bool restore = Physics.queriesHitBackfaces;
-        Physics.queriesHitBackfaces = true;
-        if (!isRotating && Physics.Raycast(r, out RaycastHit hit, 3f, wallMask, QueryTriggerInteraction.Collide))
-        {
-            //print(hit.collider.name);
-            timer = 0f;
-            randomDelay = Random.Range(delaysBetweenRotations.x, delaysBetweenRotations.y);
+        base.DestroyThisEnemy();
+        epreuve.CheckVictory();
 
-            t.eulerAngles.Scale(-Vector3.one);
-            //StartCoroutine(ReverseDirection());
-        }
-        Physics.queriesHitBackfaces = restore;
+
     }
+
 
 
 
 
     protected override IEnumerator ChangeDirection()
     {
-        isRotating = true;
         float rotTimer = 0f;
 
         float x = Random.Range(-rotIntervalleDirection, rotIntervalleDirection);
         float y = Random.Range(-rotIntervalleDirection, rotIntervalleDirection);
-        //float z = Random.Range(-rotIntervalleDirection, rotIntervalleDirection);
 
 
         while (rotTimer < 1f)
         {
             rotTimer += Time.deltaTime * rotSpeed;
-            //t.rotation = Quaternion.Euler(Vector3.Lerp(startRot.eulerAngles, new Vector3(x, t.localEulerAngles.y + y, 0), rotCurve.Evaluate(rotTimer)));
-            t.rotation = Quaternion.Lerp(startRot, Quaternion. Euler(new Vector3(x, t.localEulerAngles.y + y, 0)), rotCurve.Evaluate(rotTimer));
+            t.rotation = Quaternion.Lerp(startRot, Quaternion.Euler(new Vector3(x, t.localEulerAngles.y + y, 0)), rotCurve.Evaluate(rotTimer));
             yield return null;
         }
 
-        //startRot = t.localEulerAngles;
         startRot = t.rotation;
 
-        isRotating = false;
     }
-
-
 
 
 
@@ -147,24 +153,15 @@ public class Moustique : Enemy, IPooledObject
     public void OnObjectSpawn()
     {
         base.Start();
-        isRotating = false;
-        isOnWeakPoint = false;
         sm = FindObjectOfType<SpawnerMoustique>();
 
 
         randomDelay = Random.Range(delaysBetweenRotations.x, delaysBetweenRotations.y);
 
-        //List<WeakPoint> ts = new List<WeakPoint>();
-
-        //for (int i = 0; i < epreuve.weakPoints.Length; i++)
-        //{
-        //    if (!epreuve.weakPoints[i].destroyed)
-        //        ts.Add(epreuve.weakPoints[i]);
-        //}
-
-        //target = ts[Random.Range(0, ts.Count)];
-
-        StartCoroutine(GrowScale());
+        if (!isTargeted)
+            StartCoroutine(GrowScale());
+        else
+            t.localScale = Vector3.one;
     }
 
     private IEnumerator GrowScale()
@@ -198,7 +195,7 @@ public class Moustique : Enemy, IPooledObject
         }
 
         if(!isCaught)
-            yield return StartCoroutine(sm.Respawn(t));
+            sm.Respawn(t);
 
         while (timer < 1f)
         {
@@ -211,15 +208,6 @@ public class Moustique : Enemy, IPooledObject
 
     }
 
-//#if UNITY_EDITOR
-//    private void OnDrawGizmos()
-//    {
 
-//        col = GetComponent<BoxCollider>();
-
-//        Gizmos.color = new Color(1, 0, 0, .3f);
-//        Gizmos.DrawCube(t.position, col.size);
-//    }
-
-//#endif
+    #endregion
 }

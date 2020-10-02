@@ -25,15 +25,6 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "A work that will mark the start of a new artistic period at Dom Robert's
-      Museum, the largest of all, the most\u2026 VLADIMIRIC !"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
   - text: Vladimir, still you ?! Always in the wrong moves. Will you never be quiet
       ?!
     backgroundImg: {fileID: 0}
@@ -53,7 +44,7 @@ MonoBehaviour:
     bubbleSize: 0
     arrowOrientation: 0
   - text: I was sure it was you who was pulling the strings! Prepare to taste the
-      fury of the Great Tiger Warrior, Grrreuh !
+      fury of the Great Tiger Warrior, Grrr!
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -61,18 +52,10 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "This time, you won't be able to get in my way! Guards, stop him from taking
-      my work. Enzo, L\xE9o, Hugo, Th\xE9o, Paolo, Pierrot\u2026 On the attack !"
+  - text: "Guards, stop him from taking my work. Enzo, L\xE9o, Hugo, Th\xE9o, Paolo,
+      Pierrot\u2026 On the attack !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 440381ea924ded741b955154e765903d, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: Oh no, tiger mosquitoes, their bites hurts very very very !
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 0
@@ -81,14 +64,6 @@ MonoBehaviour:
   - text: Miguel doesn't like it when ugly mosquito bites Miguel !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: f2d41c9a3bf778042b5314b8f8c48694, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: We can never pass, how do we do it ?
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 0

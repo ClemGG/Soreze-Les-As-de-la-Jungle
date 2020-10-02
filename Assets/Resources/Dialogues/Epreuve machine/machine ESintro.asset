@@ -17,7 +17,7 @@ MonoBehaviour:
   delayAutomaticClosure: 0
   repliques:
   - text: "Amigos, no entiendo, el telar ya no funciona. \xA1Alguien debe haberlo
-      usado sin mirar las instrucciones antes! "
+      usado sin mirar primero las instrucciones!"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
     clip: {fileID: 0}
@@ -25,50 +25,15 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Todo est\xE1 roto ahora ... \xBFPuedes ayudarme a arreglarlo?"
+  - text: " \xBFPuedes ayudarme a arreglarlo?"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 8144066a600b7a24d83bdd3db683bd66, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: De hecho, el telar ya no funciona! Gilbert, una idea?
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: f4feeae82a8ad5148acc3adb502e0842, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
   - text: "Reconstruyendo una m\xE1quina tan r\xFAstica ... \xA1Pfff no hay problema!"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "As\xED que no hay tiempo que perder, Gilbert, \xA1depende de ti!"
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: "Te ayudar\xE9 a reconstruir el telar. Para eso solo tienes que seguir mis
-      instrucciones y elegir los elementos correctos. Entonces depende de usted posicionarlos
-      adecuadamente."
-    backgroundImg: {fileID: 0}
-    character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 0
-    arrowOrientation: 0
-  - text: En primer lugar, comencemos por montar la estructura. Entonces necesitaremos
-      materiales.
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}

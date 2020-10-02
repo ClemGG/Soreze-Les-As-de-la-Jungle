@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Threading;
+﻿using System.Collections;
+using NatSuite.Sharing;
 using UnityEngine;
 
 public class PrintSender : MonoBehaviour
@@ -22,7 +19,7 @@ public class PrintSender : MonoBehaviour
 
 
 
-//#if UNITY_EDITOR || UNITY_STANDALONE_WIN
+#if UNITY_EDITOR || UNITY_STANDALONE
 
     public IEnumerator PrintImage(string persistentDataPath, string fileName, int nbCopies)
     {
@@ -38,23 +35,7 @@ public class PrintSender : MonoBehaviour
             yield return null;
         }
 
-
     }
-//#elif UNITY_IOS
-    public IEnumerator PrintImage(int nbCopies)
-    {
-        for (int i = 0; i < nbCopies; i++)
-        {
-		    iosAirprintPlugin.PrintOut ();
-            yield return null;
-        }
-
-
-    }
-//#endif
-
-
-//#if UNITY_EDITOR || UNITY_STANDALONE_WIN
 
 
     public void SaveTempScreenshotStandalone(string desktopPath, string persistentDataPath, string fileName)
@@ -67,35 +48,19 @@ public class PrintSender : MonoBehaviour
         //print(System.IO.File.Exists(filePathOnDesktop));
     }
 
-
-//#elif UNITY_IOS
-//    public void SaveTempScreenshotIpad(string persistentDataPath)
-//    {
-
-
-//    }
-//#endif
-
-
-
-
-
-
-    public void DeleteFile(string path)
-    {
-
-#if UNITY_EDITOR || UNITY_STANDALONE
-
-        if (System.IO.File.Exists(path))
-        {
-            System.IO.File.Delete(path);
-        }
-
 #elif UNITY_IOS
-
-
-
+    public void PrintImage(Texture2D photo)
+    {
+        //iosAirprintPlugin.PrintOut ();
+        PrintPayload payload = new PrintPayload(true, true);
+        payload.AddImage(photo).Commit();
+    }
 #endif
 
+
+
+
+
+
+
     }
-}

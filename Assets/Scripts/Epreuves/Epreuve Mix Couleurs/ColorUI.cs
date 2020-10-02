@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ColorUI : MonoBehaviour
@@ -11,23 +9,6 @@ public class ColorUI : MonoBehaviour
     public Image[] ingredientsToHide;
 
 
-//#if UNITY_EDITOR
-//    private void OnValidate()
-//    {
-//        Start();
-//    }
-//    private void Reset()
-//    {
-//        Start();
-//    }
-//#endif
-
-    //[ContextMenu("Reveal All")]
-    //public void RevealAll()
-    //{
-
-    //    ValidateColor(colorID);
-    //}
 
 
     // Start is called before the first frame update
@@ -43,10 +24,10 @@ public class ColorUI : MonoBehaviour
 
 
         if(peintureImg.transform.childCount > 0)
-        if (peintureImg.transform.GetChild(0).TryGetComponent(out validationImg))
-        {
-            validationImg.enabled = done = false;
-        }
+            if (peintureImg.transform.GetChild(0).TryGetComponent(out validationImg))
+            {
+                validationImg.enabled = done = false;
+            }
 
         for (int i = 0; i < ingredientsToHide.Length; i++)
         {
@@ -57,6 +38,9 @@ public class ColorUI : MonoBehaviour
         }
     }
 
+
+
+    //Affiche les couleurs de tous les ingrédients d'une ligne réussie
     public void ValidateColor(ColorID resultID)
     {
         if (resultID != colorID)
@@ -68,6 +52,8 @@ public class ColorUI : MonoBehaviour
             if (ingredientsToHide[i].TryGetComponent(out Image img))
             {
                 img.enabled = true;
+                img.GetComponent<Animator>().enabled = true;
+
             }
         }
 
@@ -84,6 +70,8 @@ public class ColorUI : MonoBehaviour
     }
 
 
+
+    //Affiche une tâche pour aider le joueur
     public void DisplayRandomTache()
     {
         int alea = Random.Range(0, ingredientsToHide.Length);
@@ -93,6 +81,7 @@ public class ColorUI : MonoBehaviour
             if (ingredientsToHide[i].TryGetComponent(out Image img) && i == alea)
             {
                 img.enabled = true;
+                img.GetComponent<Animator>().enabled = true;
             }
         }
     }

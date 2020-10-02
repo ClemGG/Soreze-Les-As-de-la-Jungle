@@ -9,8 +9,12 @@
             "value": "La mégalomanie de la tapisserie"
         },
         {
-            "key": "lancer la partie",
-            "value": "Lancer la partie"
+            "key": "nouvelle partie",
+            "value": "Nouvelle partie"
+        },
+        {
+            "key": "reprendre partie",
+            "value": "Reprendre la partie"
         },
         {
             "key": "parametres",
@@ -207,6 +211,46 @@
         {
             "key": "piliers détruits",
             "value": "piliers détruits"
+        },
+        {
+            "key": "machine_outil1",
+            "value": "Pieds"
+        },
+        {
+            "key": "machine_outil2",
+            "value": "Supports de tension"
+        },
+        {
+            "key": "machine_outil3",
+            "value": "Banc"
+        },
+        {
+            "key": "machine_outil4",
+            "value": "Jumelles"
+        },
+        {
+            "key": "machine_outil5",
+            "value": "Planche"
+        },
+        {
+            "key": "machine_outil6",
+            "value": "Rouleaux"
+        },
+        {
+            "key": "machine_outil7",
+            "value": "Coulisseau"
+        },
+        {
+            "key": "machine_outil8",
+            "value": "Pédale"
+        },
+        {
+            "key": "machine_outil9",
+            "value": "Roues dentelées"
+        },
+        {
+            "key": "machine_outil10",
+            "value": "Ficelles"
         }
     ]
 }

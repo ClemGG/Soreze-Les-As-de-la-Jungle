@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EpreuveTest : Epreuve
 {
@@ -45,14 +43,14 @@ public class EpreuveTest : Epreuve
 
         if (currentHelpIndex < nbHelp && !EpreuveFinished)
         {
-            if (helpTimer < delayBeforeSendingHelp && !HelpPanelButtons.instance.btnCameleon.gameObject.activeSelf)
+            if (helpTimer < delayBeforeSendingHelp && !HelpPanelButtons.instance.cameleon.gameObject.activeSelf)
             {
                 helpTimer += Time.deltaTime;
             }
             else
             {
                 helpTimer = 0f;
-                HelpPanelButtons.instance.btnCameleon.gameObject.SetActive(true);
+                HelpPanelButtons.instance.cameleon.gameObject.SetActive(true);
 
             }
         }

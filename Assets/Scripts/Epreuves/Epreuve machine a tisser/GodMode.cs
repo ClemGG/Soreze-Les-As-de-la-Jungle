@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System;
 
 public class GodMode : MonoBehaviour
 {
+#if UNITY_EDITOR || UNITY_STANDALONE
 
 
     [SerializeField] float vitesseDeplacement = 10f;
@@ -39,8 +38,8 @@ public class GodMode : MonoBehaviour
     {
         RotateCamera();
         MoveCamera();
-     
-        
+
+
     }
 
 
@@ -77,4 +76,5 @@ public class GodMode : MonoBehaviour
             angle -= 360.0f;
         return Mathf.Clamp(angle, min, max);
     }
+#endif
 }

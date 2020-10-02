@@ -18,14 +18,10 @@ MonoBehaviour:
   - mood: 0
     sprite: {fileID: 21300000, guid: 1d1a932c6335ad7418b55ec12656632c, type: 3}
   - mood: 1
-    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+    sprite: {fileID: 21300000, guid: dac3940a317764d4495eb664227d7d49, type: 3}
   - mood: 3
-    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+    sprite: {fileID: 21300000, guid: 77d5852e1d7fd7b4aaa23004d11bc424, type: 3}
   - mood: 5
-    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
-  - mood: 7
-    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+    sprite: {fileID: 21300000, guid: 4af1718aded3c8e479bedd9b9d111580, type: 3}
   - mood: 8
-    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
-  - mood: 9
-    sprite: {fileID: 21300000, guid: 4985c1aba0f4ecf46adecc6d4933ccb1, type: 3}
+    sprite: {fileID: 21300000, guid: dfccb425257880b459d130357f1aa9dc, type: 3}

@@ -14,6 +14,7 @@ using UnityEngine.UI;
 public class ScreenTransitionImageEffect : MonoBehaviour
 {
 
+    #region Variables
 
     [Space(10)]
     [Header("Scripts & Components : ")]
@@ -62,6 +63,9 @@ public class ScreenTransitionImageEffect : MonoBehaviour
     public OnSceneTransition onEndOfSceneTransition;
 
 
+    #endregion
+
+
 
 #if UNITY_EDITOR
 
@@ -78,31 +82,36 @@ public class ScreenTransitionImageEffect : MonoBehaviour
 
     #region MonoBehaviour
 
+
+
     private void OnLevelWasLoaded(int level)
+    {
+        ChangeCanvasRenderMode(RenderMode.ScreenSpaceCamera);
+        
+    }
+
+    //Nous permet d'éviter que les objets 3D ne traversent les UIs pendant les épreuves
+    public void ChangeCanvasRenderMode(RenderMode newRenderMode)
     {
         Canvas[] allCanvasesInScene = FindAllObjectsInSceneOfType<Canvas>().ToArray();
 
         for (int i = 0; i < allCanvasesInScene.Length; i++)
         {
-            //for (int j = 0; j < canvasTags.Length; j++)
-            //{
-            //    if (allCanvasesInScene[i].tag == canvasTags[j])
-            //    {
             //print(allCanvasesInScene[i].name);
+
 
             if (allCanvasesInScene[i].renderMode != RenderMode.WorldSpace)
             {
-                allCanvasesInScene[i].renderMode = RenderMode.ScreenSpaceCamera;
+                allCanvasesInScene[i].renderMode = newRenderMode;
                 allCanvasesInScene[i].worldCamera = camUsed;
                 allCanvasesInScene[i].planeDistance = 1f;
-                //allCanvasesInScene[i].sortingOrder = 1;
             }
-            //break;
-            //    }
-            //}
 
         }
     }
+
+
+
 
 
     private void Awake()
@@ -122,20 +131,13 @@ public class ScreenTransitionImageEffect : MonoBehaviour
     {
         #region Shader
 
-        // Disable if we don't support image effects
-        if (!SystemInfo.supportsImageEffects)
-        {
-            enabled = false;
-        }
-        else
-        {
-            shader = Shader.Find("Hidden/ScreenTransitionImageEffect");
+        
+        shader = Shader.Find("Hidden/ScreenTransitionImageEffect");
 
-            // Disable the image effect if the shader can't
-            // run on the users graphics card
-            if (shader == null || !shader.isSupported)
-                enabled = false;
-        }
+        // Disable the image effect if the shader can't
+        // run on the users graphics card
+        if (shader == null || !shader.isSupported)
+            enabled = false;
         #endregion
 
         isTransitioning = false;
@@ -174,6 +176,10 @@ public class ScreenTransitionImageEffect : MonoBehaviour
         return SceneManager.GetActiveScene().name;
     }
 
+
+
+
+    //Récupère la scène d'épreuve à charger en fonction du nom de l'image scannée en RA
     public static int GetSceneIndexByName(string sceneName)
     {
         int sceneCount = SceneManager.sceneCountInBuildSettings;
@@ -182,7 +188,7 @@ public class ScreenTransitionImageEffect : MonoBehaviour
 
         for (int i = 0; i < sceneCount; i++)
         {
-            string curSceneName = System.IO.Path.GetFileNameWithoutExtension(UnityEngine.SceneManagement.SceneUtility.GetScenePathByBuildIndex(i));
+            string curSceneName = System.IO.Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
             //print(curSceneName);
 
             if (curSceneName.Trim().Equals(sceneName.Trim()))
@@ -195,6 +201,12 @@ public class ScreenTransitionImageEffect : MonoBehaviour
     }
 
 
+    //On ne passe les UIs en mode caméra que dans les épreuves 3D,
+    //les autres utilisent des sous-canvas qui peuvent disparaître à l'écran
+    public bool shouldChangeCanvasesInCameraMode()
+    {
+        return CurrentLevelIndex() > 5 && CurrentLevelIndex() < 9;
+    }
 
 
 
@@ -206,8 +218,15 @@ public class ScreenTransitionImageEffect : MonoBehaviour
     {
         OnLevelWasLoaded(-1);
 
-        if(!isTransitioning)
+        if (!isTransitioning)
+        {
             StartCoroutine(FadeOut(sceneIndex));
+
+            //On libère de la place en mémoire.
+            //On l'appelle après la Coroutine pour pouvoir lancer le changement de scène
+            //en parallèle
+            ApplicationManager.CollectGarbage();
+        }
     }
 
 
@@ -253,6 +272,7 @@ public class ScreenTransitionImageEffect : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         onImageFadeInMiddleOfTransition?.Invoke(1);
 
+
         t = 1f;
 
 
@@ -285,12 +305,48 @@ public class ScreenTransitionImageEffect : MonoBehaviour
 
 
 
+
+    /// <summary>
+    /// Augmente l'alpha du fondu pour faire disparaître la scène
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator FadeOut(int sceneIndex)
+    {
+        if (shouldChangeCanvasesInCameraMode())
+            ChangeCanvasRenderMode(RenderMode.ScreenSpaceCamera);
+
+        isTransitioning = true;
+
+        float t = 0f;
+        maskValue = t;
+
+        while (t < 1f)
+        {
+            t += Time.unscaledDeltaTime * fadeAlphaSpeed;
+            maskValue = fadeCurve.Evaluate(t);
+            yield return 0;
+        }
+
+        isTransitioning = false;
+
+        SceneManager.LoadScene(sceneIndex);
+    }
+
+
+
+
     /// <summary>
     /// Diminue l'alpha du fondu pour faire apparaître la scène
     /// </summary>
     /// <returns></returns>
     public IEnumerator FadeIn()
     {
+        ApplicationManager.CollectGarbage();
+
+
+        if (shouldChangeCanvasesInCameraMode())
+            ChangeCanvasRenderMode(RenderMode.ScreenSpaceCamera);
+
         isTransitioning = true;
 
         float t = 1f;
@@ -304,40 +360,17 @@ public class ScreenTransitionImageEffect : MonoBehaviour
             yield return 0;
         }
 
+        onEndOfSceneTransition?.Invoke();
         isTransitioning = false;
+
+
+        if (shouldChangeCanvasesInCameraMode())
+            ChangeCanvasRenderMode(RenderMode.ScreenSpaceOverlay);
 
     }
 
 
 
-
-
-
-
-
-    /// <summary>
-    /// Augmente l'alpha du fondu pour faire disparaître la scène
-    /// </summary>
-    /// <returns></returns>
-    public IEnumerator FadeOut(int sceneIndex)
-    {
-        isTransitioning = true;
-
-        float t = 0f;
-        maskValue = t;
-
-        while (t < 1f)
-        {
-            t += Time.unscaledDeltaTime * fadeAlphaSpeed;
-            maskValue = fadeCurve.Evaluate(t);
-            yield return 0;
-        }
-
-        onMiddleOfSceneTransition?.Invoke();
-        isTransitioning = false;
-
-        SceneManager.LoadScene(sceneIndex);
-    }
 
 
 

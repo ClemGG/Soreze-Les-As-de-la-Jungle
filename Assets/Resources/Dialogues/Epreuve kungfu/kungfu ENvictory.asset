@@ -16,8 +16,8 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: Well done, Al and Bob. We are rid of pests! Now let's take care of you,
-      Vladimir !
+  - text: Well done, Al and Bob. We are rid of those pests! Now let's take care of
+      you, Vladimir !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

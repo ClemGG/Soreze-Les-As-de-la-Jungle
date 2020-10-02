@@ -16,27 +16,17 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "Perfecto, gracias Salvador! \xA1Podremos aprender mientras nos divertimos,
-      y no dudaremos en pedirle ayuda a tu disc\xEDpulo!"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+  - text: 'Perfecto, gracias Salvador! No dudaremos en pedir ayuda si es necesario. '
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
     mood: 0
     side: 1
     bubbleSize: 1
     arrowOrientation: 1
-  - text: "Y t\xFA, \xBFest\xE1s listo para asumir el desaf\xEDo? \xA1La misi\xF3n
-      puede ser dif\xEDcil y necesitamos tu ayuda!"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
-    character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
-    clip: {fileID: 0}
-    mood: 0
-    side: 0
-    bubbleSize: 1
-    arrowOrientation: 1
-  - text: "\xA1Vamos, amigos! La Panda de la Selva...\n<size=120><color=#cf5708>\xA1AL
-      RESCATE!\_</color></size>"
-    backgroundImg: {fileID: 21300000, guid: a4216fb6244c44249b29f165e6c749d6, type: 3}
+  - text: "Y t\xFA, \xBFest\xE1s listo para asumir el desaf\xEDo?\nLa Panda de la
+      Selva...\n<size=120><color=#cf5708>\xA1AL RESCATE!\_</color></size>"
+    backgroundImg: {fileID: 21300000, guid: afb5d9f9ee373234482f5a0745ff4012, type: 3}
     character: {fileID: 11400000, guid: 00598ac1b520cce44829e2dcdceb7716, type: 2}
     clip: {fileID: 8300000, guid: 16928943a59dd63459d7129dfdfd312c, type: 3}
     mood: 6

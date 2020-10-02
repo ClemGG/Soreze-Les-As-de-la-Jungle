@@ -1,12 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-using Clement.Utilities.Maths;
-
 public class CameraControllerKungfu : MonoBehaviour
 {
+
+    #region Variables
+
+
     EpreuveKungfu epreuve;
 
     [Space(10)]
@@ -15,6 +16,7 @@ public class CameraControllerKungfu : MonoBehaviour
 
 
     public Image viseurImg;
+    public Animator alAnim, bobAnim;
     Camera mainCam;
     Transform t;
 
@@ -48,13 +50,12 @@ public class CameraControllerKungfu : MonoBehaviour
     [Space(10)]
 
     public bool showGizmos = true;
-    LayerMask maskToUse;
-    public LayerMask enemyMask;
-    public LayerMask fourmiMask;
     public LayerMask moustiqueMask;
     public Vector3 boxSize = Vector3.one;
     public float dst;
+
     RaycastHit hit;
+    Collider[] cols;
 
 
 
@@ -62,10 +63,19 @@ public class CameraControllerKungfu : MonoBehaviour
     [Header("Kungfu : ")]
     [Space(10)]
 
+    public Button alButton;
+    public Button bobButton;
     public AnimationCurve animLangueCurve;
     public float animLangueSpeed = 1f;
     public LineRenderer lineAl, lineBob;
     bool lineAlIsFree = true, lineBobIsFree = true;
+
+
+
+    #endregion
+
+
+    #region Mono
 
 
     // Start is called before the first frame update
@@ -80,194 +90,185 @@ public class CameraControllerKungfu : MonoBehaviour
     }
 
 
+
+
+
+#if UNITY_EDITOR || UNITY_STANDALONE
     void Update()
     {
         if (!epreuve.EpreuveFinished)
         {
-#if UNITY_EDITOR
             RotateCamera();
             MoveCamera();
+
+        }
+    }
+
 #endif
 
-            viseurImg.color = Physics.BoxCast(transform.position, boxSize, transform.forward, out hit, transform.rotation, dst, enemyMask) ? Color.red : Color.white;
+    void FixedUpdate()
+    {
+        if (!epreuve.EpreuveFinished && epreuve.isFirstLevel)
+        {
 
-#if UNITY_EDITOR || UNITY_STANDALONE
-            //if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-            //GetEnemyInBoxcast(Random.Range(0, 2));
-#endif
+            //retour visuel
+            cols = Physics.OverlapBox(t.position + t.forward * boxSize.z, boxSize, t.rotation, moustiqueMask);
+            viseurImg.color = cols.Length > 0f ? Color.red : Color.white;
+
 
         }
     }
 
 
+
+    #endregion
+
+
+
+    #region Enemy
+
+    //Appelée quand le joueur clique sur les grenouilles
     public void GetEnemyInBoxcast (int index)
     {
         if (epreuve.EpreuveFinished)
             return;
 
 
-        switch (index)
-        {
-            case -1:
-                maskToUse = enemyMask;
-                break;
-            //case -1:
-            //    maskToUse = enemyMask;
-            //    break;
-            case 0:
-                maskToUse = moustiqueMask;
-                break;
-            case 1:
-                goto case 0;
-            //case 1:
-            //    maskToUse = fourmiMask;
-            //    break;
-        }
 
-        if (Physics.BoxCast(transform.position, boxSize, transform.forward, out hit, transform.rotation, dst, maskToUse))
-        {
-            Enemy e = hit.transform.GetComponent<Enemy>();
 
-            if (epreuve.isFirstLevel)
-                StartCoroutine(CatchEnemy(e, index));
-            else
-                e.DestroyThisEnemy();
+        if (epreuve.isFirstLevel)
+        {
+            cols = Physics.OverlapBox(t.position + t.forward * boxSize.z, boxSize, t.rotation, moustiqueMask);
+
+            if (cols.Length > 0)
+            {
+                Enemy e = cols[0].GetComponent<Enemy>();
+                if(e.EligibleForDestruction())
+                {
+                    StartCoroutine(CatchEnemy(e, index));
+                }
+            }
         }
     }
 
+
+
     private IEnumerator CatchEnemy(Enemy enemy, int index)
     {
-
         if (enemy.isTargeted)
             yield break;
 
 
-        if (!lineAlIsFree && index == 0)
+
+
+        //On récupère le LineRenderer correspondant à l'ID du bouton
+        LineRenderer line;
+        if (index == 0)
         {
-            if (lineBobIsFree)
-            {
-                index = 1;
-            }
-            else
+            //Ne pas activer la langue si elle est déjà occupée
+            if (!lineAlIsFree)
                 yield break;
 
+            lineAlIsFree = alButton.interactable = false;
+            line = lineAl;
+            alAnim.Play("a_al_tir");
         }
-        if (!lineBobIsFree && index == 1)
+        else
         {
-            if (lineAlIsFree)
-            {
-                index = 0;
-            }
-            else
+            //Ne pas activer la langue si elle est déjà occupée
+            if (!lineBobIsFree)
                 yield break;
 
+            lineBobIsFree = bobButton.interactable = false;
+            line = lineBob;
+            bobAnim.Play("a_bob_tir");
         }
+
+
 
         float timer = 0f;
-
         Vector3 targetPos = Vector3.zero;
         enemy.isTargeted = true;
 
 
+
+
+
+
+
+        AudioManager.instance.Play(epreuve.langueStartClip1);
+        bool hasPlayed = false;
+
+
+
+
+        while (timer < 1f)
+        {
+
+
+            //Attacher l'ennemi au bout de la langue
+            if (timer < .5f)
+            {
+                targetPos = line.transform.InverseTransformPoint(enemy.t.position);
+            }
+
+
+
+            timer += Time.deltaTime * animLangueSpeed;
+            Vector3 languePos = Vector3.LerpUnclamped(line.GetPosition(0), targetPos, animLangueCurve.Evaluate(timer));
+            line.SetPosition(1, languePos);
+
+
+
+            //Attacher l'ennemi au bout de la langue
+            if (timer > .5f)
+            {
+                if (!hasPlayed)
+                {
+                    AudioManager.instance.Play(epreuve.langueEndClip1);
+                    //ObjectPooler.instance.SpawnFromPool("hit", enemy.t.position, Quaternion.identity);
+                    hasPlayed = true;
+                }
+
+                //Au lieu de changer isCaught, on va juste appeler le FX et déplacer le moustique,
+                //les crashs viennent du script du moustique
+
+                //enemy.isCaught = true;
+                enemy.t.position = line.transform.TransformPoint(languePos);
+
+            }
+
+            yield return null;
+
+        }
+
         if (index == 0)
         {
-            if (!lineAlIsFree)
-                yield break;
-
-            lineAlIsFree = false;
-            AudioManager.instance.Play(epreuve.langueStartClip1);
-
-            bool hasPlayed = false;
-
-            while (timer < 1f)
-            {
-                //Attacher l'ennemi au bout de la langue
-                if (timer < .5f)
-                {
-                    targetPos = lineAl.transform.InverseTransformPoint(enemy.transform.position);
-                }
-
-
-
-                timer += Time.deltaTime * animLangueSpeed;
-                Vector3 languePos = Vector3.LerpUnclamped(lineAl.GetPosition(0), targetPos, animLangueCurve.Evaluate(timer));
-                lineAl.SetPosition(1, languePos);
-                yield return null;
-
-
-
-                //Attacher l'ennemi au bout de la langue
-                if (timer > .5f)
-                {
-                    if (!hasPlayed)
-                    {
-                        AudioManager.instance.Play(epreuve.langueEndClip1);
-                        hasPlayed = true;
-                    }
-
-                    enemy.isCaught = true; 
-                    enemy.transform.position = lineAl.transform.TransformPoint(languePos);
-
-                }
-
-
-            }
-
-
-            lineAlIsFree = true;
+            lineAlIsFree = alButton.interactable = true;
         }
-        else if(index == 1)
+        else
         {
-            if (!lineBobIsFree)
-                yield break;
-
-            lineBobIsFree = false;
-            AudioManager.instance.Play(epreuve.langueStartClip2);
-
-
-            bool hasPlayed = false;
-
-            while (timer < 1f)
-            {
-                //Attacher l'ennemi au bout de la langue
-                if (timer < .5f)
-                {
-                    targetPos = lineBob.transform.InverseTransformPoint(enemy.transform.position);
-                }
-
-
-
-
-                timer += Time.deltaTime * animLangueSpeed;
-                Vector3 languePos = Vector3.LerpUnclamped(lineBob.GetPosition(0), targetPos, animLangueCurve.Evaluate(timer));
-                lineBob.SetPosition(1, languePos);
-                yield return null;
-
-                //Attacher l'ennemi au bout de la langue
-                if (timer > .5f)
-                {
-                    if (!hasPlayed)
-                    {
-                        AudioManager.instance.Play(epreuve.langueEndClip2);
-                        hasPlayed = true;
-                    }
-
-                    enemy.isCaught = true;
-                    enemy.transform.position = lineBob.transform.TransformPoint(languePos);
-                }
-
-            }
-
-            lineBobIsFree = true;
+            lineBobIsFree = bobButton.interactable = true;
         }
+
+        line.SetPosition(1, line.GetPosition(0));
+
+
 
         enemy.isTargeted = false;
-        enemy.isCaught = false;
+        //enemy.isCaught = false;
         enemy.DestroyThisEnemy();
 
     }
 
+    #endregion
 
+
+
+
+    #region Editeur
+
+#if UNITY_EDITOR || UNITY_STANDALONE
 
     private void RotateCamera()
     {
@@ -303,6 +304,10 @@ public class CameraControllerKungfu : MonoBehaviour
         return Mathf.Clamp(angle, min, max);
     }
 
+#endif
+
+
+
 
 #if UNITY_EDITOR
     void OnDrawGizmos()
@@ -331,4 +336,6 @@ public class CameraControllerKungfu : MonoBehaviour
     }
 #endif
 
+
+    #endregion
 }

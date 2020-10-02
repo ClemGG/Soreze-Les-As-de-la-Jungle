@@ -22,6 +22,11 @@ public class LocalizedTextEditor : EditorWindow {
 
 
 
+    [MenuItem("My Tools/Player Prefs/Delete All")]
+    public void DeleteAllPlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 
     [MenuItem("My Tools/Localized Text Editor")]
     static void Init()

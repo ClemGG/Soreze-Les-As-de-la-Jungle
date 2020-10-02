@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
-
-using Clement.Utilities.Maths;
 
 
 public class InfiniteRotation : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
+
+    #region Variables
+
+
     float yaw, pitch;
     bool shouldCompute = false, isOverWheel = false;
     Transform t;
@@ -30,6 +30,10 @@ public class InfiniteRotation : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     EpreuveNumeroArt e;
     Touch touchOnWheel;
 
+    #endregion
+
+
+    #region Mono
 
     // Start is called before the first frame update
     void Start()
@@ -95,6 +99,11 @@ public class InfiniteRotation : MonoBehaviour, IPointerDownHandler, IPointerUpHa
 
     }
 
+    #endregion
+
+
+    #region Rotation
+
     private IEnumerator RoundRotationNearestSection()
     {
         float timer = 0f;
@@ -122,6 +131,7 @@ public class InfiniteRotation : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         startRot = t.eulerAngles.z;
         curSection = Mathf.RoundToInt(ClampAngle(startRot, 0f, 360f) * nbSections / 360f);
+        if(curSection == nbSections) curSection = 0;
         destRot = 360f / nbSections * curSection;
     }
 
@@ -149,6 +159,8 @@ public class InfiniteRotation : MonoBehaviour, IPointerDownHandler, IPointerUpHa
         return Mathf.Clamp(angle, min, max);
     }
 
+
+    #endregion
 
 
 
@@ -194,27 +206,11 @@ public class InfiniteRotation : MonoBehaviour, IPointerDownHandler, IPointerUpHa
     {
         isOverWheel = true;
 
-        //if (Input.touchCount > 0)
-        //{
-        //    foreach (Touch touch in Input.touches)
-        //    {
-        //        int id = touch.fingerId;
-        //        if (EventSystem.current.IsPointerOverGameObject(id) && touchOnWheel.fingerId == -1 && isOverWheel)
-        //        {
-        //            touchOnWheel = touch;
-        //        }
-        //    }
-        //}
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         isOverWheel = false;
 
-        //if (Input.touchCount > 0)
-        //{
-        //    touchOnWheel = new Touch();
-        //    touchOnWheel.fingerId = -1;
-        //}
     }
 }

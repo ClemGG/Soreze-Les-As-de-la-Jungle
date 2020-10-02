@@ -16,8 +16,7 @@ MonoBehaviour:
   autoEnd: 0
   delayAutomaticClosure: 0
   repliques:
-  - text: "Bon, je pense qu\u2019on a fait le tour, tous les faux motifs ont \xE9t\xE9
-      trouv\xE9s !"
+  - text: "Bon, je pense que tous les faux motifs ont \xE9t\xE9 trouv\xE9s !"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}
@@ -26,8 +25,8 @@ MonoBehaviour:
     bubbleSize: 0
     arrowOrientation: 0
   - text: "En tout cas, nous savons d\xE9sormais qui se cache derri\xE8re tout \xE7a.
-      Et comme je le craignais, il s\u2019agit d\u2019une vieille connaissance : <b>Vladimir
-      !</b>"
+      Et comme je le craignais, il s\u2019agit d\u2019une vieille connaissance :
+      <b>Vladimir !</b>"
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 872417fe262476e4f8e0d0d4670d49b3, type: 2}
     clip: {fileID: 0}
@@ -43,9 +42,7 @@ MonoBehaviour:
     side: 0
     bubbleSize: 0
     arrowOrientation: 0
-  - text: "Allez les amis, on continue, il reste encore certainement des indices dans
-      le mus\xE9e qui vont nous permettre de d\xE9couvrir o\xF9 se cache Vladimir
-      ! "
+  - text: Allez les amis, on continue !
     backgroundImg: {fileID: 0}
     character: {fileID: 11400000, guid: 5d3acadf3fdf0a940b12ba9fe6a95d17, type: 2}
     clip: {fileID: 0}

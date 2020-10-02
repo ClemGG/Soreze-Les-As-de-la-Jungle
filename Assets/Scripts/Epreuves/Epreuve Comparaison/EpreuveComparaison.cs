@@ -1,30 +1,22 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.UI;
-using System;
 
 public class EpreuveComparaison : Epreuve
 {
+    #region Variables
+
     [Space(10)]
     [Header("Scripts & Components : ")]
     [Space(10)]
 
 
-
-    [Space(10)]
-    public ComparaisonSprite[] motifsToReveal;
-    [Space(10)]
-
-
-    [SerializeField] Animator splashAnim;
-
     [SerializeField] GameObject cross;
+    [SerializeField] Animator juniorAnim;
+    Camera cam;
 
-    [SerializeField] GameObject correctParticle;
-
-    [SerializeField] GameObject victoryParticle;
+    [Space(10)]
+    [SerializeField] ComparaisonSprite[] motifsToReveal;
+    [Space(10)]
 
 
 
@@ -36,34 +28,37 @@ public class EpreuveComparaison : Epreuve
     [Space(10)]
 
     [Tooltip("Le layerMask des triggers des sprites à faire apparaître avec le projectile")]
-    public LayerMask paintingMask;
+    [SerializeField] LayerMask paintingMask;
     RaycastHit hit;
-    public Transform spawnPoint;
-    public Camera cam;
     Vector3 mousePos;
-    [HideInInspector] public bool isShooting = false;
+    public bool isShooting = false;
 
 
     [Space(10)]
     [Header("Motifs : ")]
     [Space(10)]
 
-    int motifsFound = 0;
-    public DialogueList motifsDialogueList;
+    [SerializeField] DialogueList motifsDialogueList;
     int currentMotifIndex = 0;
+    int motifsFound = 0;
 
 
     [Space(10)]
     [Header("Audio : ")]
     [Space(10)]
 
-    public AudioClip bgmClip;
-    public AudioClip goodClip;
-    public AudioClip errorClip;
-    public AudioClip victoryClip;
+    [SerializeField] AudioClip goodClip;
+    [SerializeField] AudioClip errorClip;
+    [SerializeField] AudioClip victoryClip;
     public AudioClip splashClip;
     public AudioClip impactClip;
     public AudioClip posePapierClip;
+
+
+    #endregion
+
+
+
 
 
     #region Epreuve
@@ -80,12 +75,10 @@ public class EpreuveComparaison : Epreuve
         cross.transform.position = mousePos;
 
 
-        if (index == -1)
+        if (index == -1 || index != currentMotifIndex)
         {
             cross.SetActive(true);
-            ResetHelpTimer();
             ReplayNotice();
-
             AudioManager.instance.Play(errorClip);
         }
         else
@@ -93,79 +86,111 @@ public class EpreuveComparaison : Epreuve
             if (index == currentMotifIndex)
             {
                 cross.SetActive(false); 
-                ResetHelpTimer();
 
 
-                //motifsToReveal[index].RevealSprite();
-                motifsToReveal[index].sr.enabled = true;
-                motifsToReveal[index].done = true;
-
+                motifsToReveal[index].RevealSprite();
                 motifsFound++;
                 UpdateScoreUI();
 
-
-            }
-            else
-            {
-                cross.SetActive(true); 
-                ResetHelpTimer();
-
-                ReplayNotice();
-                AudioManager.instance.Play(errorClip);
 
             }
         }
 
     }
 
+
+
     //Vérifie si les conditions de victoire sont réunies
     public void CheckVictory(int index)
     {
-
+        //Si on a tout rempli, on joue le dialogue de victoire
         if (motifsFound == motifsToReveal.Length)
         {
             OnEpreuveEnded(true);
-            victoryParticle.SetActive(true);
-            victoryParticle.transform.position = Camera.main.transform.position + Camera.main.transform.forward;
             AudioManager.instance.Play(victoryClip);
         }
         else
         {
+            //Sinon, on lance le dialogue du motif suivant
             DisplayRandomReplique();
-            correctParticle.SetActive(true);
-            correctParticle.transform.position = motifsToReveal[index].transform.position;
             AudioManager.instance.Play(goodClip);
 
         }
+
+        ObjectPooler.instance.SpawnFromPool("success", motifsToReveal[index].transform.position, Quaternion.identity);
     }
 
 
 
     public void ShootProjectile()
     {
-        if (EpreuveFinished || isShooting)
+        if (EpreuveFinished)
             return;
 
 
+        //Si on touche la toile, on lance l'animation de tir, qui se chargera du reste
         if (Physics.Raycast(cam.ViewportPointToRay(Vector2.one / 2f), out hit, 100f, paintingMask))
         {
-            isShooting = true;
-            ProjectileJunior p = ObjectPooler.instance.SpawnFromPool("projectile junior", spawnPoint.position, Quaternion.identity).GetComponent<ProjectileJunior>();
-            mousePos = hit.point;
-            p.SetProjectile(currentMotifIndex, mousePos);
-            splashAnim.Play("splash");
-            AudioManager.instance.Play(splashClip);
+            if (juniorAnim) juniorAnim.Play("a_junior_jump");
         }
     }
 
-    private Vector3 GetMousePosOnPainting()
-    {
-        float z = cross.transform.position.z;
-        mousePos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.WorldToScreenPoint(cross.transform.position).z));
-        mousePos.z = z;
 
-        return mousePos;
+    //Appelée par le GameEvent de l'anim pour vérifier si on a bien touché la cible
+    public void CheckHitAfterAnim()
+    {
+
+        //Si on touche la toile...
+        if (Physics.Raycast(cam.ViewportPointToRay(Vector2.one / 2f), out hit, 100f, paintingMask))
+        {
+            mousePos = hit.point;
+
+
+
+
+            //Si on touche un des sprites, on le révèle
+            if (hit.collider.CompareTag("comparaison/painting"))
+            {
+
+                if(hit.collider.TryGetComponent(out ComparaisonSprite cs))
+                {
+                    HighlightDifferences(cs.ID == currentMotifIndex ? currentMotifIndex : -1);
+
+                    if (cs.ID == currentMotifIndex)
+                        CheckVictory(currentMotifIndex);
+                }
+                
+            }
+            else
+            {
+                //Sinon, on affiche une erreur
+                HighlightDifferences(-1);
+            }
+
+
+        }
+
+
+
+
+
+        Animator splashAnim = ObjectPooler.instance.SpawnFromPool("splash junior", mousePos, Quaternion.identity).GetComponent<Animator>();
+        if(splashAnim) splashAnim.Play("wall junior");
+
+        AudioManager.instance.Play(impactClip);
+        AudioManager.instance.Play(posePapierClip);
+
+
     }
+
+
+
+
+
+
+
+
+
 
     public override void UpdateScoreUI()
     {
@@ -176,19 +201,13 @@ public class EpreuveComparaison : Epreuve
 
 
 
+
+
     //Affiche la consigne liée au sprite en cours
+    //Si on veut rendre le choix des sprites aléatoire, le faire ici
     private void DisplayRandomReplique()
     {
-        //List<int> unsolvedQuestions = new List<int>();
-        //for (int i = 0; i < motifsToReveal.Length; i++)
-        //{
-        //    if (!motifsToReveal[i].done)
-        //        unsolvedQuestions.Add(i);
-        //}
-
-        //int alea = UnityEngine.Random.Range(0, unsolvedQuestions.Count);
-
-        //currentMotifIndex = unsolvedQuestions[alea];
+        
 
         for (int i = 0; i < motifsToReveal.Length; i++)
         {
@@ -232,7 +251,7 @@ public class EpreuveComparaison : Epreuve
     }
 
 
-    //Rejoue la consigne si le joueru a râté son tir
+    //Rejoue la consigne si le joueur a râté son tir
     public void ReplayNotice()
     {
         DialogueEpreuveSystem.instance.gameObject.SetActive(true);
@@ -247,6 +266,8 @@ public class EpreuveComparaison : Epreuve
 
 
 
+
+
     #region Overrides
 
 
@@ -255,6 +276,7 @@ public class EpreuveComparaison : Epreuve
     {
         scoreText.text = "0";
         finalScoreText.text = $"/{motifsToReveal.Length}";
+
         cam = Camera.main;
         cross.SetActive(false);
 
@@ -263,18 +285,15 @@ public class EpreuveComparaison : Epreuve
     }
 
 
-
-
     protected override void Update()
     {
         base.Update();
 
-//#if UNITY_EDITOR || UNITY_STANDALONE
-//        if (Input.GetMouseButtonDown(0))
-//        {
-//            ShootProjectile();
-//        }
-//#endif
+#if UNITY_EDITOR
+
+        if (Input.GetMouseButtonDown(0))
+            ShootProjectile();
+#endif
     }
 
 
@@ -284,7 +303,6 @@ public class EpreuveComparaison : Epreuve
         if (EpreuveFinished)
             return;
 
-        HelpPanelButtons.instance.btnCameleon.gameObject.SetActive(false);
         GiveSolutionToPlayer(currentHelpIndex);
 
         if (currentHelpIndex < nbHelp)
@@ -322,6 +340,7 @@ public class EpreuveComparaison : Epreuve
 
         }
         CheckVictory(currentMotifIndex);
+        ResetHelpTimer();
 
     }
 

@@ -9,6 +9,8 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARTrackedImageManager))]
 public class ImageTracker : MonoBehaviour
 {
+    public Vector3 posOffset;
+    public Vector3 rotOffset;
 
     #region Setup
 
@@ -27,6 +29,7 @@ public class ImageTracker : MonoBehaviour
     void OnDisable()
     {
         m_TrackedImageManager.trackedImagesChanged -= OnTrackedImagesChanged;
+        curScannedImage = null;
     }
 
 
@@ -35,12 +38,12 @@ public class ImageTracker : MonoBehaviour
 
 
 
-    public UnityEvent onImageTracked;
+    public UnityEvent onImageTracked, onImageLost;
     ARTrackedImage curScannedImage;
 
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs)
     {
-        foreach (var trackedImage in eventArgs.added)
+        foreach(var trackedImage in eventArgs.added)
         {
             UpdateInfo(trackedImage);
         }
@@ -48,8 +51,8 @@ public class ImageTracker : MonoBehaviour
         foreach (var trackedImage in eventArgs.updated)
         {
             UpdateInfo(trackedImage);
-
         }
+
 
 
     }
@@ -57,12 +60,17 @@ public class ImageTracker : MonoBehaviour
     private void UpdateInfo(ARTrackedImage trackedImage)
     {
         curScannedImage = trackedImage;
-        // Disable the visual plane if it is not being tracked
-        if (trackedImage.trackingState != TrackingState.Tracking)
+        onImageTracked?.Invoke();
+
+        if(trackedImage.trackingState == TrackingState.Limited)
         {
-            onImageTracked?.Invoke();
+            onImageLost?.Invoke();
         }
+
     }
+
+
+
 
 
     //Appelé par l'event onImageTracked dans la scène ppale
@@ -80,12 +88,21 @@ public class ImageTracker : MonoBehaviour
     //Appelé par l'event onImageTracked dans la scène d'épreuve pour déplacer l'oeuvre
     public void PlaceGameObjectOnTrackedImage(GameObject obj)
     {
-        //A tester pour voir si les objets s'affichent mieux maintenant
-        curScannedImage.transform.position = Vector3.one * .1f;
-
-        print(curScannedImage.name + "  " + Vector3.Distance(obj.transform.position, curScannedImage.transform.position));
+        
         obj.SetActive(true);
-        obj.transform.position = curScannedImage.transform.localPosition;
-        //obj.transform.rotation = curScannedImage.transform.rotation;
+        obj.transform.position = curScannedImage.transform.localPosition + posOffset;
+
+
     }
+
+    //Appelé par l'event onImageTracked dans la scène d'épreuve pour déplacer l'oeuvre
+    public void PlaceGameObjectOnTrackedImageWithRot(GameObject obj)
+    {
+        obj.SetActive(true);
+        obj.transform.position = curScannedImage.transform.localPosition + posOffset;
+        obj.transform.rotation = curScannedImage.transform.rotation * Quaternion.Euler(rotOffset);
+    }
+
+
+
 }

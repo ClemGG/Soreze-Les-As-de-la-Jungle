@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 
 //utilisé pendant les épreuves pour afficher le bouton du caméléon et les aides.
@@ -10,8 +7,11 @@ using UnityEngine.UI;
 public class HelpPanelButtons : MonoBehaviour
 {
     public static HelpPanelButtons instance;
-    public Transform btnCameleon;
+    public GameObject cameleon;
+    Animator cameleonAnim;
+    Epreuve curEpreuve;
 
+    bool isHelpActive;
 
     //Singleton
     private void Awake()
@@ -23,42 +23,75 @@ public class HelpPanelButtons : MonoBehaviour
         }
 
         instance = this;
+        cameleonAnim = cameleon.GetComponent<Animator>();
     }
 
 
     //Au début de chaque niveau, on cache le caméléon
     private void OnLevelWasLoaded(int level)
     {
-        //if(level == 1 && MainSceneButtons.instance.introDone)
-        //{
-        //    print("true");
-        //    btnCameleon.gameObject.SetActive(false);
 
-        //}
-        //    print("false");
-        if(MainSceneButtons.instance.introDone)
-        StartCoroutine(DisableCameleon());
-            
+        if (MainSceneButtons.instance.introDone)
+            StartCoroutine(DisableCameleon(level));
+
+        curEpreuve = FindObjectOfType<Epreuve>();
+        isHelpActive = false;
+        
     }
 
-    private IEnumerator DisableCameleon()
+    private IEnumerator DisableCameleon(int level)
     {
         yield return new WaitForSeconds(1f);
-        btnCameleon.gameObject.SetActive(false);
+
+        //Si on est dans la scène ppale, celle des échafaudages ou de la photo, on cache l'aide
+        if (level == 1 || level > 7)
+        {
+
+            cameleon.SetActive(false);
+        }
+        else
+        {
+            //Sinon, on l'active et on joue son idle
+            cameleon.SetActive(true);
+            cameleonAnim.Play("a_cameleon_idle_en_haut");
+        }
+
     }
 
+
+    public void ShowHelp()
+    {
+        if (!isHelpActive)
+        {
+            cameleonAnim.Play("a_cameleon_descente");
+            isHelpActive = true;
+        }
+    }
 
 
     //Appelée par le btn du caméléon
     public void GetEpreuveHelp()
     {
-        Epreuve e = FindObjectOfType<Epreuve>();
-
-        if (e)
+        if (curEpreuve)
         {
-            if (!e.EpreuveFinished)
+            if (!curEpreuve.EpreuveFinished)
             {
-                e.SendHelp();
+                curEpreuve.SendHelp();
+                cameleonAnim.Play("a_cameleon_remontee");
+                isHelpActive = false;
+            }
+        }
+    }
+
+
+    //Pour permettre au joueur d'appeler lui-même l'aide si besoin
+    public void CallHelp()
+    {
+        if (curEpreuve)
+        {
+            if (!curEpreuve.EpreuveFinished)
+            {
+                curEpreuve.SetHelpTimerToZero();
             }
         }
     }

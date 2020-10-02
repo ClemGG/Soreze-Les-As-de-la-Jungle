@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1932727207121385447}
   - component: {fileID: 7918260415612332887}
   - component: {fileID: 8215572183226970314}
-  - component: {fileID: 7760108770870810222}
+  - component: {fileID: 7292156566997407020}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -45,7 +45,7 @@ Camera:
   m_GameObject: {fileID: 1932727207121385443}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -72,8 +72,8 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
+  m_HDR: 0
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -127,7 +127,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   isTransitioning: 0
-  maskValue: 0
+  maskValue: 1
   maskColor: {r: 0, g: 0, b: 0, a: 1}
   maskTexture: {fileID: 2800000, guid: 945e10dbc649c8c4fac4516c8c5a39ce, type: 3}
   maskInvert: 0
@@ -143,8 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4966719baa26e4b0e8231a24d9bd491a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FocusMode: 1
-  m_LightEstimationMode: 0
+  m_FocusMode: -1
+  m_LightEstimationMode: -1
+  m_AutoFocus: 0
+  m_LightEstimation: 0
+  m_FacingDirection: 1
 --- !u!114 &8215572183226970314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +162,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UseCustomMaterial: 0
   m_CustomMaterial: {fileID: 0}
---- !u!114 &7760108770870810222
+--- !u!114 &7292156566997407020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,12 +171,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1932727207121385443}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a2a9c34df4095f47b9ca8f975175f5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e3c44306fb1e439a9f18b2212b8ab70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Device: 0
-  m_PoseSource: 6
-  m_PoseProviderComponent: {fileID: 0}
-  m_TrackingType: 0
-  m_UpdateType: 2
-  m_UseRelativeTransform: 1
