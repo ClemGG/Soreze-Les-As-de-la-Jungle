@@ -26,8 +26,10 @@ public static class ApplicationManager
 
     public static void SetResoltuion(int width, int height)
     {
+#if UNITY_EDITOR || UNITY_IOS
         Screen.SetResolution(width, height, true);
-        
+#endif
+
     }
 
     public static void SetFrameRate(int newFrameRate)
