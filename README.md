@@ -1,5 +1,6 @@
 # Soreze-Les-As-de-la-Jungle
-Une série de mini-jeux en Réalité Augmentée pour enfants sur le thème des As de la Jungle, réalisée pour l'inauguration de l'Abbaye-Ecole de Sorèze
+Une série de mini-jeux en Réalité Augmentée pour enfants sur le thème des As de la Jungle, réalisée pour l'inauguration de l'Abbaye-Ecole de Sorèze.
+Réalisé avec Unity3D 2019.2
 
 ## Screenshots
 
